@@ -1,9 +1,12 @@
 import { appWithTranslation } from "next-i18next";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { LocationContextProvider } from "../contexts/LocationContext";
+
 
 import Layout from "../components/Layout";
-
+import "../assets/stylesheets/styles.scss";
+import "../assets/stylesheets/intake.scss";
 import "../styles/styles.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -15,9 +18,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/img/logo.svg`}
         />
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+
+      <LocationContextProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </LocationContextProvider>
+
     </>
   );
 }

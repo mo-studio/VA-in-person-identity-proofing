@@ -22,8 +22,12 @@ const Layout = ({ children }: Props) => {
       <Header />
       <main id="main-content" className="grid-col-fill">
         <GridContainer>
-          <Grid row>
-            <Grid col>{children}</Grid>
+          <Grid row className="flex-justify-center">
+            <Grid col={12} tablet={{ col: 8 }}>
+              <div className="bg-white padding-y-3 padding-x-5 border border-base-lighter">
+                {children}
+              </div>
+            </Grid>
           </Grid>
         </GridContainer>
       </main>
