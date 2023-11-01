@@ -113,10 +113,6 @@ ul {
     color: #005ea2;
 }
 
-// .usa-card {
-//   border: 1px solid;
-//   border-color: DFE1E2;
-//   border-radius: 4px;
-//   padding: 24px;
-//   margin-bottom: 32px;
-// }
+.usa-search--big[data-testid="searchField"] {
+    width: 100%;
+}
