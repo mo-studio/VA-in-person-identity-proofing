@@ -1,0 +1,62 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base", "group:allNonMajor", "schedule:monthly"],
+  "timezone": "America/Los_Angeles",
+  "enabledManagers": ["npm"],
+  "rangeStrategy": "update-lockfile",
+  "ignoreUnstable": true,
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "description": "Group React packages together",
+      "packageNames": [
+        "react",
+        "@types/react",
+        "react-dom",
+        "@types/react-dom"
+      ],
+      "groupName": "React"
+    },
+    {
+      "description": "Group Storybook packages together",
+      "matchPackagePatterns": ["storybook"],
+      "groupName": "Storybook"
+    },
+    {
+      "description": "Group Next.js packages together",
+      "matchPackagePatterns": ["next"],
+      "groupName": "Next.js"
+    },
+    {
+      "description": "Group I18next packages together",
+      "matchPackagePatterns": ["i18next"],
+      "groupName": "I18next"
+    },
+    {
+      "description": "Group test packages together",
+      "enabled": false,
+      "matchPackagePatterns": ["jest", "testing-library"],
+      "groupName": "Jest"
+    },
+    {
+      "description": "Group CSS-related packages together",
+      "enabled": false,
+      "matchPackagePatterns": ["postcss", "sass"],
+      "groupName": "Styling"
+    },
+    {
+      "description": "@uswds/uswds must match the version that react-uswds depends on, so it should be manually updated.",
+      "enabled": false,
+      "matchPackagePatterns": ["@uswds/uswds"],
+      "groupName": "USWDS core"
+    },
+    {
+      "description": "Leave peer dependencies alone",
+      "depTypeList": ["peerDependencies"],
+      "enabled": false
+    }
+  ],
+  "ignoreDeps": [],
+  "assignees": [],
+  "reviewers": []
+}
