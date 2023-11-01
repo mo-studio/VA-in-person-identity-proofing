@@ -3,7 +3,7 @@ import React, {useContext} from 'react';
 import { LocationContext } from '../../../contexts/LocationContext';
 
 export default function LocationConfirmationScreen() {
-  const { location, setLocation } = useContext(LocationContext);
+  const { location } = useContext(LocationContext);
   const { name } = location.attributes;
   const { address1, city, state, zip } = location.attributes.address.physical;
 

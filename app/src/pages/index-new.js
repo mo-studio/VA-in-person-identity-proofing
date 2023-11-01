@@ -1,8 +1,7 @@
 import Head from "next/head";
-import Script from "next/script";
 import Link from "next/link";
 
-export default function Home({ children }) {
+export default function Home() {
   return (
     <div>
       <Head>
@@ -20,7 +19,6 @@ export default function Home({ children }) {
           </button>
         </Link>
       </main>
-      {/* <Script src="uswds/js/uswds.min.js" /> */}
     </div>
   );
 }
