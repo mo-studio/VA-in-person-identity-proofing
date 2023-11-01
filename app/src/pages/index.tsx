@@ -22,6 +22,11 @@ const Home: NextPage = () => {
             Intake application
           </button>
         </Link>
+        <Link href="/proofing/1-case-number">
+          <button type="button" className="usa-button">
+            Proofing agent
+          </button>
+        </Link>
       </main>
     </>
   );
