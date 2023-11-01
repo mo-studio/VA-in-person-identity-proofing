@@ -2,7 +2,7 @@ import { useTranslation } from "next-i18next";
 import { Grid, GridContainer } from "@trussworks/react-uswds";
 
 import Footer from "./Footer";
-import Header from "./Header";
+import Header from "./Header.tsx";
 
 type Props = {
   children: React.ReactNode;
@@ -15,24 +15,21 @@ const Layout = ({ children }: Props) => {
 
   return (
     // Stick the footer to the bottom of the page
-    <div className="display-flex flex-column minh-viewport">
-      <a className="usa-skipnav" href="#main-content">
-        {t("skip_to_main")}
-      </a>
+    <>
       <Header />
-      <main id="main-content" className="grid-col-fill">
-        <GridContainer>
-          <Grid row className="flex-justify-center">
-            <Grid col={12} tablet={{ col: 8 }}>
+      <div className="bg-primary-lighter">
+        <section className="grid-container usa-section">
+          <div className="grid-row flex-justify-center">
+            <div className="grid-col-12 tablet:grid-col-8">
               <div className="bg-white padding-y-3 padding-x-5 border border-base-lighter">
                 {children}
               </div>
-            </Grid>
-          </Grid>
-        </GridContainer>
-      </main>
+            </div>
+          </div>
+        </section>
+      </div>
       <Footer />
-    </div>
+    </>
   );
 };
 
