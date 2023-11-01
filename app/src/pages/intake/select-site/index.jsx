@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import Link from 'next/link';
-// import { VaSearchInput } from '@department-of-veterans-affairs/component-library/dist/react-bindings';
 import ProofingMap from './ProofingMap';
 import LocationOptions from './LocationOptions';
+import { Search } from '@trussworks/react-uswds'
 import { LocationContext } from '../../../contexts/LocationContext';
 
 
@@ -10,6 +10,12 @@ export default function LocationSelectorScreen() {
   const { location, setLocation } = useContext(LocationContext);
 
   console.log(location)
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // This is where we'd hit the API to get the locations.
+    // For now, this is just a mock.
+  }
 
   return (
     <div className="container">
@@ -21,12 +27,7 @@ export default function LocationSelectorScreen() {
           participating VA Medical Centers near you.
         </p>
 
-        {/* <VaSearchInput
-          label="Search"
-          onSubmit={e => handleSubmit(e)}
-          value="21201"
-          buttonText="Search"
-        /> */}
+        <Search className="usa-search__fullwidth" size="big" value="21201" placeholder='21201' onSubmit={e => handleSubmit(e)} />
 
         <ProofingMap location={location} />
 
