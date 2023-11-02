@@ -15,9 +15,9 @@ const Layout = ({ children }: Props) => {
 
   return (
     // Stick the footer to the bottom of the page
-    <>
+    <div className="flex-wrapper bg-primary-lighter">
       <Header />
-      <div className="bg-primary-lighter">
+      <div className="">
         <section className="grid-container usa-section">
           <div className="grid-row flex-justify-center">
             <div className="grid-col-12 tablet:grid-col-8">
@@ -29,7 +29,7 @@ const Layout = ({ children }: Props) => {
         </section>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

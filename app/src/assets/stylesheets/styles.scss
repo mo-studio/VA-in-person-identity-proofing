@@ -9,3 +9,14 @@
 
 // 3. Load your project's custom Sass
 // @forward "project-custom.scss";
+
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.usa-footer {
+  margin-top: auto;
+}

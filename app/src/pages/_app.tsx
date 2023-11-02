@@ -1,10 +1,10 @@
 import { appWithTranslation } from "next-i18next";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { LocationContextProvider } from "../contexts/LocationContext";
-
 
 import Layout from "../components/Layout";
+import { LocationContextProvider } from "../contexts/LocationContext";
+
 import "../assets/stylesheets/styles.scss";
 import "../assets/stylesheets/intake.scss";
 import "../styles/styles.scss";
@@ -24,7 +24,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </Layout>
       </LocationContextProvider>
-
     </>
   );
 }
