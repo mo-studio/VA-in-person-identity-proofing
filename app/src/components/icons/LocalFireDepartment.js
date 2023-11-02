@@ -1,5 +1,4 @@
 import * as React from "react";
-
 const SvgLocalFireDepartment = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} {...props}>
     <path d="m12 12.9-2.13 2.09c-.56.56-.87 1.29-.87 2.07C9 18.68 10.35 20 12 20s3-1.32 3-2.94c0-.78-.31-1.52-.87-2.07L12 12.9z" />

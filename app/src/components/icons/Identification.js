@@ -1,5 +1,4 @@
 import * as React from "react";
-
 const SvgIdentification = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" height={24} width={24} {...props}>
     <path d="M11 14.14C11 13.38 9.33 13 8.5 13S6 13.38 6 14.14V15h5Z" />
