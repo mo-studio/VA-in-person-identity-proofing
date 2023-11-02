@@ -3,14 +3,20 @@ import type { GetServerSideProps, NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import Link from "next/link";
-import {
-  Grid,
-  GridContainer,
-  IconFunctionalComponent,
-} from "@trussworks/react-uswds";
+import { Grid, GridContainer } from "@trussworks/react-uswds";
 
-import SvgAccountBox from "../components/icons/AccountBox.js";
-import SvgEvent from "../components/icons/Event.js";
+import SvgAccountBox from "../components/icons/AccountBox";
+import SvgEvent from "../components/icons/Event";
+
+const svgStyle = {
+  width: 50,
+  height: 50,
+  fill: "white",
+  // stroke: "grey",
+  // strokeWidth: ".25px",
+  // backgroundColor: "rgb(0 113 188)",
+  // borderRadius: "50%",
+};
 
 const Home: NextPage = () => {
   return (
@@ -19,20 +25,14 @@ const Home: NextPage = () => {
         <title>In-Person Identity Proofing</title>
       </Head>
 
-      <main id="main-content" tabIndex="-1">
+      <main id="main-content" tabIndex={-1}>
         <GridContainer>
           <Grid row>
             <Grid tablet={{ col: true }}>
-              <h1 className="padding-left-0">In-Person Identity Proofing</h1>
-            </Grid>
-            <Grid col={12} offset={0}>
-              <p>v0.1.0</p>
-            </Grid>
-          </Grid>
-          <Grid row>
-            <Grid>
-              {" "}
-              <br />{" "}
+              <div className="usa-section">
+                <h1 className="padding-left-0">In-Person Identity Proofing</h1>
+                <p>v0.1.0</p>
+              </div>
             </Grid>
           </Grid>
 
@@ -41,19 +41,7 @@ const Home: NextPage = () => {
               <Link href="/intake">
                 <button type="button" className="usa-button">
                   <Grid row className="flex-justify-center">
-                    <SvgEvent
-                      alt="Accessible by default"
-                      viewBox="0 0 25 25"
-                      style={{
-                        width: 50,
-                        height: 50,
-                        fill: "white",
-                        // stroke: "grey",
-                        // strokeWidth: ".25px",
-                        // backgroundColor: "rgb(0 113 188)",
-                        // borderRadius: "50%",
-                      }}
-                    />
+                    <SvgEvent viewBox="0 0 25 25" style={svgStyle} />
                   </Grid>
                   <Grid row>
                     <h3>Intake application</h3>
@@ -65,19 +53,7 @@ const Home: NextPage = () => {
               <Link href="/proofing/1-case-number">
                 <button type="button" className="usa-button">
                   <Grid row className="flex-justify-center">
-                    <SvgAccountBox
-                      alt="Accessible by default"
-                      viewBox="0 0 25 25"
-                      style={{
-                        width: 50,
-                        height: 50,
-                        fill: "white",
-                        // stroke: "grey",
-                        // strokeWidth: ".25px",
-                        // backgroundColor: "rgb(0 113 188)",
-                        // borderRadius: "50%",
-                      }}
-                    />
+                    <SvgAccountBox viewBox="0 0 25 25" style={svgStyle} />
                   </Grid>
                   <Grid row>
                     <h3>Proofing agent</h3>
