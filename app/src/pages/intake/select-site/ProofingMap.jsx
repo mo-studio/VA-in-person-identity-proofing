@@ -14,8 +14,6 @@ export default function ProofingMap({ location }) {
   if (!isLoaded) return <div>Loading...</div>;
 
   if (isLocationSelected) {
-    console.log(location);
-    debugger;
     const { lat, long } = location.attributes;
     if (center.lat !== lat || center.lng !== long) {
       setCenter({ lat, lng: long });
