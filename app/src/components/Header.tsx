@@ -44,7 +44,7 @@ const Header = () => {
         language={i18n.language?.match(/^es-?/) ? "spanish" : "english"}
       />
       <USWDSHeader basic={true}>
-        <div className="usa-nav-container">
+        {/* <div className="usa-nav-container">
           <div className="usa-navbar">
             <Title className="desktop:margin-top-2">
               <div className="display-flex flex-align-center">
@@ -70,7 +70,7 @@ const Header = () => {
             mobileExpanded={isMobileNavExpanded}
             onToggleMobileNav={handleMobileNavToggle}
           ></PrimaryNav>
-        </div>
+        </div> */}
       </USWDSHeader>
     </>
   );
