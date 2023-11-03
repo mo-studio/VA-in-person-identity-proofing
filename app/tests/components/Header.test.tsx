@@ -5,11 +5,7 @@ import Header from "src/components/Header";
 
 describe("Header", () => {
   it("toggles the mobile nav menu", async () => {
-    render(
-      <Header>
-        <h1>child</h1>
-      </Header>
-    );
+    render(<Header />);
 
     const menuButton = screen.getByRole("button", { name: /menu/i });
 

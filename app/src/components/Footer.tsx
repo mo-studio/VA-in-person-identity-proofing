@@ -1,6 +1,7 @@
 import { useTranslation } from "next-i18next";
 import {
   Address,
+  FooterNav,
   Grid,
   GridContainer,
   Footer as USWDSFooter,
