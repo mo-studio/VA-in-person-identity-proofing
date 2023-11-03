@@ -1,4 +1,5 @@
 import * as React from "react";
+
 const SvgChevronRight = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" height={24} width={24} {...props}>
     <path d="M0 0h24v24H0z" fill="none" />

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 const SvgRssFeed = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} {...props}>
     <circle cx={6.18} cy={17.82} r={2.18} />

@@ -1,4 +1,5 @@
 import * as React from "react";
+
 const SvgConstructionWorker = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" height={24} width={24} {...props}>
     <circle cx={10.5} cy={4.5} r={1.5} />
