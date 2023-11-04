@@ -1,15 +1,7 @@
 import Link from "next/link";
 import { Accordion, Checkbox, Label, Select } from "@trussworks/react-uswds";
 
-const options = (
-  <>
-    <option>- Select - </option>
-    <option value="LA">Lousiana Driver's License</option>
-    <option value="ME">Maine Driver's License</option>
-    <option value="MD">Maryland Driver's License</option>
-    <option value="MA">Massachusetts Driver's License</option>
-  </>
-);
+import { driversLicenseOptions } from "../../../components/proofing/SelectOptions";
 
 const validateIdSteps = [
   {
@@ -46,12 +38,16 @@ const items = [
     title: "Ask for photo ID",
     content: (
       <>
-        <p>
+        <p className="margin-top-2 margin-bottom-3">
           In order to verify their identity, ask the applicant for one of the
           following forms of valid ID:
         </p>
-        <Accordion bordered={true} items={validateIdSteps} />
-        <p>
+        <Accordion
+          bordered={true}
+          items={validateIdSteps}
+          multiselectable={true}
+        />
+        <p className="margin-top-3 margin-bottom-2">
           Once an acceptable, unexpired photo ID (and proof of address if using
           VHIC) is collected, click ‘Select ID type’.
         </p>
@@ -65,12 +61,14 @@ const items = [
     title: "Select ID type",
     content: (
       <>
-        <p>
+        <p className="margin-top-2 margin-bottom-2">
           Type in and select the appropriate ID Type from the drop-down menu
           below and then click ‘Validate document’.
-          <Label htmlFor="input-select">ID Type</Label>
+          <Label htmlFor="input-select" className="margin-top-4">
+            ID Type
+          </Label>
           <Select id="input-select" name="input-select">
-            {options}
+            {driversLicenseOptions}
           </Select>
         </p>
       </>
@@ -83,7 +81,7 @@ const items = [
     title: "Validate document",
     content: (
       <>
-        <p>
+        <p className="margin-top-2 margin-bottom-4">
           Use the information below to validate the authenticity of the
           applicant’s photo ID. Once you have reviewed the ID and determined
           that it is valid, click the check box for ‘Validated document’ and
@@ -92,17 +90,17 @@ const items = [
         <p>
           Validate a <b>Maryland Driver’s License</b> by looking for the
           following features:
-          <ul>
-            <li>Polycarbonate card body</li>
-            <li>Laser engraving</li>
-            <li>Tactile text</li>
-            <li>Inventory control number (backside)</li>
-            <li>Color photo (backside)</li>
-            <li>Rainbow printing (backside)</li>
-            <li>Identity barcode (backside)</li>
-          </ul>
         </p>
-        <p>
+        <ul>
+          <li>Polycarbonate card body</li>
+          <li>Laser engraving</li>
+          <li>Tactile text</li>
+          <li>Inventory control number (backside)</li>
+          <li>Color photo (backside)</li>
+          <li>Rainbow printing (backside)</li>
+          <li>Identity barcode (backside)</li>
+        </ul>
+        <p className="margin-top-3 margin-bottom-3">
           For additional resources to help you validate the authenticity of
           state-issued IDs, you may refer to our DMV Driver’s License Guide.
         </p>
@@ -125,12 +123,27 @@ export default function ConfirmEmailPage() {
     <div className="page">
       <div className="container">
         <section className="usa-section">
-          <h1>Validate ID</h1>
+          <h1 className="margin-bottom-4 padding-left-0">Validate ID</h1>
 
-          <Accordion bordered={false} items={items} />
+          <Accordion
+            bordered={false}
+            items={items}
+            className="margin-bottom-4"
+          />
 
+          <Link href="#">
+            <button
+              type="button"
+              className="usa-button usa-button--full-width margin-bottom-4"
+            >
+              Continue
+            </button>
+          </Link>
           <Link href="/proofing/2-confirm-email">
-            <button type="button" className="usa-button">
+            <button
+              type="button"
+              className="usa-button usa-button--outline usa-button--full-width"
+            >
               Back
             </button>
           </Link>
