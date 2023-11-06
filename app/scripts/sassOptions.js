@@ -9,7 +9,7 @@ function sassOptions(basePath = "") {
   return {
     includePaths: [
       "./node_modules/@uswds",
-      "./node_modules/@uswds/uswds/packages",
+      "./node_modules/@18f/identity-design-system/packages",
     ],
     functions: {
       "add-base-path($path)": (path) => {

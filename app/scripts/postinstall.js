@@ -7,7 +7,10 @@
 const fs = require("fs");
 const path = require("path");
 
-const uswdsPath = path.resolve(__dirname, "../node_modules/@uswds/uswds/dist");
+const uswdsPath = path.resolve(
+  __dirname,
+  "../node_modules/@18f/identity-design-system/dist"
+);
 const publicPath = path.resolve(__dirname, "../public/uswds");
 
 function copyDir(src, dest) {

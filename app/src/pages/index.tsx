@@ -1,27 +1,68 @@
 import type { GetServerSideProps, NextPage } from "next";
 
-import { Trans, useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Link from "next/link";
 import Head from "next/head";
+import Link from "next/link";
+import { Grid, GridContainer } from "@trussworks/react-uswds";
+
+import SvgAccountBox from "../components/icons/AccountBox";
+import SvgEvent from "../components/icons/Event";
+
+const svgStyle = {
+  width: 50,
+  height: 50,
+  fill: "white",
+  // stroke: "grey",
+  // strokeWidth: ".25px",
+  // backgroundColor: "rgb(0 113 188)",
+  // borderRadius: "50%",
+};
 
 const Home: NextPage = () => {
-  const { t } = useTranslation("home");
-
   return (
     <>
       <Head>
-        <title>{t("title")}</title>
+        <title>In-Person Identity Proofing</title>
       </Head>
 
-      <main id="main-content" tabIndex="-1">
-        <h1>In-Person Identity Proofing</h1>
+      <main id="main-content" tabIndex={-1}>
+        <GridContainer>
+          <Grid row>
+            <Grid tablet={{ col: true }}>
+              <div className="usa-section">
+                <h1 className="padding-left-0">In-Person Identity Proofing</h1>
+                <p>v0.1.0</p>
+              </div>
+            </Grid>
+          </Grid>
 
-        <Link href="/intake">
-          <button type="button" className="usa-button">
-            Intake application
-          </button>
-        </Link>
+          <Grid row>
+            <Grid tablet={{ col: true }}>
+              <Link href="/intake">
+                <button type="button" className="usa-button">
+                  <Grid row className="flex-justify-center">
+                    <SvgEvent viewBox="0 0 25 25" style={svgStyle} />
+                  </Grid>
+                  <Grid row>
+                    <h3>Intake application</h3>
+                  </Grid>
+                </button>
+              </Link>
+            </Grid>
+            <Grid tablet={{ col: true }}>
+              <Link href="/proofing/1-case-number">
+                <button type="button" className="usa-button">
+                  <Grid row className="flex-justify-center">
+                    <SvgAccountBox viewBox="0 0 25 25" style={svgStyle} />
+                  </Grid>
+                  <Grid row>
+                    <h3>Proofing agent</h3>
+                  </Grid>
+                </button>
+              </Link>
+            </Grid>
+          </Grid>
+        </GridContainer>
       </main>
     </>
   );
