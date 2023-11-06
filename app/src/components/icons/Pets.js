@@ -1,4 +1,5 @@
 import * as React from "react";
+
 const SvgPets = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} {...props}>
     <circle cx={4.5} cy={9.5} r={2.5} />

@@ -1,48 +1,38 @@
-import { useTranslation } from "next-i18next";
-import { useState } from "react";
-import {
-  GovBanner,
-  NavMenuButton,
-  PrimaryNav,
-  Title,
-  Header as USWDSHeader,
-} from "@trussworks/react-uswds";
+// import { useTranslation } from "next-i18next";
+// import { useState } from "react";
+import { GovBanner, Header as USWDSHeader } from "@trussworks/react-uswds";
 
-const primaryLinks = [
-  {
-    i18nKey: "nav_link_home",
-    href: "/",
-  },
-  {
-    i18nKey: "nav_link_health",
-    href: "/health",
-  },
-] as const;
+// const primaryLinks = [
+//   {
+//     i18nKey: "nav_link_home",
+//     href: "/",
+//   },
+//   {
+//     i18nKey: "nav_link_health",
+//     href: "/health",
+//   },
+// ] as const;
 
 const Header = () => {
-  const { t, i18n } = useTranslation("common", {
-    keyPrefix: "Header",
-  });
+  // const { t, i18n } = useTranslation("common", {
+  //   keyPrefix: "Header",
+  // });
 
-  const [isMobileNavExpanded, setIsMobileNavExpanded] = useState(false);
-  const handleMobileNavToggle = () => {
-    setIsMobileNavExpanded(!isMobileNavExpanded);
-  };
+  // const [isMobileNavExpanded, setIsMobileNavExpanded] = useState(false);
+  // const handleMobileNavToggle = () => {
+  //   setIsMobileNavExpanded(!isMobileNavExpanded);
+  // };
 
-  const navItems = primaryLinks.map((link) => (
-    <a href={link.href} key={link.href}>
-      {t(link.i18nKey)}
-    </a>
-  ));
+  // const navItems = primaryLinks.map((link) => (
+  //   <a href={link.href} key={link.href}>
+  //     {t(link.i18nKey)}
+  //   </a>
+  // ));
 
   return (
     <>
-      <div
-        className={`usa-overlay ${isMobileNavExpanded ? "is-visible" : ""}`}
-      />
-      <GovBanner
-        language={i18n.language?.match(/^es-?/) ? "spanish" : "english"}
-      />
+      <div className={`usa-overlay`} />
+      <GovBanner />
       <USWDSHeader basic={true}>
         {/* <div className="usa-nav-container">
           <div className="usa-navbar">

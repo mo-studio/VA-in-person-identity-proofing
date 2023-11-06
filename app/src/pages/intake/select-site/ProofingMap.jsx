@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
- 
+import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
+
+import React, { useState } from "react";
 
 export default function ProofingMap({ location }) {
-  const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API
-  
+  const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API;
+
   const [center, setCenter] = useState({ lat: 39.2904, lng: -76.6122 });
   const isLocationSelected = Object.keys(location).length;
   const { isLoaded } = useLoadScript({
