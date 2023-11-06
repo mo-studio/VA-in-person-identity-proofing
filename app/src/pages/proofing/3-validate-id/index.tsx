@@ -1,6 +1,14 @@
 import Link from "next/link";
-import { Accordion, Checkbox, Label, Select } from "@trussworks/react-uswds";
+import {
+  Accordion,
+  Checkbox,
+  Label,
+  Select,
+  StepIndicator,
+  StepIndicatorStep,
+} from "@trussworks/react-uswds";
 
+import StepIndicatorComponent from "src/components/StepIndicator";
 import { driversLicenseOptions } from "../../../components/proofing/SelectOptions";
 
 const validateIdSteps = [
@@ -123,6 +131,12 @@ export default function ConfirmEmailPage() {
     <div className="page">
       <div className="container">
         <section className="usa-section">
+          <StepIndicator counters="small" headingLevel="h4">
+            <StepIndicatorStep label="Confirm email" status="complete" />
+            <StepIndicatorStep label="Validate ID" status="complete" />
+            <StepIndicatorStep label="Fill in information" status="current" />
+            <StepIndicatorStep label="Complete verification" />
+          </StepIndicator>
           <h1 className="margin-bottom-4 padding-left-0">Validate ID</h1>
 
           <Accordion

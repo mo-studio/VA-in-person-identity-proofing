@@ -7,7 +7,7 @@ interface ILocation {
   };
 }
 
-interface LocationContextType {
+interface IntakeContextType {
   location: ILocation;
   setLocation: (location: ILocation) => void;
 }
@@ -15,19 +15,20 @@ interface LocationContextType {
 interface Props {
   children?: React.ReactNode;
 }
-const LocationContext = createContext<LocationContextType | null>(null);
 
-function LocationContextProvider({ children }: Props) {
+const IntakeContext = createContext<IntakeContextType | null>(null);
+
+function IntakeContextProvider({ children }: Props) {
   const [location, setLocation] = useState<ILocation>({
     attributes: { lat: 39.2904, long: -76.6122 },
   });
 
   console.log(location);
   return (
-    <LocationContext.Provider value={{ location, setLocation }}>
+    <IntakeContext.Provider value={{ location, setLocation }}>
       {children}
-    </LocationContext.Provider>
+    </IntakeContext.Provider>
   );
 }
 
-export { LocationContextProvider, LocationContext };
+export { IntakeContextProvider, IntakeContext };

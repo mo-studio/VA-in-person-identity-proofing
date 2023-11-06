@@ -1,9 +1,10 @@
-import Link from 'next/link';
-import React, {useContext} from 'react';
-import { LocationContext } from '../../../contexts/LocationContext';
+import Link from "next/link";
+import React, { useContext } from "react";
+
+import { IntakeContext } from "../../../contexts/IntakeContext";
 
 export default function LocationConfirmationScreen() {
-  const { location } = useContext(LocationContext);
+  const { location } = useContext(IntakeContext);
   const { name } = location.attributes;
   const { address1, city, state, zip } = location.attributes.address.physical;
 
@@ -28,10 +29,7 @@ export default function LocationConfirmationScreen() {
             </p>
             <div className="wrapper button-wrapper">
               <Link href="/intake/verify-in-person">
-                <button
-                  type="button"
-                  className="usa-button"
-                >
+                <button type="button" className="usa-button">
                   Continue
                 </button>
               </Link>
