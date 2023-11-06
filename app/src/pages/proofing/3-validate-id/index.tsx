@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useContext } from "react";
 import {
   Accordion,
   Checkbox,
@@ -8,8 +9,10 @@ import {
   StepIndicatorStep,
 } from "@trussworks/react-uswds";
 
-import StepIndicatorComponent from "src/components/StepIndicator";
-import { driversLicenseOptions } from "../../../components/proofing/SelectOptions";
+// import { driversLicenseOptions } from "../../../components/proofing/SelectOptions";
+// import { IdTypeContext } from "../../../contexts/ProofingContext";
+import SelectIDType from "../../../components/proofing/SelectIDType";
+import ValidateDocument from "../../../components/proofing/ValidateDocument";
 
 const validateIdSteps = [
   {
@@ -67,59 +70,14 @@ const items = [
   },
   {
     title: "Select ID type",
-    content: (
-      <>
-        <p className="margin-top-2 margin-bottom-2">
-          Type in and select the appropriate ID Type from the drop-down menu
-          below and then click ‘Validate document’.
-          <Label htmlFor="input-select" className="margin-top-4">
-            ID Type
-          </Label>
-          <Select id="input-select" name="input-select">
-            {driversLicenseOptions}
-          </Select>
-        </p>
-      </>
-    ),
+    content: <SelectIDType />,
     expanded: false,
     id: "validate-id-step-2",
     headingLevel: "h4",
   },
   {
     title: "Validate document",
-    content: (
-      <>
-        <p className="margin-top-2 margin-bottom-4">
-          Use the information below to validate the authenticity of the
-          applicant’s photo ID. Once you have reviewed the ID and determined
-          that it is valid, click the check box for ‘Validated document’ and
-          then click ‘Continue’ to proceed to the next step.
-        </p>
-        <p>
-          Validate a <b>Maryland Driver’s License</b> by looking for the
-          following features:
-        </p>
-        <ul>
-          <li>Polycarbonate card body</li>
-          <li>Laser engraving</li>
-          <li>Tactile text</li>
-          <li>Inventory control number (backside)</li>
-          <li>Color photo (backside)</li>
-          <li>Rainbow printing (backside)</li>
-          <li>Identity barcode (backside)</li>
-        </ul>
-        <p className="margin-top-3 margin-bottom-3">
-          For additional resources to help you validate the authenticity of
-          state-issued IDs, you may refer to our DMV Driver’s License Guide.
-        </p>
-        <Checkbox
-          id="validated-document0checkbox"
-          name="checkbox"
-          label="Validated document"
-          tile
-        />
-      </>
-    ),
+    content: <ValidateDocument />,
     expanded: false,
     id: "validate-id-step-3",
     headingLevel: "h4",
