@@ -6,7 +6,6 @@ import { ProofingContext } from "../../contexts/ProofingContext";
 export default function SelectIDType() {
   const { proofingData, setProofingData } = useContext(ProofingContext);
 
-  console.log(proofingData);
   return proofingData.idType === "" ? (
     <p>Select an ID Type above.</p>
   ) : (

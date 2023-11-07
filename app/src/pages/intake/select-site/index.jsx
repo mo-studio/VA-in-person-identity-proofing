@@ -9,8 +9,6 @@ import ProofingMap from "./ProofingMap";
 export default function LocationSelectorScreen() {
   const { location, setLocation } = useContext(IntakeContext);
 
-  console.log(location);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     // This is where we'd hit the API to get the locations.

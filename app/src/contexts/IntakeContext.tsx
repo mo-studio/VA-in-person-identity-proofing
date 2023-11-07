@@ -23,7 +23,6 @@ function IntakeContextProvider({ children }: Props) {
     attributes: { lat: 39.2904, long: -76.6122 },
   });
 
-  console.log(location);
   return (
     <IntakeContext.Provider value={{ location, setLocation }}>
       {children}

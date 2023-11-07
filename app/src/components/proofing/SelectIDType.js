@@ -8,7 +8,6 @@ export default function SelectIDType() {
 
   const changeHandler = (e) => {
     const newState = { ...proofingData, idType: e.target.value };
-    console.log(newState);
     setProofingData(newState);
   };
 

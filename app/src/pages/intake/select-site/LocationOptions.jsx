@@ -22,9 +22,7 @@ export default function LocationOptions() {
             const { address1, city, state, zip } =
               site.attributes.address.physical;
             const { main, mentalHealthClinic } = site.attributes.phone;
-            const isChecked = site.id === location.id;
-            console.log("isChecked", isChecked);
-            console.log("activeRadio === site.id", activeRadio === site.id);
+            const isChecked = activeRadio === site.id;
 
             return (
               <li className="usa-card grid-col-12" key={index}>
@@ -43,7 +41,7 @@ export default function LocationOptions() {
                     <Radio
                       id={site.id}
                       value={site.id}
-                      checked={activeRadio === site.id}
+                      checked={isChecked}
                       onChange={() => toggleLocation(site)}
                       name="site-selection"
                       label="Verify at this site"
