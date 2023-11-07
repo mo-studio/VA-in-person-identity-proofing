@@ -2,15 +2,10 @@ import Link from "next/link";
 import { useContext } from "react";
 import {
   Accordion,
-  Checkbox,
-  Label,
-  Select,
   StepIndicator,
   StepIndicatorStep,
 } from "@trussworks/react-uswds";
 
-// import { driversLicenseOptions } from "../../../components/proofing/SelectOptions";
-// import { IdTypeContext } from "../../../contexts/ProofingContext";
 import SelectIDType from "../../../components/proofing/SelectIDType";
 import ValidateDocument from "../../../components/proofing/ValidateDocument";
 import { ProofingContext } from "../../../contexts/ProofingContext";
@@ -112,6 +107,7 @@ export default function ConfirmEmailPage() {
             <button
               type="button"
               className="usa-button usa-button--full-width margin-bottom-4"
+              disabled={proofingData.isDocumentValidated === false}
             >
               Continue
             </button>

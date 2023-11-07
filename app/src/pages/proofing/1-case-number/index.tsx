@@ -50,7 +50,11 @@ export default function CaseNumerPage() {
           />
           <div className="wrapper button-wrapper">
             <Link href="/proofing/2-confirm-email">
-              <button type="button" className="usa-button">
+              <button
+                type="button"
+                className="usa-button"
+                disabled={proofingData.caseNumber === ""}
+              >
                 Continue
               </button>
             </Link>
