@@ -13,6 +13,7 @@ import {
 // import { IdTypeContext } from "../../../contexts/ProofingContext";
 import SelectIDType from "../../../components/proofing/SelectIDType";
 import ValidateDocument from "../../../components/proofing/ValidateDocument";
+import { ProofingContext } from "../../../contexts/ProofingContext";
 
 const validateIdSteps = [
   {
@@ -85,9 +86,13 @@ const items = [
 ];
 
 export default function ConfirmEmailPage() {
+  const { proofingData, setProofingData } = useContext(ProofingContext);
   return (
     <div className="page">
       <div className="container">
+        <h4>
+          <b>Case Number: {proofingData.caseNumber}</b>
+        </h4>
         <section className="usa-section">
           <StepIndicator counters="small" headingLevel="h4">
             <StepIndicatorStep label="Confirm email" status="complete" />

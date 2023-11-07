@@ -1,10 +1,17 @@
 import Link from "next/link";
+import { useContext } from "react";
 import { StepIndicator, StepIndicatorStep } from "@trussworks/react-uswds";
 
+import { ProofingContext } from "../../../contexts/ProofingContext";
+
 export default function ConfirmEmailPage() {
+  const { proofingData, setProofingData } = useContext(ProofingContext);
   return (
     <div className="page">
       <div className="container">
+        <h4>
+          <b>Case Number: {proofingData.caseNumber}</b>
+        </h4>
         <StepIndicator counters="small" headingLevel="h4">
           <StepIndicatorStep label="Confirm email" status="complete" />
           <StepIndicatorStep label="Validate ID" status="current" />
@@ -20,7 +27,8 @@ export default function ConfirmEmailPage() {
             screen; only confirm if it is correct or not correct.{" "}
           </p>
           <p>
-            Case number C8302023 is associated with the following email address:
+            Case number {proofingData.caseNumber} is associated with the
+            following email address:
           </p>
           <p>iparsons5@gmail.com</p>
           <p>

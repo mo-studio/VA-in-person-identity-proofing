@@ -13,7 +13,6 @@ export default function CaseNumerPage() {
   const { proofingData, setProofingData } = useContext(ProofingContext);
 
   const changeHandler = (e) => {
-    debugger;
     setProofingData({ ...proofingData, caseNumber: e.target.value });
   };
 
