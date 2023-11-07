@@ -3,6 +3,7 @@ import { createContext, useState } from "react";
 interface IProofingData {
   idType: string;
   isDocumentValidated: boolean;
+  caseNumber: string;
   // Add new attributes/datatypes here
 }
 
@@ -21,6 +22,7 @@ function ProofingContextProvider({ children }: Props) {
   const [proofingData, setProofingData] = useState<IProofingData>({
     idType: "",
     isDocumentValidated: false,
+    caseNumber: "",
     // Add default values for new attributes here
   });
 

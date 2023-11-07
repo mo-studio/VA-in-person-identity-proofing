@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useContext } from "react";
 import {
   Label,
   StepIndicator,
@@ -6,7 +7,16 @@ import {
   TextInput,
 } from "@trussworks/react-uswds";
 
+import { ProofingContext } from "../../../contexts/ProofingContext";
+
 export default function CaseNumerPage() {
+  const { proofingData, setProofingData } = useContext(ProofingContext);
+
+  const changeHandler = (e) => {
+    debugger;
+    setProofingData({ ...proofingData, caseNumber: e.target.value });
+  };
+
   return (
     <div className="page">
       <div className="container">
@@ -32,7 +42,13 @@ export default function CaseNumerPage() {
             signing into their Login.gov account.
           </p>
           <Label htmlFor="input-type-text">Case Number</Label>
-          <TextInput id="input-type-text" name="input-type-text" type="text" />
+          <TextInput
+            value={proofingData.caseNumber}
+            id="input-type-text"
+            name="input-type-text"
+            type="text"
+            onChange={(e) => changeHandler(e)}
+          />
           <div className="wrapper button-wrapper">
             <Link href="/proofing/2-confirm-email">
               <button type="button" className="usa-button">
