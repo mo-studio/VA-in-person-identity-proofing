@@ -40,6 +40,13 @@ export default function SelectIDType() {
         name="checkbox"
         label="Validated document"
         tile
+        checked={proofingData.isDocumentValidated}
+        onChange={() =>
+          setProofingData({
+            ...proofingData,
+            isDocumentValidated: !proofingData.isDocumentValidated,
+          })
+        }
       />
     </>
   );
