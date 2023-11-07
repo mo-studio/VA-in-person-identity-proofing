@@ -6,9 +6,9 @@ import {
   StepIndicatorStep,
 } from "@trussworks/react-uswds";
 
+import LocationOptions from "../../../components/intake/LocationOptions";
+import ProofingMap from "../../../components/intake/ProofingMap";
 import { IntakeContext } from "../../../contexts/IntakeContext";
-import LocationOptions from "./LocationOptions";
-import ProofingMap from "./ProofingMap";
 
 export default function LocationSelectorScreen() {
   const { location, setLocation } = useContext(IntakeContext);
