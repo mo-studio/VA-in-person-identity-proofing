@@ -1,32 +1,37 @@
 import { createContext, useState } from "react";
 
-interface IIdType {
+interface IProofingData {
   idType: string;
+  isDocumentValidated: boolean;
 }
 
-interface IdTypeContextType {
-  idType: IIdType;
-  setIdType: (idType: IIdType) => void;
+interface proofingDataContextType {
+  proofingData: IProofingData;
+  setProofingData: (idType: IProofingData) => void;
 }
 
 interface Props {
   children?: React.ReactNode;
 }
-const IdTypeContext = createContext<IdTypeContextType | null>(null);
+
+const ProofingContext = createContext<proofingDataContextType | null>(null);
 
 function ProofingContextProvider({ children }: Props) {
-  const [idType, setIdType] = useState<IIdType>({ idType: "" });
+  const [proofingData, setProofingData] = useState<IProofingData>({
+    idType: "",
+    isDocumentValidated: false,
+  });
 
   return (
-    <IdTypeContext.Provider
+    <ProofingContext.Provider
       value={{
-        idType,
-        setIdType,
+        proofingData,
+        setProofingData,
       }}
     >
       {children}
-    </IdTypeContext.Provider>
+    </ProofingContext.Provider>
   );
 }
 
-export { ProofingContextProvider, IdTypeContext };
+export { ProofingContextProvider, ProofingContext };

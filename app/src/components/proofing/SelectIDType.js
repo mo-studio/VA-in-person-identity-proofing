@@ -1,13 +1,17 @@
 import { useContext } from "react";
 import { Label, Select } from "@trussworks/react-uswds";
 
-import { IdTypeContext } from "../../contexts/ProofingContext";
+import { ProofingContext } from "../../contexts/ProofingContext";
 
 export default function SelectIDType() {
-  const { idType, setIdType } = useContext(IdTypeContext);
+  const { proofingData, setProofingData } = useContext(ProofingContext);
 
-  console.log(idType);
-  console.log(idType.idType);
+  const changeHandler = (e) => {
+    const newState = { ...proofingData, idType: e.target.value };
+    console.log(newState);
+    setProofingData(newState);
+  };
+
   return (
     <p className="margin-top-2 margin-bottom-2">
       Type in and select the appropriate ID Type from the drop-down menu below
@@ -18,8 +22,8 @@ export default function SelectIDType() {
       <Select
         id="input-select"
         name="input-select"
-        value={idType.idType}
-        onChange={(e) => setIdType(e.target.value)}
+        value={proofingData.idType}
+        onChange={(e) => changeHandler(e)}
       >
         <option>- Select - </option>
         <option value="Lousiana Driver's License">

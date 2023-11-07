@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { Checkbox } from "@trussworks/react-uswds";
 
-import { IdTypeContext } from "../../contexts/ProofingContext";
+import { ProofingContext } from "../../contexts/ProofingContext";
 
 export default function SelectIDType() {
-  const { idType, setIdType } = useContext(IdTypeContext);
+  const { proofingData, setProofingData } = useContext(ProofingContext);
 
-  console.log(idType);
-  return idType.idType === "" ? (
+  console.log(proofingData);
+  return proofingData.idType === "" ? (
     <p>Select an ID Type above.</p>
   ) : (
     <>
@@ -18,7 +18,8 @@ export default function SelectIDType() {
         'Continue' to proceed to the next step."
       </p>
       <p>
-        Validate a <b>{idType}</b> by looking for the following features:
+        Validate a <b>{proofingData.idType}</b> by looking for the following
+        features:
       </p>
       <ul>
         <li>Polycarbonate card body</li>
