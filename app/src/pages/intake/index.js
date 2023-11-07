@@ -1,5 +1,9 @@
 import Link from "next/link";
-import { Accordion } from "@trussworks/react-uswds";
+import {
+  Accordion,
+  StepIndicator,
+  StepIndicatorStep,
+} from "@trussworks/react-uswds";
 
 const items = [
   {
@@ -87,13 +91,21 @@ export default function Intake() {
   return (
     <div className="page">
       <div className="container">
+        <StepIndicator counters="small" headingLevel="h4">
+          <StepIndicatorStep label="Home" status="current" />
+          <StepIndicatorStep label="Select site" />
+          <StepIndicatorStep label="Confirm site" />
+          <StepIndicatorStep label="Verify in-person" />
+        </StepIndicator>
         <h1>In-person Identity Verification</h1>
         <div className="text">
           <p>
-            You can verify your identity in-person at a participating VA Medical
+            In-Person Identity Proofing is the process to verify your identity.
+            You can verify your identity in person at a participating VA Medical
             Center.
           </p>
           <p>You will need to bring following items with you:</p>
+          <br></br>
           <Accordion
             bordered={false}
             items={items}
@@ -106,6 +118,8 @@ export default function Intake() {
               </button>
             </Link>
           </div>
+          <br></br>
+          <Link href="test"> Already have a case number? Click here </Link>
           <p>
             If you decide not to verify your identity in-person, you may close
             this window at any time.

@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { useContext } from "react";
-import { Search } from "@trussworks/react-uswds";
+import {
+  Search,
+  StepIndicator,
+  StepIndicatorStep,
+} from "@trussworks/react-uswds";
 
 import { IntakeContext } from "../../../contexts/IntakeContext";
 import LocationOptions from "./LocationOptions";
@@ -17,6 +21,12 @@ export default function LocationSelectorScreen() {
 
   return (
     <div className="container">
+      <StepIndicator counters="small" headingLevel="h4">
+        <StepIndicatorStep label="Home" status="complete" />
+        <StepIndicatorStep label="Select site" status="current" />
+        <StepIndicatorStep label="Confirm site" />
+        <StepIndicatorStep label="Verify in-person" />
+      </StepIndicator>
       <h1>Choose a nearby site</h1>
       <div className="text">
         <p>
