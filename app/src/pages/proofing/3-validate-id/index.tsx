@@ -81,7 +81,7 @@ const items = [
 ];
 
 export default function ConfirmEmailPage() {
-  const { proofingData, setProofingData } = useContext(ProofingContext);
+  const { proofingData } = useContext(ProofingContext);
   return (
     <div className="page">
       <div className="container">
