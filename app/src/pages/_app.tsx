@@ -3,7 +3,8 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 
 import Layout from "../components/Layout";
-import { LocationContextProvider } from "../contexts/LocationContext";
+import { IntakeContextProvider } from "../contexts/IntakeContext";
+import { ProofingContextProvider } from "../contexts/ProofingContext";
 
 import "../assets/stylesheets/styles.scss";
 import "../assets/stylesheets/intake.scss";
@@ -19,11 +20,13 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
       </Head>
 
-      <LocationContextProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </LocationContextProvider>
+      <IntakeContextProvider>
+        <ProofingContextProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ProofingContextProvider>
+      </IntakeContextProvider>
     </>
   );
 }

@@ -1,27 +1,56 @@
+import { StepIndicator, StepIndicatorStep } from "@trussworks/react-uswds";
+
 export default function CaseNumberScreen() {
+  Date.prototype.addDays = function (days) {
+    this.setDate(this.getDate() + parseInt(days));
+    return this;
+  };
+  let currentDate = new Date();
+  let date = currentDate.addDays(10).toLocaleDateString();
+
   return (
     <div className="page">
       <div className="container">
         <div className="white-box">
           <br />
+          <StepIndicator counters="small" headingLevel="h4">
+            <StepIndicatorStep label="Home" status="complete" />
+            <StepIndicatorStep label="Select site" status="complete" />
+            <StepIndicatorStep label="Confirm site" status="complete" />
+            <StepIndicatorStep label="Verify in-person" status="current" />
+          </StepIndicator>
           <h1>Verify in Person</h1>
           <div className="text">
             <p>
               <b>Your case number is: C8302023</b>
             </p>
             <p>
-              Please bring your case number, your state-issued ID or VHIC, and
-              proof of your current address to your appointment.
+              For your In-Person Identity Proofing walk-in appointment, please
+              bring the following items:
+            </p>
+            <ol>
+              <li>Your case number</li>
+              <li>
+                Your social security number (you only need to know your number;
+                you do not need to bring in your physical card)
+              </li>
+              <li>
+                Your state-issued ID or your Veteran Health Insurance Card
+                (VHIC)
+              </li>
+              <li>
+                A proof of your current address if you plan on presenting your
+                VHIC
+              </li>
+            </ol>
+            <p>
+              Remember that your case number will expire in 10 days. Visit your
+              participating VA Medical center by {date}.
             </p>
             <p>
-              Please note that you will have 10 days to use this case number
-              before it expires. Please visit your desired proofing site for a
-              walk in appointment by 09/08/2023.
-            </p>
-            <p>
-              You will receive an email at iparsons5@gmail.com with your case
-              number and a reminder to complete your walk in by the expiration
-              date.
+              A copy of your case number and instructions on what to bring to
+              the verification site you selected have been emailed to the
+              address you provided.
             </p>
             <br />
           </div>
