@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Radio } from "@trussworks/react-uswds";
 
 import { IntakeContext } from "../../contexts/IntakeContext";
