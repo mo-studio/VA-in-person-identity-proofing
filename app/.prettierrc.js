@@ -24,4 +24,6 @@ module.exports = {
     "^[./]",
   ],
   importOrderTypeScriptVersion: "5.0.0",
+  singleQuote: true,
+  jsxSingleQuote: true,
 };
