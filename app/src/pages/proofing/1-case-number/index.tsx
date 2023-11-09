@@ -10,7 +10,11 @@ import {
 import { ProofingContext } from "../../../contexts/ProofingContext";
 
 export default function CaseNumerPage() {
-  const { proofingData, setProofingData } = useContext(ProofingContext);
+  const contextValue = useContext(ProofingContext);
+  const { proofingData, setProofingData } = contextValue || {
+    proofingData: { idType: "", isDocumentValidated: false, caseNumber: "" },
+    setProofingData: () => {},
+  };
 
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setProofingData({ ...proofingData, caseNumber: e.target.value });
