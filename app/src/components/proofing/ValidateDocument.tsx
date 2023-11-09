@@ -1,25 +1,25 @@
-import { useContext } from 'react';
-import { Checkbox } from '@trussworks/react-uswds';
+import { useContext } from "react";
+import { Checkbox } from "@trussworks/react-uswds";
 
-import { ProofingContext } from '../../contexts/ProofingContext';
+import { ProofingContext } from "../../contexts/ProofingContext";
 
 export default function SelectIDType() {
   const contextValue = useContext(ProofingContext);
   const { proofingData, setProofingData } = contextValue || {
-    proofingData: { idType: '', isDocumentValidated: false, caseNumber: '' },
+    proofingData: { idType: "", isDocumentValidated: false, caseNumber: "" },
     setProofingData: (data) => {
       return data;
     },
   };
 
-  return proofingData.idType === '' ? (
+  return proofingData.idType === "" ? (
     <p>Select an ID Type above.</p>
   ) : (
     <>
-      <p className='margin-top-2 margin-bottom-4'>
+      <p className="margin-top-2 margin-bottom-4">
         Use the information below to validate the authenticity of the
         {"applicant's "} photo ID. Once you have reviewed the ID and determined
-        that it is {'valid,'} click the check box for {"'Validated document' "}
+        that it is {"valid,"} click the check box for {"'Validated document' "}
         and then click {"'Continue'"} to proceed to the next step.
       </p>
       <p>
@@ -35,15 +35,15 @@ export default function SelectIDType() {
         <li>Rainbow printing (backside)</li>
         <li>Identity barcode (backside)</li>
       </ul>
-      <p className='margin-top-3 margin-bottom-3'>
+      <p className="margin-top-3 margin-bottom-3">
         {
           "For additional resources to help you validate the authenticity of state-issued IDs, you may refer to our DMV Driver's License Guide."
         }
       </p>
       <Checkbox
-        id='validated-document0checkbox'
-        name='checkbox'
-        label='Validated document'
+        id="validated-document0checkbox"
+        name="checkbox"
+        label="Validated document"
         tile
         checked={proofingData.isDocumentValidated}
         onChange={() =>
