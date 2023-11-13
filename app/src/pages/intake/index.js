@@ -112,7 +112,7 @@ export default function Intake() {
             className="margin-bottom-4"
           />
           <div className="wrapper button-wrapper">
-            <Link href="/intake/select-site">
+            <Link href="/intake/verify-in-person">
               <button type="button" className="usa-button">
                 Continue
               </button>
