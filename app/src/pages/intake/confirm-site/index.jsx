@@ -33,8 +33,8 @@ export default function LocationConfirmationScreen() {
             <p>
               Please confirm that this is a location you will be able to visit
               in the next 10 days before continuing. If you would like to choose
-              another location to verify in-person, please select the "Back"
-              button.
+              another location to verify {"in-person,"} please select the{" "}
+              {'"Back"'} button.
             </p>
             <div className="wrapper button-wrapper">
               <Link href="/intake/verify-in-person">

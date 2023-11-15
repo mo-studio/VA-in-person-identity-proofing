@@ -1,8 +1,8 @@
-import React, { useContext, useState } from "react";
-import { Radio } from "@trussworks/react-uswds";
+import React, { useContext } from 'react';
+import { Radio } from '@trussworks/react-uswds';
 
-import { IntakeContext } from "../../contexts/IntakeContext";
-import mockLocations from "../../pages/intake/data/locations";
+import { IntakeContext } from '../../contexts/IntakeContext';
+import mockLocations from '../../data/locations';
 
 export default function LocationOptions() {
   const { location, setLocation } = useContext(IntakeContext);
@@ -13,8 +13,8 @@ export default function LocationOptions() {
 
   return (
     <div>
-      <fieldset className="usa-fieldset">
-        <ul className="usa-card-group">
+      <fieldset className='usa-fieldset'>
+        <ul className='usa-card-group'>
           {mockLocations.data.map((site, index) => {
             const { name } = site.attributes;
             const { address1, city, state, zip } =
@@ -23,9 +23,9 @@ export default function LocationOptions() {
             const isChecked = location.id === site.id;
 
             return (
-              <li className="usa-card grid-col-12" key={index}>
-                <div className="usa-card__container">
-                  <div className="usa-radio">
+              <li className='usa-card grid-col-12' key={index}>
+                <div className='usa-card__container'>
+                  <div className='usa-radio'>
                     <h2>{name}</h2>
                     <p>
                       {address1}
@@ -41,8 +41,8 @@ export default function LocationOptions() {
                       value={site.id}
                       checked={isChecked}
                       onChange={() => changeHandler(site)}
-                      name="site-selection"
-                      label="Verify at this site"
+                      name='site-selection'
+                      label='Verify at this site'
                     />
                   </div>
                 </div>

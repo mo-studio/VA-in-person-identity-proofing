@@ -5,12 +5,13 @@ import {
   StepIndicator,
   StepIndicatorStep,
 } from "@trussworks/react-uswds";
+import { AccordionItemProps } from "@trussworks/react-uswds/lib/components/Accordion/Accordion";
 
 import SelectIDType from "../../../components/proofing/SelectIDType";
 import ValidateDocument from "../../../components/proofing/ValidateDocument";
 import { ProofingContext } from "../../../contexts/ProofingContext";
 
-const validateIdSteps = [
+const validateIdSteps: AccordionItemProps[] = [
   {
     title: "State-issued driver’s license or ID card",
     content: (
@@ -40,7 +41,7 @@ const validateIdSteps = [
   },
 ];
 
-const items = [
+const items: AccordionItemProps[] = [
   {
     title: "Ask for photo ID",
     content: (
@@ -81,7 +82,10 @@ const items = [
 ];
 
 export default function ConfirmEmailPage() {
-  const { proofingData, setProofingData } = useContext(ProofingContext);
+  const contextValue = useContext(ProofingContext);
+  const { proofingData } = contextValue || {
+    proofingData: { idType: "", isDocumentValidated: false, caseNumber: "" },
+  };
   return (
     <div className="page">
       <div className="container">

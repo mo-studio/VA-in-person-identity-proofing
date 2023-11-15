@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useContext } from "react";
+import { ChangeEvent, useContext } from "react";
 import {
   Label,
   StepIndicator,
@@ -10,9 +10,15 @@ import {
 import { ProofingContext } from "../../../contexts/ProofingContext";
 
 export default function CaseNumerPage() {
-  const { proofingData, setProofingData } = useContext(ProofingContext);
+  const contextValue = useContext(ProofingContext);
+  const { proofingData, setProofingData } = contextValue || {
+    proofingData: { idType: "", isDocumentValidated: false, caseNumber: "" },
+    setProofingData: (data) => {
+      return data;
+    },
+  };
 
-  const changeHandler = (e) => {
+  const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setProofingData({ ...proofingData, caseNumber: e.target.value });
   };
 

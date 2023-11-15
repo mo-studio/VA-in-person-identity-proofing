@@ -4,7 +4,13 @@ import { Checkbox } from "@trussworks/react-uswds";
 import { ProofingContext } from "../../contexts/ProofingContext";
 
 export default function SelectIDType() {
-  const { proofingData, setProofingData } = useContext(ProofingContext);
+  const contextValue = useContext(ProofingContext);
+  const { proofingData, setProofingData } = contextValue || {
+    proofingData: { idType: "", isDocumentValidated: false, caseNumber: "" },
+    setProofingData: (data) => {
+      return data;
+    },
+  };
 
   return proofingData.idType === "" ? (
     <p>Select an ID Type above.</p>
@@ -12,9 +18,9 @@ export default function SelectIDType() {
     <>
       <p className="margin-top-2 margin-bottom-4">
         Use the information below to validate the authenticity of the
-        applicant's photo ID. Once you have reviewed the ID and determined that
-        it is valid, click the check box for 'Validated document' and then click
-        'Continue' to proceed to the next step."
+        {"applicant's "} photo ID. Once you have reviewed the ID and determined
+        that it is {"valid,"} click the check box for {"'Validated document' "}
+        and then click {"'Continue'"} to proceed to the next step.
       </p>
       <p>
         Validate a <b>{proofingData.idType}</b> by looking for the following

@@ -20,9 +20,9 @@ const ProofingContext = createContext<proofingDataContextType | null>(null);
 
 function ProofingContextProvider({ children }: Props) {
   const [proofingData, setProofingData] = useState<IProofingData>({
+    caseNumber: "",
     idType: "",
     isDocumentValidated: false,
-    caseNumber: "",
     // Add default values for new attributes here
   });
 

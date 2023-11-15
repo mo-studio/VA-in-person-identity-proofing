@@ -5,7 +5,10 @@ import { StepIndicator, StepIndicatorStep } from "@trussworks/react-uswds";
 import { ProofingContext } from "../../../contexts/ProofingContext";
 
 export default function ConfirmEmailPage() {
-  const { proofingData, setProofingData } = useContext(ProofingContext);
+  const contextValue = useContext(ProofingContext);
+  const { proofingData } = contextValue || {
+    proofingData: { idType: "", isDocumentValidated: false, caseNumber: "" },
+  };
   return (
     <div className="page">
       <div className="container">
@@ -33,10 +36,10 @@ export default function ConfirmEmailPage() {
           <p>iparsons5@gmail.com</p>
           <p>
             If the email address provided by the applicant matches the email
-            associated with the case number, click 'Continue'.
+            associated with the case number, click {"'Continue'"}.
           </p>
           <p>
-            If the email address does not match, click the ‘Back’ button and
+            If the email address does not match, click the {"‘Back’"} button and
             help the applicant create a new case.
           </p>
           <div className="wrapper button-wrapper">
