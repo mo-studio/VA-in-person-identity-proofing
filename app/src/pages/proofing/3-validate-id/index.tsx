@@ -107,7 +107,7 @@ export default function ConfirmEmailPage() {
             className="margin-bottom-4"
           />
 
-          <Link href="#">
+          <Link href="/proofing/4-fill-in-information">
             <button
               type="button"
               className="usa-button usa-button--full-width margin-bottom-4"
