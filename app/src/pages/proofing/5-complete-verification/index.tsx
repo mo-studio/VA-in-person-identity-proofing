@@ -7,10 +7,10 @@ export default function CaseNumerPage() {
     <div className="page">
       <div className="container">
         <StepIndicator counters="small" headingLevel="h4">
-          <StepIndicatorStep label="Confirm email" status="current" />
+          <StepIndicatorStep label="Confirm email" />
           <StepIndicatorStep label="Validate ID" />
           <StepIndicatorStep label="Fill in information" />
-          <StepIndicatorStep label="Complete verification" />
+          <StepIndicatorStep label="Complete verification" status="current" />
         </StepIndicator>
 
         <h1>Complete verification</h1>
