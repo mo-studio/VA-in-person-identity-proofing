@@ -1,5 +1,5 @@
 import Link from "next/link";
-// import { ChangeEvent, useContext } from "react";
+import { useContext } from "react";
 import {
   Accordion,
   StepIndicator,
@@ -9,6 +9,8 @@ import {
   SummaryBoxHeading,
 } from "@trussworks/react-uswds";
 import { AccordionItemProps } from "@trussworks/react-uswds/lib/components/Accordion/Accordion";
+
+import { ProofingContext } from "../../../contexts/ProofingContext";
 
 const completeVerificationSteps: AccordionItemProps[] = [
   {
@@ -102,6 +104,11 @@ const completeVerificationSteps: AccordionItemProps[] = [
 ];
 
 export default function CaseNumerPage() {
+  const contextValue = useContext(ProofingContext);
+  const { proofingData } = contextValue || {
+    proofingData: { idType: "", isDocumentValidated: false, caseNumber: "" },
+  };
+
   // TODO: Replace hardcoded data with context from previous pages
   const tempFirstName = "Isabel";
   const tempMiddleInitial = "D.";
@@ -118,6 +125,9 @@ export default function CaseNumerPage() {
   return (
     <div className="page">
       <div className="container">
+        <h4>
+          <b>Case Number: {proofingData.caseNumber}</b>
+        </h4>
         <StepIndicator counters="small" headingLevel="h4">
           <StepIndicatorStep label="Confirm email" status="complete" />
           <StepIndicatorStep label="Validate ID" status="complete" />
