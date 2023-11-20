@@ -38,7 +38,7 @@ export default function CaseNumerPage() {
     {
       title: "Instructions",
       content: (
-        <>
+        <div className="margin-top-2">
           <p>
             You will need to validate that the applicant can be found in the
             Master Person Index (MPI) by logging into the Identity Access
@@ -69,7 +69,7 @@ export default function CaseNumerPage() {
               physical address one last time before pressing “Complete.”
             </li>
           </ol>
-        </>
+        </div>
       ),
       expanded: false,
       id: "complete-verification-step-1.1",
@@ -78,7 +78,7 @@ export default function CaseNumerPage() {
     {
       title: "Verify in IAM toolkit",
       content: (
-        <>
+        <div className="margin-top-2">
           <p>
             To complete the verification process, enter the applicant’s ICN that
             you wrote down from the previous screen and then check the box,
@@ -91,6 +91,7 @@ export default function CaseNumerPage() {
             id="icn-input"
             name="icn-input"
             type="text"
+            width="100%"
             // TODO: What do we do with this ICN? Is it sensative? Do we send it to the DB?
             onChange={(e) => console.log(e.target.value)}
           />
@@ -105,7 +106,7 @@ export default function CaseNumerPage() {
             // TODO: What do we do with this boolean? Local context? Do we send it to the DB?
             onChange={(e) => console.log(e.target.value)}
           />
-        </>
+        </div>
       ),
       expanded: false,
       id: "complete-verification-step-1.2",
@@ -114,12 +115,13 @@ export default function CaseNumerPage() {
     {
       title: "Confirm email and physical address",
       content: (
-        <>
+        <div className="margin-top-2">
           <p>
             The applicant will be receiving a confirmation email that their
             identity has been verified at the following email address:
           </p>
           <p>
+            {/* TODO: Fill this from context */}
             <b>iparson5@gmail.com</b>
           </p>
           <p>
@@ -127,7 +129,10 @@ export default function CaseNumerPage() {
             letter through the mail sent to the following address:
           </p>
           <p>
-            <b>231 Briarwood Road Baltimore, Maryland 21222</b>
+            <b>
+              {tempAddress1} {tempAddress2 ? tempAddress2 : ""}, {tempCity},{" "}
+              {tempState} {tempZip}
+            </b>
           </p>
           <p>
             Please ask the applicant to sign into VA.gov with their Login.gov
@@ -135,7 +140,7 @@ export default function CaseNumerPage() {
             below to close out this verification task and the associated case
             number.
           </p>
-        </>
+        </div>
       ),
       expanded: false,
       id: "complete-verification-step-1.3",
@@ -144,7 +149,7 @@ export default function CaseNumerPage() {
   ];
 
   return (
-    <div className="page">
+    <div className="proofing page">
       <div className="container">
         <h3>
           <b>Case Number: {proofingData.caseNumber}</b>
@@ -156,7 +161,7 @@ export default function CaseNumerPage() {
           <StepIndicatorStep label="Complete verification" status="current" />
         </StepIndicator>
 
-        <h1>Complete verification</h1>
+        <h1 className="padding-x-0">Complete verification</h1>
 
         <SummaryBox>
           <SummaryBoxHeading headingLevel="h3">
@@ -174,18 +179,18 @@ export default function CaseNumerPage() {
           </SummaryBoxContent>
         </SummaryBox>
 
-        <p>
+        <p className="margin-top-3 margin-bottom-4">
           To adjust the information in this summary box, click ‘Back’ and adjust
           the content in the form.
         </p>
 
         <Accordion items={completeVerificationSteps} />
 
-        <div className="text">
+        <div>
           <Link href="/proofing/6-verification-task-closed">
             <button
               type="button"
-              className="margin-bottom-4 usa-button usa-button--full-width"
+              className="margin-top-4 margin-bottom-4 usa-button usa-button--full-width"
             >
               Continue
             </button>
