@@ -1,4 +1,6 @@
 import { ProofingContext } from "src/contexts/ProofingContext";
+import { initialProofingData } from "src/data/proofingData";
+
 import { ChangeEvent, useContext } from "react";
 import { Label, Select } from "@trussworks/react-uswds";
 
@@ -7,7 +9,7 @@ import IDTypeSelectOptions from "./IDTypeSelectOptions";
 export default function SelectIDType() {
   const contextValue = useContext(ProofingContext);
   const { proofingData, setProofingData } = contextValue || {
-    proofingData: { idType: "", isDocumentValidated: false, caseNumber: "" },
+    proofingData: initialProofingData,
     setProofingData: (data) => {
       return data;
     },

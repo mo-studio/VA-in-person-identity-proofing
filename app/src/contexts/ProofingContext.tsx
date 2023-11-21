@@ -1,3 +1,5 @@
+import { initialProofingData } from "src/data/proofingData";
+
 import { createContext, useState } from "react";
 
 interface IProofingData {
@@ -30,24 +32,8 @@ interface Props {
 const ProofingContext = createContext<proofingDataContextType | null>(null);
 
 function ProofingContextProvider({ children }: Props) {
-  const [proofingData, setProofingData] = useState<IProofingData>({
-    caseNumber: "",
-    idType: "",
-    isDocumentValidated: false,
-    socialSecurityNumber: "",
-    firstName: "",
-    middleName: "",
-    lastName: "",
-    idNumber: "",
-    idType: "",
-    address1: "",
-    address2: "",
-    city: "",
-    zipCode: "",
-    dateOfBirth: "",
-    stateName: "",
-    // Add default values for new attributes here
-  });
+  const [proofingData, setProofingData] =
+    useState<IProofingData>(initialProofingData);
 
   return (
     <ProofingContext.Provider
