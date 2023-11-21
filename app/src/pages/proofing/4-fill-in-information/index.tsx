@@ -1,5 +1,4 @@
 import Link from "next/link";
-
 import router from "next/router";
 import { ChangeEvent, useContext, useState } from "react";
 import {
@@ -19,7 +18,7 @@ export default function CaseNumerPage() {
     const selectedValue = e.target.value;
     setProofingData({
       ...proofingData,
-      id_type: selectedValue,
+      idType: selectedValue,
     });
     setSelectedIdType(selectedValue);
     // You can do further processing with the selected value if needed
@@ -32,14 +31,14 @@ export default function CaseNumerPage() {
       idType: "",
       isDocumentValidated: false,
       caseNumber: "",
-      social_security_number: "",
-      first_name: "",
-      middle_name: "",
-      last_name: "",
-      id_number: "",
-      id_type: "",
-      address_1: "",
-      address_2: "",
+      socialSecurityNumber: "",
+      firstName: "",
+      middleName: "",
+      lastName: "",
+      idNumber: "",
+      idType: "",
+      address1: "",
+      addres2: "",
       city: "",
       zipCode: "",
       dateOfBirth: "",
@@ -52,43 +51,43 @@ export default function CaseNumerPage() {
   const ssnChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setProofingData({
       ...proofingData,
-      social_security_number: e.target.value,
+      socialSecurityNumber: e.target.value,
     });
   };
   const firstNameChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setProofingData({
       ...proofingData,
-      first_name: e.target.value,
+      firstName: e.target.value,
     });
   };
   const midNameChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setProofingData({
       ...proofingData,
-      middle_name: e.target.value,
+      middleName: e.target.value,
     });
   };
   const lastNameChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setProofingData({
       ...proofingData,
-      last_name: e.target.value,
+      lastName: e.target.value,
     });
   };
   const idNumberNameChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setProofingData({
       ...proofingData,
-      id_number: e.target.value,
+      idNumber: e.target.value,
     });
   };
   const address1ChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setProofingData({
       ...proofingData,
-      address_1: e.target.value,
+      address1: e.target.value,
     });
   };
   const address2ChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setProofingData({
       ...proofingData,
-      address_2: e.target.value,
+      addres2: e.target.value,
     });
   };
   const cityChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {

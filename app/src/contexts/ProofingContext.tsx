@@ -4,14 +4,14 @@ interface IProofingData {
   idType: string;
   isDocumentValidated: boolean;
   caseNumber: string;
-  social_security_number: string;
-  first_name: string;
-  middle_name: string;
-  last_name: string;
-  id_number: string;
-  id_type: string;
-  address_1: string;
-  address_2: string;
+  socialSecurityNumber: string;
+  firstName: string;
+  middleName: string;
+  lastName: string;
+  idNumber: string;
+  idType: string;
+  address1: string;
+  addres2: string;
   city: string;
   zipCode: string;
   dateOfBirth: string;
@@ -35,14 +35,14 @@ function ProofingContextProvider({ children }: Props) {
     caseNumber: "",
     idType: "",
     isDocumentValidated: false,
-    social_security_number: "",
-    first_name: "",
-    middle_name: "",
-    last_name: "",
-    id_number: "",
-    id_type: "",
-    address_1: "",
-    address_2: "",
+    socialSecurityNumber: "",
+    firstName: "",
+    middleName: "",
+    lastName: "",
+    idNumber: "",
+    idType: "",
+    address1: "",
+    addres2: "",
     city: "",
     zipCode: "",
     dateOfBirth: "",
