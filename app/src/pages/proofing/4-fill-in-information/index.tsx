@@ -2,7 +2,7 @@ import { initialProofingData } from "src/data/proofingData";
 import StateSelectOptions from "src/data/StateSelectOptions";
 
 import Link from "next/link";
-import { ChangeEvent, useContext, useState } from "react";
+import { ChangeEvent, useContext } from "react";
 import {
   DatePicker,
   Label,
@@ -15,21 +15,6 @@ import {
 import { ProofingContext } from "../../../contexts/ProofingContext";
 
 export default function CaseNumerPage() {
-  const [selectedIdType, setSelectedIdType] = useState("");
-  // TODO: Should this be stored in Context isntead of local state?
-  // How does this data get used?
-
-  const handleDropdownChange = (e: { target: { value: any } }) => {
-    const selectedValue = e.target.value;
-    setProofingData({
-      ...proofingData,
-      idType: selectedValue,
-    });
-    setSelectedIdType(selectedValue);
-    // You can do further processing with the selected value if needed
-    console.log("Selected option:", selectedValue);
-  };
-
   const contextValue = useContext(ProofingContext);
   const { proofingData, setProofingData } = contextValue || {
     proofingData: initialProofingData,
@@ -125,8 +110,8 @@ export default function CaseNumerPage() {
             id="id-type"
             name="id-type"
             required
-            value={selectedIdType}
-            onChange={handleDropdownChange}
+            value={proofingData.idType}
+            onChange={(e) => inputChangeHandler(e, "idType")}
           >
             <option value="Drivers License">Drivers License</option>
             <option value="VHIC">VHIC</option>
