@@ -2,7 +2,7 @@ import { ProofingContext } from "src/contexts/ProofingContext";
 import { initialProofingData } from "src/data/proofingData";
 
 import Link from "next/link";
-import { useContext } from "react";
+import { ChangeEvent, useContext } from "react";
 import {
   Accordion,
   Checkbox,
@@ -18,8 +18,25 @@ import { AccordionItemProps } from "@trussworks/react-uswds/lib/components/Accor
 
 export default function CaseNumerPage() {
   const contextValue = useContext(ProofingContext);
-  const { proofingData } = contextValue || {
+  const { proofingData, setProofingData } = contextValue || {
     proofingData: initialProofingData,
+    setProofingData: (data) => {
+      return data;
+    },
+  };
+
+  const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    setProofingData({
+      ...proofingData,
+      icn: e.target.value,
+    });
+  };
+
+  const checkboxChangeHandler = () => {
+    setProofingData({
+      ...proofingData,
+      isIamToolkitVerified: !proofingData.isIamToolkitVerified,
+    });
   };
 
   const completeVerificationSteps: AccordionItemProps[] = [
@@ -80,8 +97,9 @@ export default function CaseNumerPage() {
             name="icn-input"
             type="text"
             width="100%"
+            value={proofingData.icn}
             // TODO: What do we do with this ICN? Is it sensative? Do we send it to the DB?
-            onChange={(e) => console.log(e.target.value)}
+            onChange={(e) => changeHandler(e)}
           />
 
           {/* insert Verified IAM checkbox here */}
@@ -90,9 +108,9 @@ export default function CaseNumerPage() {
             name="validated-iam-checkbox"
             label="Verified in IAM toolkit"
             tile
-            checked={proofingData.isDocumentValidated}
+            checked={proofingData.isIamToolkitVerified}
             // TODO: What do we do with this boolean? Local context? Do we send it to the DB?
-            onChange={(e) => console.log(e.target.value)}
+            onChange={() => checkboxChangeHandler()}
           />
         </div>
       ),

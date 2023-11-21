@@ -17,6 +17,8 @@ interface IProofingData {
   zipCode: string;
   dateOfBirth: string;
   stateName: string;
+  icn: string;
+  isIamToolkitVerified: boolean;
   // Add new attributes/datatypes here
 }
 

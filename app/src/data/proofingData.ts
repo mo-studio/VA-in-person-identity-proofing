@@ -13,4 +13,6 @@ export const initialProofingData = {
   zipCode: "",
   dateOfBirth: "",
   stateName: "",
+  icn: "",
+  isIamToolkitVerified: false,
 };
