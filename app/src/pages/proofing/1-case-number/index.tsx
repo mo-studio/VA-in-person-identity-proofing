@@ -12,14 +12,32 @@ import { ProofingContext } from "../../../contexts/ProofingContext";
 export default function CaseNumerPage() {
   const contextValue = useContext(ProofingContext);
   const { proofingData, setProofingData } = contextValue || {
-    proofingData: { idType: "", isDocumentValidated: false, caseNumber: "" },
+    proofingData: {
+      idType: "",
+      isDocumentValidated: false,
+      caseNumber: "",
+      social_security_number: "",
+      first_name: "",
+      middle_name: "",
+      last_name: "",
+      id_number: "",
+      id_type: "",
+      address_1: "",
+      address_2: "",
+      city: "",
+      zipCode: "",
+      dateOfBirth: "",
+    },
     setProofingData: (data) => {
       return data;
     },
   };
 
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setProofingData({ ...proofingData, caseNumber: e.target.value });
+    setProofingData({
+      ...proofingData,
+      caseNumber: e.target.value,
+    });
   };
 
   return (
