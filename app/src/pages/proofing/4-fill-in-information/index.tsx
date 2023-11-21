@@ -33,70 +33,21 @@ export default function CaseNumerPage() {
       return data;
     },
   };
-  const ssnChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+
+  const inputChangeHandler = (
+    e: ChangeEvent<HTMLInputElement>,
+    fieldName: string
+  ) => {
     setProofingData({
       ...proofingData,
-      socialSecurityNumber: e.target.value,
+      [fieldName]: e.target.value,
     });
   };
-  const firstNameChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setProofingData({
-      ...proofingData,
-      firstName: e.target.value,
-    });
-  };
-  const midNameChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setProofingData({
-      ...proofingData,
-      middleName: e.target.value,
-    });
-  };
-  const lastNameChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setProofingData({
-      ...proofingData,
-      lastName: e.target.value,
-    });
-  };
-  const idNumberNameChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setProofingData({
-      ...proofingData,
-      idNumber: e.target.value,
-    });
-  };
-  const address1ChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setProofingData({
-      ...proofingData,
-      address1: e.target.value,
-    });
-  };
-  const address2ChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setProofingData({
-      ...proofingData,
-      address2: e.target.value,
-    });
-  };
-  const cityChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setProofingData({
-      ...proofingData,
-      city: e.target.value,
-    });
-  };
-  const zipCodeChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setProofingData({
-      ...proofingData,
-      zipCode: e.target.value,
-    });
-  };
+
   const dateChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setProofingData({
       ...proofingData,
       dateOfBirth: String(e),
-    });
-  };
-  const stateNameChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setProofingData({
-      ...proofingData,
-      stateName: String(e.target.value),
     });
   };
 
@@ -126,7 +77,8 @@ export default function CaseNumerPage() {
             id="ssn"
             name="ssn"
             type="text"
-            onChange={(e) => ssnChangeHandler(e)}
+            value={proofingData.socialSecurityNumber}
+            onChange={(e) => inputChangeHandler(e, "socialSecurityNumber")}
           />
 
           <Label htmlFor="first-name">First name</Label>
@@ -134,21 +86,24 @@ export default function CaseNumerPage() {
             id="fname"
             name="fname"
             type="text"
-            onChange={(e) => firstNameChangeHandler(e)}
+            value={proofingData.firstName}
+            onChange={(e) => inputChangeHandler(e, "firstName")}
           />
           <Label htmlFor="middle-name">Middle initial</Label>
           <TextInput
             id="middle-name"
             name="middle-name"
             type="text"
-            onChange={(e) => midNameChangeHandler(e)}
+            value={proofingData.middleName}
+            onChange={(e) => inputChangeHandler(e, "middleName")}
           />
           <Label htmlFor="last-name">Last name</Label>
           <TextInput
             id="last-name"
             name="last-name"
             type="text"
-            onChange={(e) => lastNameChangeHandler(e)}
+            value={proofingData.lastName}
+            onChange={(e) => inputChangeHandler(e, "lastName")}
           />
 
           <Label htmlFor="id-num">ID Number</Label>
@@ -156,7 +111,8 @@ export default function CaseNumerPage() {
             id="id-num"
             name="id-num"
             type="text"
-            onChange={(e) => idNumberNameChangeHandler(e)}
+            value={proofingData.idNumber}
+            onChange={(e) => inputChangeHandler(e, "idNumber")}
           />
           <Label htmlFor="id-type">Select ID type</Label>
           <Select
@@ -177,6 +133,8 @@ export default function CaseNumerPage() {
             id="birth-date"
             name="Birthday"
             key="hello"
+            value={proofingData.dateOfBirth}
+            // TODO: figure how why field doesn't show previous value
             onChange={(e) => dateChangeHandler(e)}
           ></DatePicker>
 
@@ -185,28 +143,32 @@ export default function CaseNumerPage() {
             id="mailing-address-1"
             name="mailing-address-1"
             type="text"
-            onChange={(e) => address1ChangeHandler(e)}
+            value={proofingData.address1}
+            onChange={(e) => inputChangeHandler(e, "address1")}
           />
           <Label htmlFor="mailing-address-2">Street address line 2</Label>
           <TextInput
             id="mailing-address-2"
             name="mailing-address-2"
             type="text"
-            onChange={(e) => address2ChangeHandler(e)}
+            value={proofingData.address2}
+            onChange={(e) => inputChangeHandler(e, "address2")}
           />
           <Label htmlFor="city">City</Label>
           <TextInput
             id="city"
             name="city"
             type="text"
-            onChange={(e) => cityChangeHandler(e)}
+            value={proofingData.city}
+            onChange={(e) => inputChangeHandler(e, "city")}
             required
           />
           <Label htmlFor="state">State, territory, or military post</Label>
           <Select
             id="state"
             name="state"
-            onChange={(e) => stateNameChangeHandler(e)}
+            value={proofingData.stateName}
+            onChange={(e) => inputChangeHandler(e, "stateName")}
             required
           >
             <option>- Select -</option>
@@ -274,7 +236,8 @@ export default function CaseNumerPage() {
             name="zip"
             type="text"
             pattern="[\d]{5}(-[\d]{4})?"
-            onChange={(e) => zipCodeChangeHandler(e)}
+            value={proofingData.zipCode}
+            onChange={(e) => inputChangeHandler(e, "zipCode")}
           />
           <Label htmlFor="urbanization">Urbanization (Puerto Rico only)</Label>
           <TextInput id="urbanization" name="urbanization" type="text" />
