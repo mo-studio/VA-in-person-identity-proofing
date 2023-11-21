@@ -1,3 +1,6 @@
+import { ProofingContext } from "src/contexts/ProofingContext";
+import { initialProofingData } from "src/data/proofingData";
+
 import Link from "next/link";
 import { useContext } from "react";
 import {
@@ -7,9 +10,8 @@ import {
 } from "@trussworks/react-uswds";
 import { AccordionItemProps } from "@trussworks/react-uswds/lib/components/Accordion/Accordion";
 
-import SelectIDType from "../../../components/proofing/SelectIDType";
-import ValidateDocument from "../../../components/proofing/ValidateDocument";
-import { ProofingContext } from "../../../contexts/ProofingContext";
+import SelectIDType from "src/components/proofing/SelectIDType";
+import ValidateDocument from "src/components/proofing/ValidateDocument";
 
 const validateIdSteps: AccordionItemProps[] = [
   {
@@ -54,6 +56,7 @@ const items: AccordionItemProps[] = [
           bordered={true}
           items={validateIdSteps}
           multiselectable={true}
+          className="spaced-accordion"
         />
         <p className="margin-top-3 margin-bottom-2">
           Once an acceptable, unexpired photo ID (and proof of address if using
@@ -84,19 +87,19 @@ const items: AccordionItemProps[] = [
 export default function ConfirmEmailPage() {
   const contextValue = useContext(ProofingContext);
   const { proofingData } = contextValue || {
-    proofingData: { idType: "", isDocumentValidated: false, caseNumber: "" },
+    proofingData: initialProofingData,
   };
   return (
-    <div className="page">
+    <div className="proofing page">
       <div className="container">
-        <h4>
+        <h3>
           <b>Case Number: {proofingData.caseNumber}</b>
-        </h4>
-        <section className="usa-section">
+        </h3>
+        <section>
           <StepIndicator counters="small" headingLevel="h4">
             <StepIndicatorStep label="Confirm email" status="complete" />
-            <StepIndicatorStep label="Validate ID" status="complete" />
-            <StepIndicatorStep label="Fill in information" status="current" />
+            <StepIndicatorStep label="Validate ID" status="current" />
+            <StepIndicatorStep label="Fill in information" />
             <StepIndicatorStep label="Complete verification" />
           </StepIndicator>
           <h1 className="margin-bottom-4 padding-left-0">Validate ID</h1>
@@ -107,7 +110,7 @@ export default function ConfirmEmailPage() {
             className="margin-bottom-4"
           />
 
-          <Link href="/proofing/4-fill-in-information">
+          <Link href="/proofing/3-fill-in-information">
             <button
               type="button"
               className="usa-button usa-button--full-width margin-bottom-4"
@@ -116,7 +119,7 @@ export default function ConfirmEmailPage() {
               Continue
             </button>
           </Link>
-          <Link href="/proofing/2-confirm-email">
+          <Link href="/proofing/1b-confirm-email">
             <button
               type="button"
               className="usa-button usa-button--outline usa-button--full-width"
