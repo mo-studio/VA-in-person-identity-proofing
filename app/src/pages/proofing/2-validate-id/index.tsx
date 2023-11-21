@@ -89,16 +89,16 @@ export default function ConfirmEmailPage() {
     proofingData: initialProofingData,
   };
   return (
-    <div className="page">
+    <div className="proofing page">
       <div className="container">
-        <h4>
+        <h3>
           <b>Case Number: {proofingData.caseNumber}</b>
-        </h4>
+        </h3>
         <section className="usa-section">
           <StepIndicator counters="small" headingLevel="h4">
             <StepIndicatorStep label="Confirm email" status="complete" />
-            <StepIndicatorStep label="Validate ID" status="complete" />
-            <StepIndicatorStep label="Fill in information" status="current" />
+            <StepIndicatorStep label="Validate ID" status="current" />
+            <StepIndicatorStep label="Fill in information" />
             <StepIndicatorStep label="Complete verification" />
           </StepIndicator>
           <h1 className="margin-bottom-4 padding-left-0">Validate ID</h1>
@@ -109,7 +109,7 @@ export default function ConfirmEmailPage() {
             className="margin-bottom-4"
           />
 
-          <Link href="/proofing/4-fill-in-information">
+          <Link href="/proofing/3-fill-in-information">
             <button
               type="button"
               className="usa-button usa-button--full-width margin-bottom-4"
@@ -118,7 +118,7 @@ export default function ConfirmEmailPage() {
               Continue
             </button>
           </Link>
-          <Link href="/proofing/2-confirm-email">
+          <Link href="/proofing/1b-confirm-email">
             <button
               type="button"
               className="usa-button usa-button--outline usa-button--full-width"

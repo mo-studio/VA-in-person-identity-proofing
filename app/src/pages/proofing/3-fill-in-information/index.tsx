@@ -33,16 +33,22 @@ export default function CaseNumerPage() {
     });
   };
 
-  const dateChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+  const dateChangeHandler = (date: string) => {
+    console.log(date);
+    console.log(typeof date);
     setProofingData({
       ...proofingData,
-      dateOfBirth: String(e),
+      dateOfBirth: date,
     });
   };
 
   return (
     <div className="page">
       <div className="container">
+        <h3>
+          <b>Case Number: {proofingData.caseNumber}</b>
+        </h3>
+
         <StepIndicator counters="small" headingLevel="h4">
           <StepIndicatorStep label="Confirm email" status="complete" />
           <StepIndicatorStep label="Validate ID" status="complete" />
@@ -50,9 +56,9 @@ export default function CaseNumerPage() {
           <StepIndicatorStep label="Complete verification" />
         </StepIndicator>
 
-        <h1>Fill in Information</h1>
+        <h1 className="padding-x-0">Fill in Information</h1>
 
-        <div className="text">
+        <div>
           <p>
             Using the applicant’s validated documents, fill out the form below.
             As you fill out the form, make sure with the applicant that the
@@ -124,9 +130,10 @@ export default function CaseNumerPage() {
             id="birth-date"
             name="Birthday"
             key="hello"
+            defaultValue={proofingData.dateOfBirth}
             value={proofingData.dateOfBirth}
             // TODO: figure how why field doesn't show previous value
-            onChange={(e) => dateChangeHandler(e)}
+            onChange={(date) => dateChangeHandler(date)}
           ></DatePicker>
 
           <Label htmlFor="mailing-address-1">Street address</Label>
@@ -178,23 +185,22 @@ export default function CaseNumerPage() {
           <Label htmlFor="urbanization">Urbanization (Puerto Rico only)</Label>
           <TextInput id="urbanization" name="urbanization" type="text" />
 
-          <div className="wrapper button-wrapper">
-            <Link href="/proofing/5-complete-verification">
-              <button type="button" className="usa-button">
-                Continue
-              </button>
-            </Link>
-          </div>
-          <div className="wrapper button-wrapper">
-            <Link href="/proofing/3-validate-id">
-              <button
-                type="button"
-                className="usa-button usa-button--outline usa-button--full-width"
-              >
-                Back
-              </button>
-            </Link>
-          </div>
+          <Link href="/proofing/4a-complete-verification">
+            <button
+              type="button"
+              className="usa-button usa-button--full-width margin-y-4"
+            >
+              Continue
+            </button>
+          </Link>
+          <Link href="/proofing/2-validate-id">
+            <button
+              type="button"
+              className="usa-button usa-button--outline usa-button--full-width"
+            >
+              Back
+            </button>
+          </Link>
         </div>
       </div>
     </div>

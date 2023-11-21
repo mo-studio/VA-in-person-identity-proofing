@@ -24,9 +24,9 @@ export default function CaseNumerPage() {
   return (
     <div className="page">
       <div className="container">
-        <h1>Enter Case Number</h1>
+        <h1 className="padding-x-0">Enter Case Number</h1>
 
-        <div className="text">
+        <div>
           <p>
             Ask for the 8-digit case number that the applicant received in their
             email when they registered for In-Person Identity Proofing. This
@@ -46,18 +46,15 @@ export default function CaseNumerPage() {
             type="text"
             onChange={(e) => changeHandler(e)}
           />
-          <div className="wrapper button-wrapper">
-            <Link href="/proofing/2-confirm-email">
-              <button
-                type="button"
-                className="usa-button"
-                disabled={proofingData.caseNumber === ""}
-              >
-                Continue
-              </button>
-            </Link>
-          </div>
-          <br></br>
+          <Link href="/proofing/1b-confirm-email">
+            <button
+              type="button"
+              className="usa-button usa-button--full-width margin-top-4"
+              disabled={proofingData.caseNumber === ""}
+            >
+              Continue
+            </button>
+          </Link>
         </div>
       </div>
     </div>

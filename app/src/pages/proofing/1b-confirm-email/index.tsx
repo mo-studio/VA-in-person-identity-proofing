@@ -13,28 +13,29 @@ export default function ConfirmEmailPage() {
   return (
     <div className="page">
       <div className="container">
-        <h4>
+        <h3>
           <b>Case Number: {proofingData.caseNumber}</b>
-        </h4>
+        </h3>
         <StepIndicator counters="small" headingLevel="h4">
-          <StepIndicatorStep label="Confirm email" status="complete" />
-          <StepIndicatorStep label="Validate ID" status="current" />
+          <StepIndicatorStep label="Confirm email" status="current" />
+          <StepIndicatorStep label="Validate ID" />
           <StepIndicatorStep label="Fill in information" />
           <StepIndicatorStep label="Complete verification" />
         </StepIndicator>
-        <h1>Confirm applicant email</h1>
+        <h1 className="padding-x-0">Confirm applicant email</h1>
 
-        <div className="text">
+        <div>
           <p>
             Ask what email address is associated with the applicant’s Login.gov
             account. For security, you should not share the information on this
             screen; only confirm if it is correct or not correct.{" "}
           </p>
           <p>
-            Case number {proofingData.caseNumber} is associated with the
+            Case number <b>{proofingData.caseNumber}</b> is associated with the
             following email address:
           </p>
-          <p>iparsons5@gmail.com</p>
+          {/* TODO: Replace this with state data */}
+          <p className="text-bold">iparsons5@gmail.com</p>
           <p>
             If the email address provided by the applicant matches the email
             associated with the case number, click {"'Continue'"}.
@@ -43,16 +44,20 @@ export default function ConfirmEmailPage() {
             If the email address does not match, click the {"‘Back’"} button and
             help the applicant create a new case.
           </p>
-          <div className="wrapper button-wrapper">
-            <Link href="/proofing/3-validate-id">
-              <button type="button" className="usa-button">
+          <div>
+            <Link href="/proofing/2-validate-id">
+              <button
+                type="button"
+                className="usa-button  usa-button--full-width margin-top-3 margin-bottom-4"
+              >
                 Continue
               </button>
             </Link>
-          </div>
-          <div className="wrapper button-wrapper">
-            <Link href="/proofing/1-case-number">
-              <button type="button" className="usa-button usa-button--outline">
+            <Link href="/proofing/1a-case-number">
+              <button
+                type="button"
+                className="usa-button usa-button--outline usa-button--full-width"
+              >
                 Back
               </button>
             </Link>

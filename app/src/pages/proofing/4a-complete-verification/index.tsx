@@ -39,6 +39,13 @@ export default function CaseNumerPage() {
     });
   };
 
+  const formattedAddress = `${proofingData.address1}${
+    proofingData.address2 ? "," : ""
+  } ${proofingData.address2}, ${proofingData.city}, ${proofingData.stateName} ${
+    proofingData.zipCode
+  }`;
+  const formattedName = `${proofingData.firstName} ${proofingData.middleName} ${proofingData.lastName}`;
+
   const completeVerificationSteps: AccordionItemProps[] = [
     {
       title: "Instructions",
@@ -135,11 +142,7 @@ export default function CaseNumerPage() {
             letter through the mail sent to the following address:
           </p>
           <p>
-            <b>
-              {proofingData.address1}
-              {proofingData.address2}, {proofingData.city},{" "}
-              {proofingData.stateName} {proofingData.zipCode}
-            </b>
+            <b>{formattedAddress}</b>
           </p>
           <p>
             Please ask the applicant to sign into VA.gov with their Login.gov
@@ -175,16 +178,13 @@ export default function CaseNumerPage() {
             Applicant Summary
           </SummaryBoxHeading>
           <SummaryBoxContent>
-            Name: {proofingData.firstName} {proofingData.middleName}{" "}
-            {proofingData.lastName}
+            Name: {formattedName}
             <br />
             Social Security Number: {proofingData.socialSecurityNumber}
             <br />
             DOB: {proofingData.dateOfBirth}
             <br />
-            Address: {proofingData.address1}
-            {proofingData.address2}, {proofingData.city},{" "}
-            {proofingData.stateName} {proofingData.zipCode}
+            Address: {formattedAddress}
           </SummaryBoxContent>
         </SummaryBox>
 
@@ -196,7 +196,7 @@ export default function CaseNumerPage() {
         <Accordion items={completeVerificationSteps} />
 
         <div>
-          <Link href="/proofing/6-verification-task-closed">
+          <Link href="/proofing/4b-verification-task-closed">
             <button
               type="button"
               className="margin-top-4 margin-bottom-4 usa-button usa-button--full-width"
@@ -209,7 +209,7 @@ export default function CaseNumerPage() {
               Continue
             </button>
           </Link>
-          <Link href="/proofing/4-fill-in-information">
+          <Link href="/proofing/3-fill-in-information">
             <button
               type="button"
               className="usa-button usa-button--outline usa-button--full-width"
