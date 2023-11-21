@@ -16,8 +16,7 @@ export default function SelectIDType() {
   };
 
   const changeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-    const newState = { ...proofingData, idType: e.target.value };
-    setProofingData(newState);
+    setProofingData({ ...proofingData, idType: e.target.value });
   };
 
   return (
