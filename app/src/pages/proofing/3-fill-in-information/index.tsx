@@ -181,10 +181,6 @@ export default function CaseNumerPage() {
             onChange={(e) => inputChangeHandler(e, "zipCode")}
           />
 
-          {/* TODO, is this field always displayed? We don't even have PR has an option in the states and territories. */}
-          <Label htmlFor="urbanization">Urbanization (Puerto Rico only)</Label>
-          <TextInput id="urbanization" name="urbanization" type="text" />
-
           <Link href="/proofing/4a-complete-verification">
             <button
               type="button"
