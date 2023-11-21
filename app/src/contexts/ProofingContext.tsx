@@ -9,7 +9,6 @@ interface IProofingData {
   middleName: string;
   lastName: string;
   idNumber: string;
-  idType: string;
   address1: string;
   address2: string;
   city: string;
