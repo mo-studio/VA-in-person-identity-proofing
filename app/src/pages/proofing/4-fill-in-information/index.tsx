@@ -36,7 +36,6 @@ export default function CaseNumerPage() {
       middleName: "",
       lastName: "",
       idNumber: "",
-      idType: "",
       address1: "",
       addres2: "",
       city: "",

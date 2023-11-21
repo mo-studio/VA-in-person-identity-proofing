@@ -17,22 +17,7 @@ import { ProofingContext } from "../../../contexts/ProofingContext";
 
 export default function CaseNumerPage() {
   const contextValue = useContext(ProofingContext);
-  const { proofingData } = contextValue || {
-    proofingData: { idType: "", isDocumentValidated: false, caseNumber: "" },
-  };
-
-  // TODO: Replace hardcoded data with context from previous pages
-  const tempFirstName = "Isabel";
-  const tempMiddleInitial = "D.";
-  const tempLastName = "Parsons";
-  const tempSSN = "123-45-6789";
-  const tempDOB = "12/03/1954";
-  const tempAddress1 = "231 Briarwood Road";
-  const tempAddress2 = "";
-  const tempCity = "Baltimore";
-  const tempState = "Maryland";
-  const tempZip = "21222";
-  // end TODO
+  const { proofingData } = contextValue || {};
 
   const completeVerificationSteps: AccordionItemProps[] = [
     {
@@ -130,8 +115,9 @@ export default function CaseNumerPage() {
           </p>
           <p>
             <b>
-              {tempAddress1} {tempAddress2 ? tempAddress2 : ""}, {tempCity},{" "}
-              {tempState} {tempZip}
+              {proofingData.address1}
+              {proofingData.address2}, {proofingData.city},{" "}
+              {proofingData.stateName} {proofingData.zipCode}
             </b>
           </p>
           <p>
@@ -168,14 +154,16 @@ export default function CaseNumerPage() {
             Applicant Summary
           </SummaryBoxHeading>
           <SummaryBoxContent>
-            Name: {tempFirstName} {tempMiddleInitial} {tempLastName}
+            Name: {proofingData.firstName} {proofingData.middleName}{" "}
+            {proofingData.lastName}
             <br />
-            Social Security Number: {tempSSN}
+            Social Security Number: {proofingData.socialSecurityNumber}
             <br />
-            DOB: {tempDOB}
+            DOB: {proofingData.dateOfBirth}
             <br />
-            Address: {tempAddress1}
-            {tempAddress2}, {tempCity}, {tempState} {tempZip}
+            Address: {proofingData.address1}
+            {proofingData.address2}, {proofingData.city},{" "}
+            {proofingData.stateName} {proofingData.zipCode}
           </SummaryBoxContent>
         </SummaryBox>
 
