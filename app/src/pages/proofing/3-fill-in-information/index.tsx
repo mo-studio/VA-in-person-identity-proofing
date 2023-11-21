@@ -23,6 +23,18 @@ export default function CaseNumerPage() {
     },
   };
 
+  const disableContinueButton =
+    proofingData.socialSecurityNumber === "" ||
+    proofingData.firstName === "" ||
+    proofingData.lastName === "" ||
+    proofingData.dateOfBirth === "" ||
+    proofingData.address1 === "" ||
+    proofingData.city === "" ||
+    proofingData.stateName === "" ||
+    proofingData.zipCode === "" ||
+    proofingData.idType === "" ||
+    proofingData.idNumber === "";
+
   const inputChangeHandler = (
     e: ChangeEvent<HTMLInputElement>,
     fieldName: string
@@ -84,7 +96,7 @@ export default function CaseNumerPage() {
             value={proofingData.firstName}
             onChange={(e) => inputChangeHandler(e, "firstName")}
           />
-          <Label htmlFor="middle-name">Middle initial</Label>
+          <Label htmlFor="middle-name">Middle initial (optional) </Label>
           <TextInput
             id="middle-name"
             name="middle-name"
@@ -144,7 +156,9 @@ export default function CaseNumerPage() {
             value={proofingData.address1}
             onChange={(e) => inputChangeHandler(e, "address1")}
           />
-          <Label htmlFor="mailing-address-2">Street address line 2</Label>
+          <Label htmlFor="mailing-address-2">
+            Street address line 2 (optional)
+          </Label>
           <TextInput
             id="mailing-address-2"
             name="mailing-address-2"
@@ -189,6 +203,7 @@ export default function CaseNumerPage() {
             <button
               type="button"
               className="usa-button usa-button--full-width margin-y-4"
+              disabled={disableContinueButton == true}
             >
               Continue
             </button>
