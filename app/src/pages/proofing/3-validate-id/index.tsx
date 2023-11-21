@@ -1,3 +1,4 @@
+import { ProofingContext } from "src/contexts/ProofingContext";
 import { initialProofingData } from "src/data/proofingData";
 
 import Link from "next/link";
@@ -9,9 +10,8 @@ import {
 } from "@trussworks/react-uswds";
 import { AccordionItemProps } from "@trussworks/react-uswds/lib/components/Accordion/Accordion";
 
-import SelectIDType from "../../../components/proofing/SelectIDType";
-import ValidateDocument from "../../../components/proofing/ValidateDocument";
-import { ProofingContext } from "../../../contexts/ProofingContext";
+import SelectIDType from "src/components/proofing/SelectIDType";
+import ValidateDocument from "src/components/proofing/ValidateDocument";
 
 const validateIdSteps: AccordionItemProps[] = [
   {

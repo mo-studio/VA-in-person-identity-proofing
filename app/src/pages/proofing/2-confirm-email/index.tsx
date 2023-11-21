@@ -1,10 +1,9 @@
+import { ProofingContext } from "src/contexts/ProofingContext";
 import { initialProofingData } from "src/data/proofingData";
 
 import Link from "next/link";
 import { useContext } from "react";
 import { StepIndicator, StepIndicatorStep } from "@trussworks/react-uswds";
-
-import { ProofingContext } from "../../../contexts/ProofingContext";
 
 export default function ConfirmEmailPage() {
   const contextValue = useContext(ProofingContext);

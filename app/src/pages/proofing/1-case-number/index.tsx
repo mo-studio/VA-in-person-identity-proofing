@@ -1,3 +1,4 @@
+import { ProofingContext } from "src/contexts/ProofingContext";
 import { initialProofingData } from "src/data/proofingData";
 
 import Link from "next/link";
@@ -8,8 +9,6 @@ import {
   StepIndicatorStep,
   TextInput,
 } from "@trussworks/react-uswds";
-
-import { ProofingContext } from "../../../contexts/ProofingContext";
 
 export default function CaseNumerPage() {
   const contextValue = useContext(ProofingContext);

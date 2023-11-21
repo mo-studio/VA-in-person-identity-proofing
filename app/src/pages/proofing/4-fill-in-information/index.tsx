@@ -1,5 +1,5 @@
+import { ProofingContext } from "src/contexts/ProofingContext";
 import { initialProofingData } from "src/data/proofingData";
-import StateSelectOptions from "src/data/StateSelectOptions";
 
 import Link from "next/link";
 import { ChangeEvent, useContext } from "react";
@@ -12,7 +12,7 @@ import {
   TextInput,
 } from "@trussworks/react-uswds";
 
-import { ProofingContext } from "../../../contexts/ProofingContext";
+import StateSelectOptions from "src/components/proofing/StateSelectOptions";
 
 export default function CaseNumerPage() {
   const contextValue = useContext(ProofingContext);

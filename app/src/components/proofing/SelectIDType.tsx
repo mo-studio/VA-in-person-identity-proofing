@@ -1,7 +1,7 @@
+import { ProofingContext } from "src/contexts/ProofingContext";
 import { ChangeEvent, useContext } from "react";
 import { Label, Select } from "@trussworks/react-uswds";
 
-import { ProofingContext } from "../../contexts/ProofingContext";
 import IDTypeSelectOptions from "./IDTypeSelectOptions";
 
 export default function SelectIDType() {
