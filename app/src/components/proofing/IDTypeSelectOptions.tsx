@@ -8,16 +8,10 @@ const IDTypeSelectOptions: React.FC<Props> = () => {
   return (
     <>
       <option>- Select - </option>
-      <option value="Lousiana Driver's License">
-        Lousiana {"Driver's"} License
+      <option value="Driver's License or State-issued ID">
+        {"Driver's License or State-issued ID"}
       </option>
-      <option value="Maine Driver's License">Maine {"Driver's"} License</option>
-      <option value="Maryland Driver's License">
-        Maryland {"Driver's"} License
-      </option>
-      <option value="Massachusetts Driver's License">
-        Massachusetts {"Driver's"} License
-      </option>
+      <option value="VHIC">VHIC</option>
     </>
   );
 };

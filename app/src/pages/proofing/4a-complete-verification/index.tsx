@@ -102,6 +102,7 @@ export default function CaseNumerPage() {
           <TextInput
             id="icn-input"
             name="icn-input"
+            className="margin-bottom-4"
             type="text"
             width="100%"
             value={proofingData.icn}

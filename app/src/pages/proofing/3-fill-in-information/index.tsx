@@ -12,6 +12,7 @@ import {
   TextInput,
 } from "@trussworks/react-uswds";
 
+import IDTypeSelectOptions from "src/components/proofing/IDTypeSelectOptions";
 import StateSelectOptions from "src/components/proofing/StateSelectOptions";
 
 export default function CaseNumerPage() {
@@ -77,7 +78,6 @@ export default function CaseNumerPage() {
             information is correct, but do not show them this screen. Click
             {" ‘Continue’"} when this form is complete.
           </p>
-          <p> Required fields are marked with an asterisk (*).</p>
 
           <Label htmlFor="first-name">Social Security Number</Label>
           <TextInput
@@ -96,7 +96,7 @@ export default function CaseNumerPage() {
             value={proofingData.firstName}
             onChange={(e) => inputChangeHandler(e, "firstName")}
           />
-          <Label htmlFor="middle-name">Middle initial (optional) </Label>
+          <Label htmlFor="middle-name">Middle initial (optional)</Label>
           <TextInput
             id="middle-name"
             name="middle-name"
@@ -113,6 +113,17 @@ export default function CaseNumerPage() {
             onChange={(e) => inputChangeHandler(e, "lastName")}
           />
 
+          <Label htmlFor="id-type">ID Type</Label>
+          <Select
+            id="id-type"
+            name="id-type"
+            required
+            value={proofingData.idType}
+            disabled
+          >
+            <IDTypeSelectOptions />
+          </Select>
+
           <Label htmlFor="id-num">ID Number</Label>
           <TextInput
             id="id-num"
@@ -121,19 +132,6 @@ export default function CaseNumerPage() {
             value={proofingData.idNumber}
             onChange={(e) => inputChangeHandler(e, "idNumber")}
           />
-
-          {/* TODO, how do we use this data? Do we need to persist it anywhere? */}
-          <Label htmlFor="id-type">Select ID type</Label>
-          <Select
-            id="id-type"
-            name="id-type"
-            required
-            value={proofingData.idType}
-            onChange={(e) => inputChangeHandler(e, "idType")}
-          >
-            <option value="Drivers License">Drivers License</option>
-            <option value="VHIC">VHIC</option>
-          </Select>
 
           <Label id="birth-date-label" htmlFor="appointment-date">
             Date of Birth
@@ -194,10 +192,6 @@ export default function CaseNumerPage() {
             value={proofingData.zipCode}
             onChange={(e) => inputChangeHandler(e, "zipCode")}
           />
-
-          {/* TODO, is this field always displayed? We don't even have PR has an option in the states and territories. */}
-          <Label htmlFor="urbanization">Urbanization (Puerto Rico only)</Label>
-          <TextInput id="urbanization" name="urbanization" type="text" />
 
           <Link href="/proofing/4a-complete-verification">
             <button
