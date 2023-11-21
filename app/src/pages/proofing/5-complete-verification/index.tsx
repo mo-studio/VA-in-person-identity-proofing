@@ -200,6 +200,11 @@ export default function CaseNumerPage() {
             <button
               type="button"
               className="margin-top-4 margin-bottom-4 usa-button usa-button--full-width"
+              disabled={
+                // Only enable the button if the user inputted the ICN and verified in IAM toolkit
+                proofingData.isIamToolkitVerified === false ||
+                proofingData.icn === ""
+              }
             >
               Continue
             </button>
