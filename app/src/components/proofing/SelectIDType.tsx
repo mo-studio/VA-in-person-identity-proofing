@@ -4,8 +4,6 @@ import { initialProofingData } from "src/data/proofingData";
 import { ChangeEvent, useContext } from "react";
 import { Label, Select } from "@trussworks/react-uswds";
 
-import IDTypeSelectOptions from "./IDTypeSelectOptions";
-
 export default function SelectIDType() {
   const contextValue = useContext(ProofingContext);
   const { proofingData, setProofingData } = contextValue || {
@@ -32,7 +30,8 @@ export default function SelectIDType() {
         value={proofingData.idType}
         onChange={(e) => changeHandler(e)}
       >
-        <IDTypeSelectOptions />
+        <option value="Drivers License">Drivers License</option>
+        <option value="VHIC">VHIC</option>
       </Select>
     </p>
   );

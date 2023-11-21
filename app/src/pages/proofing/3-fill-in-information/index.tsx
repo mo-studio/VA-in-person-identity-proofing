@@ -65,7 +65,6 @@ export default function CaseNumerPage() {
             information is correct, but do not show them this screen. Click
             {" ‘Continue’"} when this form is complete.
           </p>
-          <p> Required fields are marked with an asterisk (*).</p>
 
           <Label htmlFor="first-name">Social Security Number</Label>
           <TextInput
@@ -84,7 +83,7 @@ export default function CaseNumerPage() {
             value={proofingData.firstName}
             onChange={(e) => inputChangeHandler(e, "firstName")}
           />
-          <Label htmlFor="middle-name">Middle initial</Label>
+          <Label htmlFor="middle-name">Middle initial (optional)</Label>
           <TextInput
             id="middle-name"
             name="middle-name"
@@ -101,6 +100,18 @@ export default function CaseNumerPage() {
             onChange={(e) => inputChangeHandler(e, "lastName")}
           />
 
+          <Label htmlFor="id-type">ID Type</Label>
+          <Select
+            id="id-type"
+            name="id-type"
+            required
+            value={proofingData.idType}
+            disabled
+          >
+            <option value="Drivers License">Drivers License</option>
+            <option value="VHIC">VHIC</option>
+          </Select>
+
           <Label htmlFor="id-num">ID Number</Label>
           <TextInput
             id="id-num"
@@ -109,19 +120,6 @@ export default function CaseNumerPage() {
             value={proofingData.idNumber}
             onChange={(e) => inputChangeHandler(e, "idNumber")}
           />
-
-          {/* TODO, how do we use this data? Do we need to persist it anywhere? */}
-          <Label htmlFor="id-type">Select ID type</Label>
-          <Select
-            id="id-type"
-            name="id-type"
-            required
-            value={proofingData.idType}
-            onChange={(e) => inputChangeHandler(e, "idType")}
-          >
-            <option value="Drivers License">Drivers License</option>
-            <option value="VHIC">VHIC</option>
-          </Select>
 
           <Label id="birth-date-label" htmlFor="appointment-date">
             Date of Birth
@@ -144,7 +142,9 @@ export default function CaseNumerPage() {
             value={proofingData.address1}
             onChange={(e) => inputChangeHandler(e, "address1")}
           />
-          <Label htmlFor="mailing-address-2">Street address line 2</Label>
+          <Label htmlFor="mailing-address-2">
+            Street address line 2 (optional)
+          </Label>
           <TextInput
             id="mailing-address-2"
             name="mailing-address-2"
