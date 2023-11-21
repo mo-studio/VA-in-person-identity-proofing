@@ -1,7 +1,6 @@
 import { initialProofingData } from "src/data/proofingData";
 
 import Link from "next/link";
-import router from "next/router";
 import { ChangeEvent, useContext, useState } from "react";
 import {
   DatePicker,
@@ -292,7 +291,4 @@ export default function CaseNumerPage() {
       </div>
     </div>
   );
-}
-function setSelectedOption(selectedValue: any) {
-  throw new Error("Function not implemented.");
 }
