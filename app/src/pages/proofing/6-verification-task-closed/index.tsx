@@ -1,11 +1,4 @@
-import Link from "next/link";
-import { ChangeEvent, useContext } from "react";
-import {
-  Label,
-  StepIndicator,
-  StepIndicatorStep,
-  TextInput,
-} from "@trussworks/react-uswds";
+import { StepIndicator, StepIndicatorStep } from "@trussworks/react-uswds";
 
 export default function CaseNumerPage() {
   return (
