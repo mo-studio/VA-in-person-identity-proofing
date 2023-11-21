@@ -183,7 +183,7 @@ export default function CaseNumerPage() {
               Continue
             </button>
           </Link>
-          <Link href="/proofing/2-confirm-email">
+          <Link href="/proofing/4-fill-in-information">
             <button
               type="button"
               className="usa-button usa-button--outline usa-button--full-width"
