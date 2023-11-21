@@ -15,6 +15,9 @@ import { ProofingContext } from "../../../contexts/ProofingContext";
 
 export default function CaseNumerPage() {
   const [selectedIdType, setSelectedIdType] = useState("");
+  // TODO: Should this be stored in Context isntead of local state?
+  // How does this data get used?
+
   const handleDropdownChange = (e: { target: { value: any } }) => {
     const selectedValue = e.target.value;
     setProofingData({
@@ -114,6 +117,8 @@ export default function CaseNumerPage() {
             value={proofingData.idNumber}
             onChange={(e) => inputChangeHandler(e, "idNumber")}
           />
+
+          {/* TODO, how do we use this data? Do we need to persist it anywhere? */}
           <Label htmlFor="id-type">Select ID type</Label>
           <Select
             id="id-type"
@@ -239,8 +244,11 @@ export default function CaseNumerPage() {
             value={proofingData.zipCode}
             onChange={(e) => inputChangeHandler(e, "zipCode")}
           />
+
+          {/* TODO, is this field always displayed? We don't even have PR has an option in the states and territories. */}
           <Label htmlFor="urbanization">Urbanization (Puerto Rico only)</Label>
           <TextInput id="urbanization" name="urbanization" type="text" />
+
           <div className="wrapper button-wrapper">
             <Link href="/proofing/5-complete-verification">
               <button type="button" className="usa-button">
