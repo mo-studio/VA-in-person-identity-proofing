@@ -28,7 +28,7 @@ export default function CaseNumerPage() {
         </p>
         <p>
           If you have not already done so, have the applicant sign in to VA.gov
-          using their Login.gov account. 
+          using their Login.gov account.
         </p>
         <p>You may close this application window now.</p>
       </div>
