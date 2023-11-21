@@ -56,6 +56,7 @@ const items: AccordionItemProps[] = [
           bordered={true}
           items={validateIdSteps}
           multiselectable={true}
+          className="spaced-accordion"
         />
         <p className="margin-top-3 margin-bottom-2">
           Once an acceptable, unexpired photo ID (and proof of address if using
@@ -94,7 +95,7 @@ export default function ConfirmEmailPage() {
         <h3>
           <b>Case Number: {proofingData.caseNumber}</b>
         </h3>
-        <section className="usa-section">
+        <section>
           <StepIndicator counters="small" headingLevel="h4">
             <StepIndicatorStep label="Confirm email" status="complete" />
             <StepIndicatorStep label="Validate ID" status="current" />

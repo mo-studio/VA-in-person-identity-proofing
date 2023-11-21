@@ -33,3 +33,9 @@ h4.usa-step-indicator__heading {
 .usa-prose .usa-accordion__heading:not(:first-child) {
   margin-top: 2rem;
 }
+
+.spaced-accordion .usa-accordion__heading:not(:first-child),
+.usa-prose .usa-accordion__heading:not(:first-child) {
+  margin-top: 2rem !important;
+  // 😬, open to refactoring this for sure.
+}
