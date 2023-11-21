@@ -37,7 +37,7 @@ export default function CaseNumerPage() {
       lastName: "",
       idNumber: "",
       address1: "",
-      addres2: "",
+      address2: "",
       city: "",
       zipCode: "",
       dateOfBirth: "",
@@ -86,7 +86,7 @@ export default function CaseNumerPage() {
   const address2ChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setProofingData({
       ...proofingData,
-      addres2: e.target.value,
+      address2: e.target.value,
     });
   };
   const cityChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {

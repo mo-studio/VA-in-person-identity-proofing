@@ -11,7 +11,7 @@ interface IProofingData {
   idNumber: string;
   idType: string;
   address1: string;
-  addres2: string;
+  address2: string;
   city: string;
   zipCode: string;
   dateOfBirth: string;
@@ -42,7 +42,7 @@ function ProofingContextProvider({ children }: Props) {
     idNumber: "",
     idType: "",
     address1: "",
-    addres2: "",
+    address2: "",
     city: "",
     zipCode: "",
     dateOfBirth: "",
