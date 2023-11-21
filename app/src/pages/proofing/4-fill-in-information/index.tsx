@@ -248,8 +248,16 @@ export default function CaseNumerPage() {
               </button>
             </Link>
           </div>
-
-          <br></br>
+          <div className="wrapper button-wrapper">
+            <Link href="/proofing/3-validate-id">
+              <button
+                type="button"
+                className="usa-button usa-button--outline usa-button--full-width"
+              >
+                Back
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
