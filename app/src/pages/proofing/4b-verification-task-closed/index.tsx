@@ -1,12 +1,13 @@
+import { ProofingContext } from "src/contexts/ProofingContext";
+import { initialProofingData } from "src/data/proofingData";
+
 import { useContext } from "react";
 import { StepIndicator, StepIndicatorStep } from "@trussworks/react-uswds";
-
-import { ProofingContext } from "../../../contexts/ProofingContext";
 
 export default function CaseNumerPage() {
   const contextValue = useContext(ProofingContext);
   const { proofingData } = contextValue || {
-    proofingData: { idType: "", isDocumentValidated: false, caseNumber: "" },
+    proofingData: initialProofingData,
   };
   return (
     <div className="page">
