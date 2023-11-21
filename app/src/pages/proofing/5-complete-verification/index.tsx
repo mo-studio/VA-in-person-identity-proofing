@@ -1,3 +1,5 @@
+import { initialProofingData } from "src/data/proofingData";
+
 import Link from "next/link";
 import { useContext } from "react";
 import {
@@ -17,7 +19,9 @@ import { ProofingContext } from "../../../contexts/ProofingContext";
 
 export default function CaseNumerPage() {
   const contextValue = useContext(ProofingContext);
-  const { proofingData } = contextValue || {};
+  const { proofingData } = contextValue || {
+    proofingData: initialProofingData,
+  };
 
   const completeVerificationSteps: AccordionItemProps[] = [
     {

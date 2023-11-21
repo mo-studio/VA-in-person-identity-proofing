@@ -1,3 +1,5 @@
+import { initialProofingData } from "src/data/proofingData";
+
 import Link from "next/link";
 import router from "next/router";
 import { ChangeEvent, useContext, useState } from "react";
@@ -27,22 +29,7 @@ export default function CaseNumerPage() {
 
   const contextValue = useContext(ProofingContext);
   const { proofingData, setProofingData } = contextValue || {
-    proofingData: {
-      idType: "",
-      isDocumentValidated: false,
-      caseNumber: "",
-      socialSecurityNumber: "",
-      firstName: "",
-      middleName: "",
-      lastName: "",
-      idNumber: "",
-      address1: "",
-      address2: "",
-      city: "",
-      zipCode: "",
-      dateOfBirth: "",
-      stateName: "",
-    },
+    proofingData: initialProofingData,
     setProofingData: (data) => {
       return data;
     },

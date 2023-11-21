@@ -1,3 +1,5 @@
+import { initialProofingData } from "src/data/proofingData";
+
 import Link from "next/link";
 import { useContext } from "react";
 import {
@@ -84,7 +86,7 @@ const items: AccordionItemProps[] = [
 export default function ConfirmEmailPage() {
   const contextValue = useContext(ProofingContext);
   const { proofingData } = contextValue || {
-    proofingData: { idType: "", isDocumentValidated: false, caseNumber: "" },
+    proofingData: initialProofingData,
   };
   return (
     <div className="page">

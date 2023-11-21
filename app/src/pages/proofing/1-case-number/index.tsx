@@ -1,3 +1,5 @@
+import { initialProofingData } from "src/data/proofingData";
+
 import Link from "next/link";
 import { ChangeEvent, useContext } from "react";
 import {
@@ -12,22 +14,7 @@ import { ProofingContext } from "../../../contexts/ProofingContext";
 export default function CaseNumerPage() {
   const contextValue = useContext(ProofingContext);
   const { proofingData, setProofingData } = contextValue || {
-    proofingData: {
-      idType: "",
-      isDocumentValidated: false,
-      caseNumber: "",
-      socialSecurityNumber: "",
-      firstName: "",
-      middleName: "",
-      lastName: "",
-      idNumber: "",
-      idType: "",
-      address1: "",
-      addres2: "",
-      city: "",
-      zipCode: "",
-      dateOfBirth: "",
-    },
+    proofingData: initialProofingData,
     setProofingData: (data) => {
       return data;
     },

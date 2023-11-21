@@ -1,0 +1,16 @@
+export const initialProofingData = {
+  idType: "",
+  isDocumentValidated: false,
+  caseNumber: "",
+  socialSecurityNumber: "",
+  firstName: "",
+  middleName: "",
+  lastName: "",
+  idNumber: "",
+  address1: "",
+  address2: "",
+  city: "",
+  zipCode: "",
+  dateOfBirth: "",
+  stateName: "",
+};
