@@ -12,6 +12,7 @@ import {
   TextInput,
 } from "@trussworks/react-uswds";
 
+import IDTypeSelectOptions from "src/components/proofing/IDTypeSelectOptions";
 import StateSelectOptions from "src/components/proofing/StateSelectOptions";
 
 export default function CaseNumerPage() {
@@ -108,8 +109,7 @@ export default function CaseNumerPage() {
             value={proofingData.idType}
             disabled
           >
-            <option value="Drivers License">Drivers License</option>
-            <option value="VHIC">VHIC</option>
+            <IDTypeSelectOptions />
           </Select>
 
           <Label htmlFor="id-num">ID Number</Label>
