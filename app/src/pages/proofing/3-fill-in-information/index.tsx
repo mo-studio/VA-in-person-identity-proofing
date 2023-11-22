@@ -24,6 +24,18 @@ export default function CaseNumerPage() {
     },
   };
 
+  const isContinueButtonDisabled =
+    proofingData.socialSecurityNumber === "" ||
+    proofingData.firstName === "" ||
+    proofingData.lastName === "" ||
+    proofingData.dateOfBirth === "" ||
+    proofingData.address1 === "" ||
+    proofingData.city === "" ||
+    proofingData.stateName === "" ||
+    proofingData.zipCode === "" ||
+    proofingData.idType === "" ||
+    proofingData.idNumber === "";
+
   const inputChangeHandler = (
     e: ChangeEvent<HTMLInputElement>,
     fieldName: string
@@ -185,6 +197,7 @@ export default function CaseNumerPage() {
             <button
               type="button"
               className="usa-button usa-button--full-width margin-y-4"
+              disabled={isContinueButtonDisabled}
             >
               Continue
             </button>
