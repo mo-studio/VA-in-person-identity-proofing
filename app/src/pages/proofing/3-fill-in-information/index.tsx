@@ -23,7 +23,7 @@ export default function CaseNumerPage() {
     },
   };
 
-  const disableContinueButton =
+  const isContinueButtonDisabled =
     proofingData.socialSecurityNumber === "" ||
     proofingData.firstName === "" ||
     proofingData.lastName === "" ||
@@ -203,7 +203,7 @@ export default function CaseNumerPage() {
             <button
               type="button"
               className="usa-button usa-button--full-width margin-y-4"
-              disabled={disableContinueButton == true}
+              disabled={isContinueButtonDisabled}
             >
               Continue
             </button>
