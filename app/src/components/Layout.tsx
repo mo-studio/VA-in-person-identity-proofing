@@ -21,7 +21,7 @@ const Layout = ({ children }: Props) => {
         <section className="grid-container usa-section">
           <div className="grid-row flex-justify-center">
             <div className="grid-col-12 tablet:grid-col-8">
-              <div className="bg-white padding-y-3 padding-x-5 border border-base-lighter">
+              <div className="bg-white padding-y-8 padding-x-10 border border-base-lighter">
                 {children}
               </div>
             </div>

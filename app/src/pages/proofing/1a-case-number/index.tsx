@@ -1,40 +1,32 @@
+import { ProofingContext } from "src/contexts/ProofingContext";
+import { initialProofingData } from "src/data/proofingData";
+
 import Link from "next/link";
 import { ChangeEvent, useContext } from "react";
-import {
-  Label,
-  StepIndicator,
-  StepIndicatorStep,
-  TextInput,
-} from "@trussworks/react-uswds";
-
-import { ProofingContext } from "../../../contexts/ProofingContext";
+import { Label, TextInput } from "@trussworks/react-uswds";
 
 export default function CaseNumerPage() {
   const contextValue = useContext(ProofingContext);
   const { proofingData, setProofingData } = contextValue || {
-    proofingData: { idType: "", isDocumentValidated: false, caseNumber: "" },
+    proofingData: initialProofingData,
     setProofingData: (data) => {
       return data;
     },
   };
 
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setProofingData({ ...proofingData, caseNumber: e.target.value });
+    setProofingData({
+      ...proofingData,
+      caseNumber: e.target.value,
+    });
   };
 
   return (
     <div className="page">
       <div className="container">
-        <StepIndicator counters="small" headingLevel="h4">
-          <StepIndicatorStep label="Confirm email" status="current" />
-          <StepIndicatorStep label="Validate ID" />
-          <StepIndicatorStep label="Fill in information" />
-          <StepIndicatorStep label="Complete verification" />
-        </StepIndicator>
+        <h1 className="padding-x-0">Enter Case Number</h1>
 
-        <h1>Enter Case Number</h1>
-
-        <div className="text">
+        <div>
           <p>
             Ask for the 8-digit case number that the applicant received in their
             email when they registered for In-Person Identity Proofing. This
@@ -54,18 +46,15 @@ export default function CaseNumerPage() {
             type="text"
             onChange={(e) => changeHandler(e)}
           />
-          <div className="wrapper button-wrapper">
-            <Link href="/proofing/2-confirm-email">
-              <button
-                type="button"
-                className="usa-button"
-                disabled={proofingData.caseNumber === ""}
-              >
-                Continue
-              </button>
-            </Link>
-          </div>
-          <br></br>
+          <Link href="/proofing/1b-confirm-email">
+            <button
+              type="button"
+              className="usa-button usa-button--full-width margin-top-4"
+              disabled={proofingData.caseNumber === ""}
+            >
+              Continue
+            </button>
+          </Link>
         </div>
       </div>
     </div>

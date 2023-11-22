@@ -28,3 +28,14 @@ h4.usa-step-indicator__heading {
 .usa-card__container .usa-radio {
   border-radius: 0.5rem;
 }
+
+.proofing .usa-accordion__heading:not(:first-child),
+.usa-prose .usa-accordion__heading:not(:first-child) {
+  margin-top: 2rem;
+}
+
+.spaced-accordion .usa-accordion__heading:not(:first-child),
+.usa-prose .usa-accordion__heading:not(:first-child) {
+  margin-top: 2rem !important;
+  // 😬, open to refactoring this for sure.
+}
