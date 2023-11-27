@@ -1,3 +1,5 @@
+import { IntakeContext } from "src/contexts/IntakeContext";
+
 import Link from "next/link";
 import { useContext } from "react";
 import {
@@ -6,9 +8,8 @@ import {
   StepIndicatorStep,
 } from "@trussworks/react-uswds";
 
-import LocationOptions from "../../../components/intake/LocationOptions";
-import ProofingMap from "../../../components/intake/ProofingMap";
-import { IntakeContext } from "../../../contexts/IntakeContext";
+import LocationOptions from "src/components/intake/LocationOptions";
+import ProofingMap from "src/components/intake/ProofingMap";
 
 export default function LocationSelectorScreen() {
   const { location, setLocation } = useContext(IntakeContext);

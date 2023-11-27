@@ -1,8 +1,8 @@
+import { IntakeContext } from "src/contexts/IntakeContext";
+
 import Link from "next/link";
 import React, { useContext } from "react";
 import { StepIndicator, StepIndicatorStep } from "@trussworks/react-uswds";
-
-import { IntakeContext } from "../../../contexts/IntakeContext";
 
 export default function LocationConfirmationScreen() {
   const { location } = useContext(IntakeContext);
