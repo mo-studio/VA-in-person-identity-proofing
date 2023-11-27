@@ -28,8 +28,8 @@ export default function LocationSelectorScreen() {
         <StepIndicatorStep label="Confirm site" />
         <StepIndicatorStep label="Verify in-person" />
       </StepIndicator>
-      <h1>Choose a nearby site</h1>
-      <div className="text">
+      <h1 className="padding-x-0">Choose a nearby site</h1>
+      <div>
         <p>
           At this time In-person Identity Verification is available by walk-in
           appointment only. Enter your postal code below to find participating

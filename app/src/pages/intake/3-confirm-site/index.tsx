@@ -20,8 +20,8 @@ export default function LocationConfirmationScreen() {
             <StepIndicatorStep label="Confirm site" status="current" />
             <StepIndicatorStep label="Verify in-person" />
           </StepIndicator>
-          <h1>Confirm your selection</h1>
-          <div className="text">
+          <h1 className="padding-x-0">Confirm your selection</h1>
+          <div>
             <p>You have chosen to verify at the following location:</p>
             <p>
               {name}

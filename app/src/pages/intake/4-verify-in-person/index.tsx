@@ -19,8 +19,8 @@ export default function CaseNumberScreen() {
             <StepIndicatorStep label="Confirm site" status="complete" />
             <StepIndicatorStep label="Verify in-person" status="current" />
           </StepIndicator>
-          <h1>Verify in Person</h1>
-          <div className="text">
+          <h1 className="padding-x-0">Verify in Person</h1>
+          <div>
             <p>
               <b>Your case number is: C8302023</b>
             </p>

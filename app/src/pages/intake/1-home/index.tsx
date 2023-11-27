@@ -97,8 +97,8 @@ export default function Intake() {
           <StepIndicatorStep label="Confirm site" />
           <StepIndicatorStep label="Verify in-person" />
         </StepIndicator>
-        <h1>In-person Identity Verification</h1>
-        <div className="text">
+        <h1 className="padding-x-0">In-person Identity Verification</h1>
+        <div>
           <p>
             In-Person Identity Proofing is the process to verify your identity.
             You can verify your identity in person at a participating VA Medical
