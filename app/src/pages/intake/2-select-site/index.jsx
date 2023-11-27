@@ -48,7 +48,7 @@ export default function LocationSelectorScreen() {
         <LocationOptions location={location} setLocation={setLocation} />
 
         <div className="wrapper button-wrapper">
-          <Link href="/intake/confirm-site">
+          <Link href="/intake/3-confirm-site">
             <button
               disabled={!location.id}
               type="button"
@@ -59,7 +59,7 @@ export default function LocationSelectorScreen() {
           </Link>
         </div>
         <div className="wrapper button-wrapper">
-          <Link href="/intake">
+          <Link href="/intake/1-home">
             <button type="button" className="usa-button usa-button--outline">
               Back
             </button>
