@@ -90,7 +90,7 @@ export default function ConfirmEmailPage() {
     proofingData: initialProofingData,
   };
   return (
-    <div className="proofing page">
+    <div className="spaced-accordion page">
       <div className="container">
         <h3>
           <b>Case Number: {proofingData.caseNumber}</b>
