@@ -6,9 +6,10 @@ import { IntakeContext } from "../../../contexts/IntakeContext";
 
 export default function LocationConfirmationScreen() {
   const { location } = useContext(IntakeContext);
+
   const { name } = location.attributes;
   const { physical } = location.attributes.address || {};
-  const { address1, city, state, zip } = physical && physical;
+  const { address1 = "", city = "", state = "", zip = "" } = physical || {};
 
   return (
     <div className="page">
