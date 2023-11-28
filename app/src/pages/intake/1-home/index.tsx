@@ -13,23 +13,16 @@ const items = [
         <p>At this time, the following forms of identification are accepted:</p>
         <ul>
           <li>
-            <b>Driver’s license</b> from any of the 50 states, the District of
-            Columbia (DC), or other US territories (Guam, US Virgin Islands,
-            American Samoa, Mariana Islands and Puerto Rico)
+            <b>State-issued driver’s license or identification cards</b> from
+            any of the 50 states, the District of Columbia (DC), or other US
+            territories (Guam, US Virgin Islands, American Samoa, Mariana
+            Islands and Puerto Rico)
           </li>
           <li>
-            <b>Non-driver’s license resident ID card </b> from any of the 50
-            states, the District of Columbia (DC), or other US territories
-            (Guam, US Virgin Islands, American Samoa, Mariana Islands and Puerto
-            Rico).
-          </li>
-          <li>
-            <b>Veteran Health Identification Card</b>
-          </li>
-          <p>
+            <b>Veteran Health Identification Card</b> <br />
             Please note that any form of ID you present must be authentic and
             non-expired.
-          </p>
+          </li>
         </ul>
       </>
     ),
@@ -87,7 +80,7 @@ const items = [
 ];
 export default function Intake() {
   return (
-    <div className="spaced-accordion page">
+    <div className="page">
       <div className="container">
         <StepIndicator counters="small" headingLevel="h4">
           <StepIndicatorStep label="Home" status="current" />

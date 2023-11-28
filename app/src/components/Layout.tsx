@@ -15,7 +15,7 @@ const Layout = ({ children }: Props) => {
 
   return (
     // Stick the footer to the bottom of the page
-    <div className="flex-wrapper bg-primary-lighter">
+    <div className="flex-wrapper bg-primary-lighter ipp">
       <Header />
       <div className="">
         <section className="grid-container usa-section">
