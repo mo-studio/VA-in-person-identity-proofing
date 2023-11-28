@@ -1,6 +1,5 @@
-import type { GetServerSideProps, NextPage } from "next";
+import type { NextPage } from "next";
 
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import Link from "next/link";
 import { Grid, GridContainer } from "@trussworks/react-uswds";
@@ -12,10 +11,6 @@ const svgStyle = {
   width: 50,
   height: 50,
   fill: "white",
-  // stroke: "grey",
-  // strokeWidth: ".25px",
-  // backgroundColor: "rgb(0 113 188)",
-  // borderRadius: "50%",
 };
 
 const Home: NextPage = () => {
@@ -66,12 +61,6 @@ const Home: NextPage = () => {
       </main>
     </>
   );
-};
-
-// Change this to getStaticProps if you're not using server-side rendering
-export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
-  const translations = await serverSideTranslations(locale ?? "en-US");
-  return { props: { ...translations } };
 };
 
 export default Home;
