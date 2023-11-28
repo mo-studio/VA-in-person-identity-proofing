@@ -39,7 +39,7 @@ const Home: NextPage = () => {
                     <SvgEvent viewBox="0 0 25 25" style={svgStyle} />
                   </Grid>
                   <Grid row>
-                    <h3>Intake application</h3>
+                    <h2>Intake application</h2>
                   </Grid>
                 </button>
               </Link>
@@ -51,7 +51,7 @@ const Home: NextPage = () => {
                     <SvgAccountBox viewBox="0 0 25 25" style={svgStyle} />
                   </Grid>
                   <Grid row>
-                    <h3>Proofing agent</h3>
+                    <h2>Proofing agent</h2>
                   </Grid>
                 </button>
               </Link>
