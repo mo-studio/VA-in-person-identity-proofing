@@ -7,7 +7,7 @@ import {
 
 const items = [
   {
-    title: "Your VHIC or state-issued ID",
+    title: "State-Issued ID or VHIC",
     content: (
       <>
         <p>At this time, the following forms of identification are accepted:</p>
@@ -31,7 +31,7 @@ const items = [
     headingLevel: "h4",
   },
   {
-    title: "Proof of address",
+    title: "Proof of Address",
     content: (
       <>
         <p>
@@ -60,16 +60,19 @@ const items = [
     headingLevel: "h4",
   },
   {
-    title: "Confirmation case number",
+    title: "Confirmation Case Number",
     content: (
       <>
         <p>
-          Once you complete the steps on Login.gov, we’ll generate a
-          confirmation case number that will be valid for 10 days. You can write
-          this number down, print the email, or show the email from your mobile
-          device. If you go to a VA Medical Center after the deadline, your
-          information will not be saved and you will need to restart the
-          process.
+          Once you complete the steps here to register for In-Person Identity
+          proofing, a confirmation case number will be created and emailed to
+          you. This case number will be valid for 10 days. You will need to
+          share it when you come in-person to verify your identity at a VA
+          Medical Center. You can write your case number down, print the email,
+          or show it from your mobile device. If you go to a VA Medical Center
+          after the 10 days have passed, the case number will no longer be valid
+          and you will need to sign in to your Login.gov account and repeat the
+          process to register for In-Person Identity Proofing again.
         </p>
       </>
     ),
@@ -115,7 +118,7 @@ export default function Intake() {
           </div>
           <Link href="test"> Already have a case number? Click here </Link>
           <p className="margin-top-4">
-            If you decide not to verify your identity in-person, you may close
+            If you decide not to verify your identity in person, you may close
             this window at any time.
           </p>
           <br />
