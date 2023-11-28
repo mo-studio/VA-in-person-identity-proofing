@@ -1,6 +1,3 @@
-// import { useTranslation } from "next-i18next";
-// import { Grid, GridContainer } from "@trussworks/react-uswds";
-
 import Footer from "./Footer";
 import Header from "./Header";
 
@@ -9,10 +6,6 @@ type Props = {
 };
 
 const Layout = ({ children }: Props) => {
-  // const { t } = useTranslation("common", {
-  //   keyPrefix: "Layout",
-  // });
-
   return (
     // Stick the footer to the bottom of the page
     <div className="flex-wrapper bg-primary-lighter">
