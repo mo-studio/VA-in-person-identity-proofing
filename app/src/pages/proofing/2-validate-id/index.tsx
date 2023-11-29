@@ -3,13 +3,13 @@ import { initialProofingData } from "src/data/proofingData";
 
 import Link from "next/link";
 import { useContext } from "react";
-import {
-  Accordion,
-  StepIndicator,
-  StepIndicatorStep,
-} from "@trussworks/react-uswds";
+import { Accordion } from "@trussworks/react-uswds";
 import { AccordionItemProps } from "@trussworks/react-uswds/lib/components/Accordion/Accordion";
 
+import StepIndicator from "src/components/LoginDesignSystem/step-indicator/step-indicator";
+import StepIndicatorStep, {
+  StepStatus,
+} from "src/components/LoginDesignSystem/step-indicator/step-indicator-step";
 import SelectIDType from "src/components/proofing/SelectIDType";
 import ValidateDocument from "src/components/proofing/ValidateDocument";
 
@@ -89,6 +89,7 @@ export default function ConfirmEmailPage() {
   const { proofingData } = contextValue || {
     proofingData: initialProofingData,
   };
+
   return (
     <div className="spaced-accordion page">
       <div className="container">
@@ -96,11 +97,23 @@ export default function ConfirmEmailPage() {
           <b>Case Number: {proofingData.caseNumber}</b>
         </h3>
         <section>
-          <StepIndicator counters="small" headingLevel="h4">
-            <StepIndicatorStep label="Confirm email" status="complete" />
-            <StepIndicatorStep label="Validate ID" status="current" />
-            <StepIndicatorStep label="Fill in information" />
-            <StepIndicatorStep label="Complete verification" />
+          <StepIndicator>
+            <StepIndicatorStep
+              title="Confirm email"
+              status={StepStatus.COMPLETE}
+            />
+            <StepIndicatorStep
+              title="Validate ID"
+              status={StepStatus.CURRENT}
+            />
+            <StepIndicatorStep
+              title="Fill in information"
+              status={StepStatus.INCOMPLETE}
+            />
+            <StepIndicatorStep
+              title="Complete verification"
+              status={StepStatus.INCOMPLETE}
+            />
           </StepIndicator>
           <h1 className="margin-bottom-4 padding-left-0">Validate ID</h1>
 

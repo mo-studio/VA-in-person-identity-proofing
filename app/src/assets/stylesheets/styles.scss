@@ -10,6 +10,8 @@
 // 3. Load your project's custom Sass
 // @forward "project-custom.scss";
 
+@forward "components/_step-indicator";
+
 .flex-wrapper {
   display: flex;
   min-height: 100vh;
