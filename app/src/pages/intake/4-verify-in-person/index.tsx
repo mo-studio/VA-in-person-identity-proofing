@@ -19,7 +19,7 @@ export default function CaseNumberScreen() {
             <StepIndicatorStep label="Confirm site" status="complete" />
             <StepIndicatorStep label="Verify in-person" status="current" />
           </StepIndicator>
-          <h1>Verify in Person</h1>
+          <h1>Verify In Person</h1>
           <div className="text">
             <p>
               <b>Your case number is: C8302023</b>
@@ -39,7 +39,7 @@ export default function CaseNumberScreen() {
                 (VHIC)
               </li>
               <li>
-                A proof of your current address if you plan on presenting your
+                Proof of your current address if you plan on presenting your
                 VHIC
               </li>
             </ol>

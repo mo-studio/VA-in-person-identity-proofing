@@ -16,6 +16,10 @@ export default function LocationSelectorScreen() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLocation({
+      ...location,
+      isSiteSelected: true,
+    });
     // This is where we'd hit the API to get the locations.
     // For now, this is just a mock.
   };
@@ -46,7 +50,9 @@ export default function LocationSelectorScreen() {
 
         <ProofingMap location={location} />
 
-        <LocationOptions location={location} setLocation={setLocation} />
+        {location.isSiteSelected === true && (
+          <LocationOptions location={location} setLocation={setLocation} />
+        )}
 
         <div className="wrapper button-wrapper">
           <Link href="/intake/3-confirm-site">

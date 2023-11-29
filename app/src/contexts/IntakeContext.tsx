@@ -5,6 +5,7 @@ interface ILocation {
     lat: number;
     long: number;
   };
+  isSiteSelected: boolean;
 }
 
 interface IntakeContextType {
@@ -21,6 +22,7 @@ const IntakeContext = createContext<IntakeContextType | null>(null);
 function IntakeContextProvider({ children }: Props) {
   const [location, setLocation] = useState<ILocation>({
     attributes: { lat: 39.2904, long: -76.6122 },
+    isSiteSelected: false,
   });
 
   return (

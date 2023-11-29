@@ -7,7 +7,8 @@ export default function LocationOptions() {
   const { location, setLocation } = useContext(IntakeContext);
 
   const changeHandler = (newLocation) => {
-    setLocation(newLocation);
+    const test = { isSiteSelected: true };
+    setLocation({ ...newLocation, ...test });
   };
   const mockLocations = {
     data: [

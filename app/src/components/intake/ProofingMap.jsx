@@ -1,4 +1,4 @@
-import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
+import { GoogleMap, MarkerF, useLoadScript } from "@react-google-maps/api";
 
 import React, { useState } from "react";
 
@@ -26,7 +26,7 @@ export default function ProofingMap({ location }) {
 function Map({ center, isLocationSelected }) {
   return (
     <GoogleMap zoom={13} center={center} mapContainerClassName="map-container">
-      {isLocationSelected && <Marker position={center} />}
+      {isLocationSelected && <MarkerF position={center} />}
     </GoogleMap>
   );
 }
