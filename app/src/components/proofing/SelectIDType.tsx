@@ -1,20 +1,22 @@
+import { ProofingContext } from "src/contexts/ProofingContext";
+import { initialProofingData } from "src/data/proofingData";
+
 import { ChangeEvent, useContext } from "react";
 import { Label, Select } from "@trussworks/react-uswds";
 
-import { ProofingContext } from "../../contexts/ProofingContext";
+import IDTypeSelectOptions from "./IDTypeSelectOptions";
 
 export default function SelectIDType() {
   const contextValue = useContext(ProofingContext);
   const { proofingData, setProofingData } = contextValue || {
-    proofingData: { idType: "", isDocumentValidated: false, caseNumber: "" },
+    proofingData: initialProofingData,
     setProofingData: (data) => {
       return data;
     },
   };
 
   const changeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-    const newState = { ...proofingData, idType: e.target.value };
-    setProofingData(newState);
+    setProofingData({ ...proofingData, idType: e.target.value });
   };
 
   return (
@@ -30,19 +32,7 @@ export default function SelectIDType() {
         value={proofingData.idType}
         onChange={(e) => changeHandler(e)}
       >
-        <option>- Select - </option>
-        <option value="Lousiana Driver's License">
-          Lousiana {"Driver's"} License
-        </option>
-        <option value="Maine Driver's License">
-          Maine {"Driver's"} License
-        </option>
-        <option value="Maryland Driver's License">
-          Maryland {"Driver's"} License
-        </option>
-        <option value="Massachusetts Driver's License">
-          Massachusetts {"Driver's"} License
-        </option>
+        <IDTypeSelectOptions />
       </Select>
     </p>
   );

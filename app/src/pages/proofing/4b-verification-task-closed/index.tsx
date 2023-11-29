@@ -1,12 +1,13 @@
+import { ProofingContext } from "src/contexts/ProofingContext";
+import { initialProofingData } from "src/data/proofingData";
+
 import { useContext } from "react";
 import { StepIndicator, StepIndicatorStep } from "@trussworks/react-uswds";
-
-import { ProofingContext } from "../../../contexts/ProofingContext";
 
 export default function CaseNumerPage() {
   const contextValue = useContext(ProofingContext);
   const { proofingData } = contextValue || {
-    proofingData: { idType: "", isDocumentValidated: false, caseNumber: "" },
+    proofingData: initialProofingData,
   };
   return (
     <div className="page">
@@ -28,7 +29,7 @@ export default function CaseNumerPage() {
         </p>
         <p>
           If you have not already done so, have the applicant sign in to VA.gov
-          using their Login.gov account. 
+          using their Login.gov account.
         </p>
         <p>You may close this application window now.</p>
       </div>

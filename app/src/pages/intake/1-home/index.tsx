@@ -7,31 +7,22 @@ import {
 
 const items = [
   {
-    title: "Your VHIC or state-issued ID",
+    title: "State-Issued ID or VHIC",
     content: (
       <>
-        <p className="margin-top-2 margin-bottom-3">
-          At this time, the following forms of identification are accepted:
-        </p>
+        <p>At this time, the following forms of identification are accepted:</p>
         <ul>
           <li>
-            <b>Driver’s license</b> from any of the 50 states, the District of
-            Columbia (DC), or other US territories (Guam, US Virgin Islands,
-            American Samoa, Mariana Islands and Puerto Rico)
+            <b>State-issued driver’s license or identification cards</b> from
+            any of the 50 states, the District of Columbia (DC), or other US
+            territories (Guam, US Virgin Islands, American Samoa, Mariana
+            Islands and Puerto Rico)
           </li>
           <li>
-            <b>Non-driver’s license resident ID card </b> from any of the 50
-            states, the District of Columbia (DC), or other US territories
-            (Guam, US Virgin Islands, American Samoa, Mariana Islands and Puerto
-            Rico).
-          </li>
-          <li>
-            <b>Veteran Health Identification Card</b>
-          </li>
-          <p>
+            <b>Veteran Health Identification Card</b> <br />
             Please note that any form of ID you present must be authentic and
             non-expired.
-          </p>
+          </li>
         </ul>
       </>
     ),
@@ -40,10 +31,10 @@ const items = [
     headingLevel: "h4",
   },
   {
-    title: "Proof of address",
+    title: "Proof of Address",
     content: (
       <>
-        <p className="margin-top-2 margin-bottom-2">
+        <p>
           If you present a VHIC, you must also provide additional documentation
           of proof of address in the form of a utility bill or bank statement.
         </p>
@@ -57,7 +48,7 @@ const items = [
     title: "Social Security Number",
     content: (
       <>
-        <p className="margin-top-2 margin-bottom-4">
+        <p>
           You will need to provide VA staff with your Social Security Number so
           that they may verify your identity. You do not need to bring your
           physical Social Security card.
@@ -69,16 +60,19 @@ const items = [
     headingLevel: "h4",
   },
   {
-    title: "Confirmation case number",
+    title: "Confirmation Case Number",
     content: (
       <>
-        <p className="margin-top-2 margin-bottom-4">
-          Once you complete the steps on Login.gov, we’ll generate a
-          confirmation case number that will be valid for 10 days. You can write
-          this number down, print the email, or show the email from your mobile
-          device. If you go to a VA Medical Center after the deadline, your
-          information will not be saved and you will need to restart the
-          process.{" "}
+        <p>
+          Once you complete the steps here to register for In-Person Identity
+          proofing, a confirmation case number will be created and emailed to
+          you. This case number will be valid for 10 days. You will need to
+          share it when you come in-person to verify your identity at a VA
+          Medical Center. You can write your case number down, print the email,
+          or show it from your mobile device. If you go to a VA Medical Center
+          after the 10 days have passed, the case number will no longer be valid
+          and you will need to sign in to your Login.gov account and repeat the
+          process to register for In-Person Identity Proofing again.
         </p>
       </>
     ),
@@ -97,9 +91,9 @@ export default function Intake() {
           <StepIndicatorStep label="Confirm site" />
           <StepIndicatorStep label="Verify in-person" />
         </StepIndicator>
-        <h1>In-person Identity Verification</h1>
-        <div className="text">
-          <p>
+        <h1 className="padding-x-0">In-person Identity Verification</h1>
+        <div>
+          <p className="margin-top-4">
             In-Person Identity Proofing is the process to verify your identity.
             You can verify your identity in person at a participating VA Medical
             Center.
@@ -109,19 +103,22 @@ export default function Intake() {
           <Accordion
             bordered={false}
             items={items}
+            multiselectable={true}
             className="margin-bottom-4"
           />
-          <div className="wrapper button-wrapper">
-            <Link href="/intake/select-site">
-              <button type="button" className="usa-button">
+          <div className="margin-y-4">
+            <Link href="/intake/2-select-site">
+              <button
+                type="button"
+                className="usa-button usa-button--full-width"
+              >
                 Continue
               </button>
             </Link>
           </div>
-          <br></br>
           <Link href="test"> Already have a case number? Click here </Link>
-          <p>
-            If you decide not to verify your identity in-person, you may close
+          <p className="margin-top-4">
+            If you decide not to verify your identity in person, you may close
             this window at any time.
           </p>
           <br />

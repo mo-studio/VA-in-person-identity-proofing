@@ -12,10 +12,6 @@ const svgStyle = {
   width: 50,
   height: 50,
   fill: "white",
-  // stroke: "grey",
-  // strokeWidth: ".25px",
-  // backgroundColor: "rgb(0 113 188)",
-  // borderRadius: "50%",
 };
 
 const Home: NextPage = () => {
@@ -38,7 +34,7 @@ const Home: NextPage = () => {
 
           <Grid row>
             <Grid tablet={{ col: true }}>
-              <Link href="/intake">
+              <Link href="/intake/1-home">
                 <button type="button" className="usa-button">
                   <Grid row className="flex-justify-center">
                     <SvgEvent viewBox="0 0 25 25" style={svgStyle} />
@@ -50,7 +46,7 @@ const Home: NextPage = () => {
               </Link>
             </Grid>
             <Grid tablet={{ col: true }}>
-              <Link href="/proofing/1-case-number">
+              <Link href="/proofing/1a-case-number">
                 <button type="button" className="usa-button">
                   <Grid row className="flex-justify-center">
                     <SvgAccountBox viewBox="0 0 25 25" style={svgStyle} />

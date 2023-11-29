@@ -1,5 +1,8 @@
+import { ProofingContext } from "src/contexts/ProofingContext";
+import { initialProofingData } from "src/data/proofingData";
+
 import Link from "next/link";
-import { useContext } from "react";
+import { ChangeEvent, useContext } from "react";
 import {
   Accordion,
   Checkbox,
@@ -13,26 +16,35 @@ import {
 } from "@trussworks/react-uswds";
 import { AccordionItemProps } from "@trussworks/react-uswds/lib/components/Accordion/Accordion";
 
-import { ProofingContext } from "../../../contexts/ProofingContext";
-
 export default function CaseNumerPage() {
   const contextValue = useContext(ProofingContext);
-  const { proofingData } = contextValue || {
-    proofingData: { idType: "", isDocumentValidated: false, caseNumber: "" },
+  const { proofingData, setProofingData } = contextValue || {
+    proofingData: initialProofingData,
+    setProofingData: (data) => {
+      return data;
+    },
   };
 
-  // TODO: Replace hardcoded data with context from previous pages
-  const tempFirstName = "Isabel";
-  const tempMiddleInitial = "D.";
-  const tempLastName = "Parsons";
-  const tempSSN = "123-45-6789";
-  const tempDOB = "12/03/1954";
-  const tempAddress1 = "231 Briarwood Road";
-  const tempAddress2 = "";
-  const tempCity = "Baltimore";
-  const tempState = "Maryland";
-  const tempZip = "21222";
-  // end TODO
+  const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    setProofingData({
+      ...proofingData,
+      icn: e.target.value,
+    });
+  };
+
+  const checkboxChangeHandler = () => {
+    setProofingData({
+      ...proofingData,
+      isIamToolkitVerified: !proofingData.isIamToolkitVerified,
+    });
+  };
+
+  const formattedAddress = `${proofingData.address1}${
+    proofingData.address2 ? "," : ""
+  } ${proofingData.address2}, ${proofingData.city}, ${proofingData.stateName} ${
+    proofingData.zipCode
+  }`;
+  const formattedName = `${proofingData.firstName} ${proofingData.middleName} ${proofingData.lastName}`;
 
   const completeVerificationSteps: AccordionItemProps[] = [
     {
@@ -90,10 +102,12 @@ export default function CaseNumerPage() {
           <TextInput
             id="icn-input"
             name="icn-input"
+            className="margin-bottom-4"
             type="text"
             width="100%"
+            value={proofingData.icn}
             // TODO: What do we do with this ICN? Is it sensative? Do we send it to the DB?
-            onChange={(e) => console.log(e.target.value)}
+            onChange={(e) => changeHandler(e)}
           />
 
           {/* insert Verified IAM checkbox here */}
@@ -102,9 +116,9 @@ export default function CaseNumerPage() {
             name="validated-iam-checkbox"
             label="Verified in IAM toolkit"
             tile
-            checked={proofingData.isDocumentValidated}
+            checked={proofingData.isIamToolkitVerified}
             // TODO: What do we do with this boolean? Local context? Do we send it to the DB?
-            onChange={(e) => console.log(e.target.value)}
+            onChange={() => checkboxChangeHandler()}
           />
         </div>
       ),
@@ -129,10 +143,7 @@ export default function CaseNumerPage() {
             letter through the mail sent to the following address:
           </p>
           <p>
-            <b>
-              {tempAddress1} {tempAddress2 ? tempAddress2 : ""}, {tempCity},{" "}
-              {tempState} {tempZip}
-            </b>
+            <b>{formattedAddress}</b>
           </p>
           <p>
             Please ask the applicant to sign into VA.gov with their Login.gov
@@ -149,7 +160,7 @@ export default function CaseNumerPage() {
   ];
 
   return (
-    <div className="proofing page">
+    <div className="spaced-accordion page">
       <div className="container">
         <h3>
           <b>Case Number: {proofingData.caseNumber}</b>
@@ -168,14 +179,13 @@ export default function CaseNumerPage() {
             Applicant Summary
           </SummaryBoxHeading>
           <SummaryBoxContent>
-            Name: {tempFirstName} {tempMiddleInitial} {tempLastName}
+            Name: {formattedName}
             <br />
-            Social Security Number: {tempSSN}
+            Social Security Number: {proofingData.socialSecurityNumber}
             <br />
-            DOB: {tempDOB}
+            DOB: {proofingData.dateOfBirth}
             <br />
-            Address: {tempAddress1}
-            {tempAddress2}, {tempCity}, {tempState} {tempZip}
+            Address: {formattedAddress}
           </SummaryBoxContent>
         </SummaryBox>
 
@@ -187,15 +197,20 @@ export default function CaseNumerPage() {
         <Accordion items={completeVerificationSteps} />
 
         <div>
-          <Link href="/proofing/6-verification-task-closed">
+          <Link href="/proofing/4b-verification-task-closed">
             <button
               type="button"
               className="margin-top-4 margin-bottom-4 usa-button usa-button--full-width"
+              disabled={
+                // Only enable the button if the user inputted the ICN and verified in IAM toolkit
+                proofingData.isIamToolkitVerified === false ||
+                proofingData.icn === ""
+              }
             >
               Continue
             </button>
           </Link>
-          <Link href="/proofing/2-confirm-email">
+          <Link href="/proofing/3-fill-in-information">
             <button
               type="button"
               className="usa-button usa-button--outline usa-button--full-width"
