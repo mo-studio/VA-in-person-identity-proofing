@@ -4,8 +4,9 @@ import {
   StepIndicator,
   StepIndicatorStep,
 } from "@trussworks/react-uswds";
+import { AccordionItemProps } from "@trussworks/react-uswds/lib/components/Accordion/Accordion";
 
-const items = [
+const items: AccordionItemProps[] = [
   {
     title: "Your VHIC or state-issued ID",
     content: (

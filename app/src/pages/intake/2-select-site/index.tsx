@@ -18,8 +18,6 @@ export default function LocationSelectorScreen() {
   };
   const { location } = intakeData;
 
-  console.log(intakeData);
-
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // This is where we'd hit the API to get the locations.
@@ -45,7 +43,7 @@ export default function LocationSelectorScreen() {
         <Search
           className="usa-search__fullwidth"
           size="big"
-          value="21201"
+          // value="21201"
           placeholder="21201"
           onSubmit={(e) => handleSubmit(e)}
         />
