@@ -34,7 +34,7 @@ const Home: NextPage = () => {
 
           <Grid row>
             <Grid tablet={{ col: true }}>
-              <Link href="/intake">
+              <Link href="/intake/1-home">
                 <button type="button" className="usa-button">
                   <Grid row className="flex-justify-center">
                     <SvgEvent viewBox="0 0 25 25" style={svgStyle} />
