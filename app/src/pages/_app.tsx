@@ -1,13 +1,14 @@
+import { IntakeContextProvider } from "src/contexts/IntakeContext";
+import { ProofingContextProvider } from "src/contexts/ProofingContext";
+
 import type { AppProps } from "next/app";
 import Head from "next/head";
 
-import Layout from "../components/Layout";
-import { IntakeContextProvider } from "../contexts/IntakeContext";
-import { ProofingContextProvider } from "../contexts/ProofingContext";
+import Layout from "src/components/Layout";
 
-import "../assets/stylesheets/styles.scss";
-import "../assets/stylesheets/intake.scss";
-import "../styles/styles.scss";
+import "src/assets/stylesheets/styles.scss";
+import "src/assets/stylesheets/intake.scss";
+import "src/styles/styles.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

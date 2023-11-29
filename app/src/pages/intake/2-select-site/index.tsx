@@ -1,3 +1,5 @@
+import { IntakeContext } from "src/contexts/IntakeContext";
+
 import Link from "next/link";
 import { useContext } from "react";
 import {
@@ -6,9 +8,8 @@ import {
   StepIndicatorStep,
 } from "@trussworks/react-uswds";
 
-import LocationOptions from "../../../components/intake/LocationOptions";
-import ProofingMap from "../../../components/intake/ProofingMap";
-import { IntakeContext } from "../../../contexts/IntakeContext";
+import LocationOptions from "src/components/intake/LocationOptions";
+import ProofingMap from "src/components/intake/ProofingMap";
 
 export default function LocationSelectorScreen() {
   const { location, setLocation } = useContext(IntakeContext);
@@ -48,7 +49,7 @@ export default function LocationSelectorScreen() {
         <LocationOptions location={location} setLocation={setLocation} />
 
         <div className="wrapper button-wrapper">
-          <Link href="/intake/confirm-site">
+          <Link href="/intake/3-confirm-site">
             <button
               disabled={!location.id}
               type="button"
@@ -59,7 +60,7 @@ export default function LocationSelectorScreen() {
           </Link>
         </div>
         <div className="wrapper button-wrapper">
-          <Link href="/intake">
+          <Link href="/intake/1-home">
             <button type="button" className="usa-button usa-button--outline">
               Back
             </button>

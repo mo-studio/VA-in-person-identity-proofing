@@ -1,8 +1,8 @@
+import { IntakeContext } from "src/contexts/IntakeContext";
+
 import Link from "next/link";
 import React, { useContext } from "react";
 import { StepIndicator, StepIndicatorStep } from "@trussworks/react-uswds";
-
-import { IntakeContext } from "../../../contexts/IntakeContext";
 
 export default function LocationConfirmationScreen() {
   const { location } = useContext(IntakeContext);
@@ -37,14 +37,14 @@ export default function LocationConfirmationScreen() {
               {'"Back"'} button.
             </p>
             <div className="wrapper button-wrapper">
-              <Link href="/intake/verify-in-person">
+              <Link href="/intake/4-verify-in-person">
                 <button type="button" className="usa-button">
                   Continue
                 </button>
               </Link>
             </div>
             <div className="wrapper button-wrapper">
-              <Link href="/intake/select-site">
+              <Link href="/intake/2-select-site">
                 <button
                   type="button"
                   className="usa-button usa-button--outline"
