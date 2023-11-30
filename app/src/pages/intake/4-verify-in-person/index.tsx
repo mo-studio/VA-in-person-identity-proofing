@@ -22,12 +22,12 @@ export default function CaseNumberScreen() {
             <StepIndicatorStep label="Confirm site" status="complete" />
             <StepIndicatorStep label="Verify in-person" status="current" />
           </StepIndicator>
-          <h1>Verify in Person</h1>
-          <div className="text">
+          <h1 className="padding-x-0">Verify in Person</h1>
+          <div>
             <p>
               <b>Your case number is: C8302023</b>
             </p>
-            <p>
+            <p className="margin-y-4">
               For your In-Person Identity Proofing walk-in appointment, please
               bring the following items:
             </p>
@@ -46,16 +46,15 @@ export default function CaseNumberScreen() {
                 VHIC
               </li>
             </ol>
-            <p>
+            <p className="margin-y-4">
               Remember that your case number will expire in 10 days. Visit your
               participating VA Medical center by {date}.
             </p>
-            <p>
+            <p className="margin-top-4">
               A copy of your case number and instructions on what to bring to
               the verification site you selected have been emailed to the
               address you provided.
             </p>
-            <br />
           </div>
         </div>
       </div>

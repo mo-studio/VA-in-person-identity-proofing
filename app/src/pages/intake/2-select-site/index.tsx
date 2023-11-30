@@ -32,9 +32,9 @@ export default function LocationSelectorScreen() {
         <StepIndicatorStep label="Confirm site" />
         <StepIndicatorStep label="Verify in-person" />
       </StepIndicator>
-      <h1>Choose a nearby site</h1>
-      <div className="text">
-        <p>
+      <h1 className="padding-x-0">Choose a nearby site</h1>
+      <div>
+        <p className="margin-bottom-4">
           At this time In-person Identity Verification is available by walk-in
           appointment only. Enter your postal code below to find participating
           VA Medical Centers near you.
@@ -52,25 +52,27 @@ export default function LocationSelectorScreen() {
 
         <LocationOptions />
 
-        <div className="wrapper button-wrapper">
+        <div className="margin-bottom-4">
           <Link href="/intake/3-confirm-site">
             <button
               disabled={!location.id}
               type="button"
-              className="usa-button"
+              className="usa-button usa-button--full-width"
             >
               Continue
             </button>
           </Link>
         </div>
-        <div className="wrapper button-wrapper">
+        <div className="margin-top-4">
           <Link href="/intake/1-home">
-            <button type="button" className="usa-button usa-button--outline">
+            <button
+              type="button"
+              className="usa-button usa-button--outline usa-button--full-width"
+            >
               Back
             </button>
           </Link>
         </div>
-        <br />
       </div>
     </div>
   );
