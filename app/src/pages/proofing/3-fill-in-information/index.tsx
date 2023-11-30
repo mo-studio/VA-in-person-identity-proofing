@@ -3,15 +3,12 @@ import { initialProofingData } from "src/data/proofingData";
 
 import Link from "next/link";
 import { ChangeEvent, useContext } from "react";
-import {
-  DatePicker,
-  Label,
-  Select,
-  StepIndicator,
-  StepIndicatorStep,
-  TextInput,
-} from "@trussworks/react-uswds";
+import { DatePicker, Label, Select, TextInput } from "@trussworks/react-uswds";
 
+import StepIndicator from "src/components/LoginDesignSystem/step-indicator/step-indicator";
+import StepIndicatorStep, {
+  StepStatus,
+} from "src/components/LoginDesignSystem/step-indicator/step-indicator-step";
 import IDTypeSelectOptions from "src/components/proofing/IDTypeSelectOptions";
 import StateSelectOptions from "src/components/proofing/StateSelectOptions";
 
@@ -61,12 +58,20 @@ export default function CaseNumerPage() {
         <h3>
           <b>Case Number: {proofingData.caseNumber}</b>
         </h3>
-
-        <StepIndicator counters="small" headingLevel="h4">
-          <StepIndicatorStep label="Confirm email" status="complete" />
-          <StepIndicatorStep label="Validate ID" status="complete" />
-          <StepIndicatorStep label="Fill in information" status="current" />
-          <StepIndicatorStep label="Complete verification" />
+        <StepIndicator className="margin-top-4">
+          <StepIndicatorStep
+            title="Confirm email"
+            status={StepStatus.COMPLETE}
+          />
+          <StepIndicatorStep title="Validate ID" status={StepStatus.COMPLETE} />
+          <StepIndicatorStep
+            title="Fill in information"
+            status={StepStatus.CURRENT}
+          />
+          <StepIndicatorStep
+            title="Complete verification"
+            status={StepStatus.INCOMPLETE}
+          />
         </StepIndicator>
 
         <h1 className="padding-x-0">Fill in Information</h1>

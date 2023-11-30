@@ -20,7 +20,7 @@ export default function ConfirmEmailPage() {
         <h3>
           <b>Case Number: {proofingData.caseNumber}</b>
         </h3>
-        <StepIndicator>
+        <StepIndicator className="margin-top-4">
           <StepIndicatorStep
             title="Confirm email"
             status={StepStatus.CURRENT}

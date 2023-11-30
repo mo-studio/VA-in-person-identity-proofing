@@ -1,23 +1,34 @@
-import { StepIndicator, StepIndicatorStep } from "@trussworks/react-uswds";
+import StepIndicator from "src/components/LoginDesignSystem/step-indicator/step-indicator";
+import StepIndicatorStep, {
+  StepStatus,
+} from "src/components/LoginDesignSystem/step-indicator/step-indicator-step";
 
 export default function CaseNumberScreen() {
   Date.prototype.addDays = function (days) {
     this.setDate(this.getDate() + parseInt(days));
     return this;
   };
-  let currentDate = new Date();
-  let date = currentDate.addDays(10).toLocaleDateString();
+  const currentDate = new Date();
+  const date = currentDate.addDays(10).toLocaleDateString();
 
   return (
     <div className="page">
       <div className="container">
         <div className="white-box">
-          <br />
-          <StepIndicator counters="small" headingLevel="h4">
-            <StepIndicatorStep label="Home" status="complete" />
-            <StepIndicatorStep label="Select site" status="complete" />
-            <StepIndicatorStep label="Confirm site" status="complete" />
-            <StepIndicatorStep label="Verify in-person" status="current" />
+          <StepIndicator>
+            <StepIndicatorStep title="Home" status={StepStatus.COMPLETE} />
+            <StepIndicatorStep
+              title="Select site"
+              status={StepStatus.COMPLETE}
+            />
+            <StepIndicatorStep
+              title="Confirm site"
+              status={StepStatus.COMPLETE}
+            />
+            <StepIndicatorStep
+              title="Verify in-person"
+              status={StepStatus.CURRENT}
+            />
           </StepIndicator>
           <h1 className="padding-x-0">Verify in Person</h1>
           <div>

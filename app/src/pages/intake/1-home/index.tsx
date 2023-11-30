@@ -1,9 +1,10 @@
 import Link from "next/link";
-import {
-  Accordion,
-  StepIndicator,
-  StepIndicatorStep,
-} from "@trussworks/react-uswds";
+import { Accordion } from "@trussworks/react-uswds";
+
+import StepIndicator from "src/components/LoginDesignSystem/step-indicator/step-indicator";
+import StepIndicatorStep, {
+  StepStatus,
+} from "src/components/LoginDesignSystem/step-indicator/step-indicator-step";
 
 const items = [
   {
@@ -85,11 +86,20 @@ export default function Intake() {
   return (
     <div className="page">
       <div className="container">
-        <StepIndicator counters="small" headingLevel="h4">
-          <StepIndicatorStep label="Home" status="current" />
-          <StepIndicatorStep label="Select site" />
-          <StepIndicatorStep label="Confirm site" />
-          <StepIndicatorStep label="Verify in-person" />
+        <StepIndicator>
+          <StepIndicatorStep title="Home" status={StepStatus.CURRENT} />
+          <StepIndicatorStep
+            title="Select site"
+            status={StepStatus.INCOMPLETE}
+          />
+          <StepIndicatorStep
+            title="Confirm site"
+            status={StepStatus.INCOMPLETE}
+          />
+          <StepIndicatorStep
+            title="Verify in-person"
+            status={StepStatus.INCOMPLETE}
+          />
         </StepIndicator>
         <h1 className="padding-x-0">In-person Identity Verification</h1>
         <div>

@@ -2,7 +2,11 @@ import { IntakeContext } from "src/contexts/IntakeContext";
 
 import Link from "next/link";
 import React, { useContext } from "react";
-import { StepIndicator, StepIndicatorStep } from "@trussworks/react-uswds";
+
+import StepIndicator from "src/components/LoginDesignSystem/step-indicator/step-indicator";
+import StepIndicatorStep, {
+  StepStatus,
+} from "src/components/LoginDesignSystem/step-indicator/step-indicator-step";
 
 export default function LocationConfirmationScreen() {
   const { location } = useContext(IntakeContext);
@@ -13,12 +17,20 @@ export default function LocationConfirmationScreen() {
     <div className="page">
       <div className="container">
         <div className="white-box">
-          <br />
-          <StepIndicator counters="small" headingLevel="h4">
-            <StepIndicatorStep label="Home" status="complete" />
-            <StepIndicatorStep label="Select site" status="complete" />
-            <StepIndicatorStep label="Confirm site" status="current" />
-            <StepIndicatorStep label="Verify in-person" />
+          <StepIndicator>
+            <StepIndicatorStep title="Home" status={StepStatus.COMPLETE} />
+            <StepIndicatorStep
+              title="Select site"
+              status={StepStatus.COMPLETE}
+            />
+            <StepIndicatorStep
+              title="Confirm site"
+              status={StepStatus.CURRENT}
+            />
+            <StepIndicatorStep
+              title="Verify in-person"
+              status={StepStatus.INCOMPLETE}
+            />
           </StepIndicator>
           <h1 className="padding-x-0">Confirm your selection</h1>
           <div>
