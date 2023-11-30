@@ -1,7 +1,7 @@
-import { IntakeContext } from "src/contexts/IntakeContext";
+import { initialIntakeData, IntakeContext } from "src/contexts/IntakeContext";
 
 import Link from "next/link";
-import { useContext } from "react";
+import { FormEvent, useContext } from "react";
 import {
   Search,
   StepIndicator,
@@ -12,9 +12,13 @@ import LocationOptions from "src/components/intake/LocationOptions";
 import ProofingMap from "src/components/intake/ProofingMap";
 
 export default function LocationSelectorScreen() {
-  const { location, setLocation } = useContext(IntakeContext);
+  const contextValue = useContext(IntakeContext);
+  const { intakeData } = contextValue || {
+    intakeData: initialIntakeData,
+  };
+  const { location } = intakeData;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // This is where we'd hit the API to get the locations.
     // For now, this is just a mock.
@@ -39,14 +43,14 @@ export default function LocationSelectorScreen() {
         <Search
           className="usa-search__fullwidth"
           size="big"
-          value="21201"
+          // value="21201"
           placeholder="21201"
           onSubmit={(e) => handleSubmit(e)}
         />
 
         <ProofingMap location={location} />
 
-        <LocationOptions location={location} setLocation={setLocation} />
+        <LocationOptions />
 
         <div className="wrapper button-wrapper">
           <Link href="/intake/3-confirm-site">

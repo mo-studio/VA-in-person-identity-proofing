@@ -1,10 +1,6 @@
 import React from "react";
 
-interface Props {
-  // Define the props for your component here
-}
-
-const StateSelectOptions: React.FC<Props> = () => {
+const StateSelectOptions: React.FC = () => {
   return (
     <>
       <option>- Select -</option>

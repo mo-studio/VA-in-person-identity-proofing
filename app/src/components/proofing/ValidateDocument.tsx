@@ -1,3 +1,5 @@
+import { initialProofingData } from "src/data/proofingData";
+
 import { useContext } from "react";
 import { Checkbox } from "@trussworks/react-uswds";
 
@@ -6,7 +8,7 @@ import { ProofingContext } from "../../contexts/ProofingContext";
 export default function SelectIDType() {
   const contextValue = useContext(ProofingContext);
   const { proofingData, setProofingData } = contextValue || {
-    proofingData: { idType: "", isDocumentValidated: false, caseNumber: "" },
+    proofingData: initialProofingData,
     setProofingData: (data) => {
       return data;
     },
