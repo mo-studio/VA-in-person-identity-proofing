@@ -24,6 +24,20 @@ export default function CaseNumerPage() {
     },
   };
 
+  function formatDate(inputDate: string): string {
+    var dateArray = inputDate.split("/");
+    var originalDate = new Date(
+      Number(dateArray[2]),
+      Number(dateArray[0]) - 1,
+      Number(dateArray[1])
+    );
+    var year = originalDate.getFullYear();
+    var month = (originalDate.getMonth() + 1).toString().padStart(2, "0");
+    var day = originalDate.getDate().toString().padStart(2, "0");
+    var formattedDate = `${year}-${month}-${day}`;
+    return formattedDate;
+  }
+
   const isContinueButtonDisabled =
     proofingData.socialSecurityNumber === "" ||
     proofingData.firstName === "" ||
@@ -50,12 +64,8 @@ export default function CaseNumerPage() {
     // Handle the case where date is undefined
     if (date === undefined) {
       // Handle accordingly, for example, set a default value or perform other logic
-      console.log("Date is undefined");
       return;
     }
-
-    console.log(date);
-    console.log(typeof date);
     setProofingData({
       ...proofingData,
       dateOfBirth: date,
@@ -147,9 +157,8 @@ export default function CaseNumerPage() {
             id="birth-date"
             name="Birthday"
             key="hello"
-            defaultValue={proofingData.dateOfBirth || ""}
+            defaultValue={formatDate(proofingData.dateOfBirth) || ""}
             value={proofingData.dateOfBirth || ""}
-            // TODO: figure how why field doesn't show previous value
             onChange={(date) => dateChangeHandler(date)}
           ></DatePicker>
 
