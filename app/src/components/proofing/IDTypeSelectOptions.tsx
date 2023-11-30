@@ -1,10 +1,6 @@
 import React from "react";
 
-interface Props {
-  // Define the props for your component here
-}
-
-const IDTypeSelectOptions: React.FC<Props> = () => {
+const IDTypeSelectOptions: React.FC = () => {
   return (
     <>
       <option>- Select - </option>

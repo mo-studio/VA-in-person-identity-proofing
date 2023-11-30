@@ -37,7 +37,7 @@ export default function CaseNumerPage() {
     proofingData.idNumber === "";
 
   const inputChangeHandler = (
-    e: ChangeEvent<HTMLInputElement>,
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>,
     fieldName: string
   ) => {
     setProofingData({
@@ -46,7 +46,14 @@ export default function CaseNumerPage() {
     });
   };
 
-  const dateChangeHandler = (date: string) => {
+  const dateChangeHandler = (date: string | undefined) => {
+    // Handle the case where date is undefined
+    if (date === undefined) {
+      // Handle accordingly, for example, set a default value or perform other logic
+      console.log("Date is undefined");
+      return;
+    }
+
     console.log(date);
     console.log(typeof date);
     setProofingData({
@@ -140,8 +147,8 @@ export default function CaseNumerPage() {
             id="birth-date"
             name="Birthday"
             key="hello"
-            defaultValue={proofingData.dateOfBirth}
-            value={proofingData.dateOfBirth}
+            defaultValue={proofingData.dateOfBirth || ""}
+            value={proofingData.dateOfBirth || ""}
             // TODO: figure how why field doesn't show previous value
             onChange={(date) => dateChangeHandler(date)}
           ></DatePicker>

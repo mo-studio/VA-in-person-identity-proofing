@@ -1,12 +1,15 @@
 import { StepIndicator, StepIndicatorStep } from "@trussworks/react-uswds";
 
 export default function CaseNumberScreen() {
-  Date.prototype.addDays = function (days) {
-    this.setDate(this.getDate() + parseInt(days));
-    return this;
-  };
-  let currentDate = new Date();
-  let date = currentDate.addDays(10).toLocaleDateString();
+  function addDays(date: Date, days: number): Date {
+    const result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+  }
+
+  const currentDate = new Date();
+  const newDate = addDays(currentDate, 10);
+  const date = newDate.toLocaleDateString();
 
   return (
     <div className="page">

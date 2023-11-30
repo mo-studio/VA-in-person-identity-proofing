@@ -1,15 +1,48 @@
 import { createContext, useState } from "react";
 
-interface ILocation {
-  attributes: {
-    lat: number;
-    long: number;
+const initialIntakeData = {
+  location: {
+    id: "",
+    attributes: {
+      name: "",
+      lat: 39.2904, // Baltimore, MD
+      long: -76.6122, // Baltimore, MD
+      address: {
+        physical: {
+          address1: "",
+          address2: "",
+          city: "",
+          state: "",
+          zip: "",
+        },
+      },
+    },
+  },
+};
+
+interface IIntakeData {
+  location: {
+    id: string;
+    attributes: {
+      name: string;
+      lat: number;
+      long: number;
+      address: {
+        physical: {
+          address1: string;
+          address2: string;
+          city: string;
+          state: string;
+          zip: string;
+        };
+      };
+    };
   };
 }
 
 interface IntakeContextType {
-  location: ILocation;
-  setLocation: (location: ILocation) => void;
+  intakeData: IIntakeData;
+  setIntakeData: (location: IIntakeData) => void;
 }
 
 interface Props {
@@ -19,15 +52,13 @@ interface Props {
 const IntakeContext = createContext<IntakeContextType | null>(null);
 
 function IntakeContextProvider({ children }: Props) {
-  const [location, setLocation] = useState<ILocation>({
-    attributes: { lat: 39.2904, long: -76.6122 },
-  });
+  const [intakeData, setIntakeData] = useState<IIntakeData>(initialIntakeData);
 
   return (
-    <IntakeContext.Provider value={{ location, setLocation }}>
+    <IntakeContext.Provider value={{ intakeData, setIntakeData }}>
       {children}
     </IntakeContext.Provider>
   );
 }
 
-export { IntakeContextProvider, IntakeContext };
+export { IntakeContextProvider, IntakeContext, initialIntakeData };
