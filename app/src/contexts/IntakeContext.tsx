@@ -18,6 +18,7 @@ const initialIntakeData = {
       },
     },
   },
+  isSiteSelected: false,
 };
 
 interface IIntakeData {
@@ -38,6 +39,7 @@ interface IIntakeData {
       };
     };
   };
+  isSiteSelected: boolean;
 }
 
 interface IntakeContextType {

@@ -12,14 +12,23 @@ import LocationOptions from "src/components/intake/LocationOptions";
 import ProofingMap from "src/components/intake/ProofingMap";
 
 export default function LocationSelectorScreen() {
+  // const contextValue = useContext(IntakeContext);
+  // const { intakeData } = contextValue || {
+  //   intakeData: initialIntakeData,
+  // };
+  // const { location } = intakeData;
   const contextValue = useContext(IntakeContext);
-  const { intakeData } = contextValue || {
+  const { intakeData, setIntakeData } = contextValue || {
     intakeData: initialIntakeData,
+    setIntakeData: (data) => {
+      return data;
+    },
   };
   const { location } = intakeData;
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIntakeData({ ...intakeData, isSiteSelected: true });
     // This is where we'd hit the API to get the locations.
     // For now, this is just a mock.
   };
@@ -50,7 +59,7 @@ export default function LocationSelectorScreen() {
 
         <ProofingMap location={location} />
 
-        <LocationOptions />
+        {intakeData.isSiteSelected === true && <LocationOptions />}
 
         <div className="wrapper button-wrapper">
           <Link href="/intake/3-confirm-site">
