@@ -12,11 +12,6 @@ import LocationOptions from "src/components/intake/LocationOptions";
 import ProofingMap from "src/components/intake/ProofingMap";
 
 export default function LocationSelectorScreen() {
-  // const contextValue = useContext(IntakeContext);
-  // const { intakeData } = contextValue || {
-  //   intakeData: initialIntakeData,
-  // };
-  // const { location } = intakeData;
   const contextValue = useContext(IntakeContext);
   const { intakeData, setIntakeData } = contextValue || {
     intakeData: initialIntakeData,
