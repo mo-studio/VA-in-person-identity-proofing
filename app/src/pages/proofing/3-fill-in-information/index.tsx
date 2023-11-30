@@ -25,16 +25,16 @@ export default function CaseNumerPage() {
   };
 
   function formatDate(inputDate: string): string {
-    let dateArray = inputDate.split("/");
-    let originalDate = new Date(
+    const dateArray = inputDate.split("/");
+    const originalDate = new Date(
       Number(dateArray[2]),
       Number(dateArray[0]) - 1,
       Number(dateArray[1])
     );
-    let year = originalDate.getFullYear();
-    let month = (originalDate.getMonth() + 1).toString().padStart(2, "0");
-    let day = originalDate.getDate().toString().padStart(2, "0");
-    let formattedDate = `${year}-${month}-${day}`;
+    const year = originalDate.getFullYear();
+    const month = (originalDate.getMonth() + 1).toString().padStart(2, "0");
+    const day = originalDate.getDate().toString().padStart(2, "0");
+    const formattedDate = `${year}-${month}-${day}`;
     return formattedDate;
   }
 
