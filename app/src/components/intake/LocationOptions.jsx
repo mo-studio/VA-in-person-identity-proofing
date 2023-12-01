@@ -1,13 +1,20 @@
+import { initialIntakeData, IntakeContext } from "src/contexts/IntakeContext";
+
 import React, { useContext } from "react";
 import { Radio } from "@trussworks/react-uswds";
 
-import { IntakeContext } from "../../contexts/IntakeContext";
-
 export default function LocationOptions() {
-  const { location, setLocation } = useContext(IntakeContext);
+  const contextValue = useContext(IntakeContext);
+  const { intakeData, setIntakeData } = contextValue || {
+    intakeData: initialIntakeData,
+    setIntakeData: (data) => {
+      return data;
+    },
+  };
+  const { location } = intakeData;
 
   const changeHandler = (newLocation) => {
-    setLocation(newLocation);
+    setIntakeData({ ...intakeData, location: newLocation });
   };
   const mockLocations = {
     data: [

@@ -1,4 +1,3 @@
-import { useTranslation } from "next-i18next";
 import {
   Address,
   Grid,
@@ -7,16 +6,12 @@ import {
 } from "@trussworks/react-uswds";
 
 const Footer = () => {
-  const { t } = useTranslation("common", {
-    keyPrefix: "Footer",
-  });
-
   return (
     <USWDSFooter
       size="slim"
       returnToTop={
         <GridContainer className="usa-footer__return-to-top">
-          <a href="#">{t("return_to_top")}</a>
+          <a href="#">Return to top</a>
         </GridContainer>
       }
       primary={
@@ -36,7 +31,7 @@ const Footer = () => {
           </Grid>
         </GridContainer>
       }
-      secondary={<p className="usa-footer__logo-heading">{t("agency_name")}</p>}
+      secondary={<p className="usa-footer__logo-heading">VA.gov</p>}
     />
   );
 };

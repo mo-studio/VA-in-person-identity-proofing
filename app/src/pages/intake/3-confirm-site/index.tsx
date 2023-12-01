@@ -1,4 +1,4 @@
-import { IntakeContext } from "src/contexts/IntakeContext";
+import { initialIntakeData, IntakeContext } from "src/contexts/IntakeContext";
 
 import Link from "next/link";
 import React, { useContext } from "react";
@@ -9,9 +9,16 @@ import StepIndicatorStep, {
 } from "src/components/LoginDesignSystem/step-indicator/step-indicator-step";
 
 export default function LocationConfirmationScreen() {
-  const { location } = useContext(IntakeContext);
-  const { name } = location.attributes;
-  const { address1, city, state, zip } = location.attributes.address.physical;
+  const contextValue = useContext(IntakeContext);
+  const { intakeData } = contextValue || {
+    intakeData: initialIntakeData,
+    setIntakeData: (data) => {
+      return data;
+    },
+  };
+
+  const { name, address } = intakeData.location.attributes;
+  const { address1, city, state, zip } = address.physical;
 
   return (
     <div className="page">

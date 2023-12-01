@@ -57,7 +57,7 @@ export default function CaseNumerPage() {
           <p>
             You will need to validate that the applicant can be found in the
             Master Person Index (MPI) by logging into the Identity Access
-            Management (IAM) toolkit. Do not close this window as you access the
+            Management (IAM) toolkit. Do not close this window as you access the
             IAM toolkit.
           </p>
           <ol>

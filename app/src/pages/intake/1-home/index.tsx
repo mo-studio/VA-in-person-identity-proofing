@@ -6,7 +6,7 @@ import StepIndicatorStep, {
   StepStatus,
 } from "src/components/LoginDesignSystem/step-indicator/step-indicator-step";
 
-const items = [
+const items: AccordionItemProps[] = [
   {
     title: "State-Issued ID or VHIC",
     content: (
