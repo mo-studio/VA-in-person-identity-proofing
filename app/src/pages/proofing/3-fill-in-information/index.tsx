@@ -12,6 +12,18 @@ import StepIndicatorStep, {
 import IDTypeSelectOptions from "src/components/proofing/IDTypeSelectOptions";
 import StateSelectOptions from "src/components/proofing/StateSelectOptions";
 
+function formatDate(inputDate: string): string {
+  if (inputDate === "") {
+    return "";
+  }
+  const originalDate = new Date(inputDate);
+  const formattedDate = Intl.DateTimeFormat("en-CA", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(originalDate);
+  return formattedDate;
+}
 export default function CaseNumerPage() {
   const contextValue = useContext(ProofingContext);
   const { proofingData, setProofingData } = contextValue || {
@@ -47,12 +59,8 @@ export default function CaseNumerPage() {
     // Handle the case where date is undefined
     if (date === undefined) {
       // Handle accordingly, for example, set a default value or perform other logic
-      console.log("Date is undefined");
       return;
     }
-
-    console.log(date);
-    console.log(typeof date);
     setProofingData({
       ...proofingData,
       dateOfBirth: date,
@@ -152,9 +160,8 @@ export default function CaseNumerPage() {
             id="birth-date"
             name="Birthday"
             key="hello"
-            defaultValue={proofingData.dateOfBirth || ""}
+            defaultValue={formatDate(proofingData.dateOfBirth) || ""}
             value={proofingData.dateOfBirth || ""}
-            // TODO: figure how why field doesn't show previous value
             onChange={(date) => dateChangeHandler(date)}
           ></DatePicker>
 
