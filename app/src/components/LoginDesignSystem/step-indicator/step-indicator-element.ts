@@ -9,9 +9,9 @@ interface StepIndicatorElements {
 }
 
 class StepIndicatorElement extends HTMLElement {
-  elements: StepIndicatorElements;
+  elements!: StepIndicatorElements;
 
-  mediaQueryList: MediaQueryList | null;
+  mediaQueryList!: MediaQueryList | null;
 
   get isSmallViewport() {
     return this.mediaQueryList ? this.mediaQueryList.matches : false;

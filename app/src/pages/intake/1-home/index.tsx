@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Accordion } from "@trussworks/react-uswds";
+import { AccordionItemProps } from "@trussworks/react-uswds/lib/components/Accordion/Accordion";
 
 import StepIndicator from "src/components/LoginDesignSystem/step-indicator/step-indicator";
 import StepIndicatorStep, {
