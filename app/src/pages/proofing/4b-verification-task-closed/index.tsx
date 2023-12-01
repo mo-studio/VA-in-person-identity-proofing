@@ -2,7 +2,11 @@ import { ProofingContext } from "src/contexts/ProofingContext";
 import { initialProofingData } from "src/data/proofingData";
 
 import { useContext } from "react";
-import { StepIndicator, StepIndicatorStep } from "@trussworks/react-uswds";
+
+import StepIndicator from "src/components/LoginDesignSystem/step-indicator/step-indicator";
+import StepIndicatorStep, {
+  StepStatus,
+} from "src/components/LoginDesignSystem/step-indicator/step-indicator-step";
 
 export default function CaseNumerPage() {
   const contextValue = useContext(ProofingContext);
@@ -15,11 +19,20 @@ export default function CaseNumerPage() {
         <h3>
           <b>Case Number: {proofingData.caseNumber}</b>
         </h3>
-        <StepIndicator counters="small" headingLevel="h4">
-          <StepIndicatorStep label="Confirm email" status="complete" />
-          <StepIndicatorStep label="Validate ID" status="complete" />
-          <StepIndicatorStep label="Fill in information" status="complete" />
-          <StepIndicatorStep label="Complete verification" status="complete" />
+        <StepIndicator className="margin-top-4">
+          <StepIndicatorStep
+            title="Confirm email"
+            status={StepStatus.COMPLETE}
+          />
+          <StepIndicatorStep title="Validate ID" status={StepStatus.COMPLETE} />
+          <StepIndicatorStep
+            title="Fill in information"
+            status={StepStatus.COMPLETE}
+          />
+          <StepIndicatorStep
+            title="Complete verification"
+            status={StepStatus.COMPLETE}
+          />
         </StepIndicator>
 
         <h1 className="padding-x-0">Verification task closed</h1>

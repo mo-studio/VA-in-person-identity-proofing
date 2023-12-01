@@ -3,7 +3,11 @@ import { initialProofingData } from "src/data/proofingData";
 
 import Link from "next/link";
 import { useContext } from "react";
-import { StepIndicator, StepIndicatorStep } from "@trussworks/react-uswds";
+
+import StepIndicator from "src/components/LoginDesignSystem/step-indicator/step-indicator";
+import StepIndicatorStep, {
+  StepStatus,
+} from "src/components/LoginDesignSystem/step-indicator/step-indicator-step";
 
 export default function ConfirmEmailPage() {
   const contextValue = useContext(ProofingContext);
@@ -16,11 +20,23 @@ export default function ConfirmEmailPage() {
         <h3>
           <b>Case Number: {proofingData.caseNumber}</b>
         </h3>
-        <StepIndicator counters="small" headingLevel="h4">
-          <StepIndicatorStep label="Confirm email" status="current" />
-          <StepIndicatorStep label="Validate ID" />
-          <StepIndicatorStep label="Fill in information" />
-          <StepIndicatorStep label="Complete verification" />
+        <StepIndicator className="margin-top-4">
+          <StepIndicatorStep
+            title="Confirm email"
+            status={StepStatus.CURRENT}
+          />
+          <StepIndicatorStep
+            title="Validate ID"
+            status={StepStatus.INCOMPLETE}
+          />
+          <StepIndicatorStep
+            title="Fill in information"
+            status={StepStatus.INCOMPLETE}
+          />
+          <StepIndicatorStep
+            title="Complete verification"
+            status={StepStatus.INCOMPLETE}
+          />
         </StepIndicator>
         <h1 className="padding-x-0">Confirm applicant email</h1>
 

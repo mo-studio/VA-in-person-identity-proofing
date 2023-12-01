@@ -2,14 +2,14 @@ import { initialIntakeData, IntakeContext } from "src/contexts/IntakeContext";
 
 import Link from "next/link";
 import { FormEvent, useContext } from "react";
-import {
-  Search,
-  StepIndicator,
-  StepIndicatorStep,
-} from "@trussworks/react-uswds";
+import { Search } from "@trussworks/react-uswds";
 
 import LocationOptions from "src/components/intake/LocationOptions";
 import ProofingMap from "src/components/intake/ProofingMap";
+import StepIndicator from "src/components/LoginDesignSystem/step-indicator/step-indicator";
+import StepIndicatorStep, {
+  StepStatus,
+} from "src/components/LoginDesignSystem/step-indicator/step-indicator-step";
 
 export default function LocationSelectorScreen() {
   const contextValue = useContext(IntakeContext);
@@ -30,11 +30,17 @@ export default function LocationSelectorScreen() {
 
   return (
     <div className="container">
-      <StepIndicator counters="small" headingLevel="h4">
-        <StepIndicatorStep label="Home" status="complete" />
-        <StepIndicatorStep label="Select site" status="current" />
-        <StepIndicatorStep label="Confirm site" />
-        <StepIndicatorStep label="Verify in-person" />
+      <StepIndicator>
+        <StepIndicatorStep title="Home" status={StepStatus.COMPLETE} />
+        <StepIndicatorStep title="Select site" status={StepStatus.CURRENT} />
+        <StepIndicatorStep
+          title="Confirm site"
+          status={StepStatus.INCOMPLETE}
+        />
+        <StepIndicatorStep
+          title="Verify in-person"
+          status={StepStatus.INCOMPLETE}
+        />
       </StepIndicator>
       <h1 className="padding-x-0">Choose a nearby site</h1>
       <div>
