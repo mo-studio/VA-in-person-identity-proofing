@@ -19,6 +19,7 @@ class StepIndicatorElement extends HTMLElement {
 
   connectedCallback() {
     this.elements = {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       scroller: this.querySelector(".step-indicator__scroller")!,
       currentStep: this.querySelector(".step-indicator__step--current"),
     };

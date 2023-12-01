@@ -6,6 +6,7 @@ import React, { type HTMLAttributes, type ReactNode } from "react";
 import type StepIndicatorElement from "./step-indicator-element";
 
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace JSX {
     interface IntrinsicElements {
       "lg-step-indicator": HTMLAttributes<StepIndicatorElement> & {
