@@ -2,6 +2,22 @@
 
 [Include a catchy or descriptive tagline about your app]
 
+## Features
+
+- Framework for server-side rendered, static, or hybrid React applications
+- TypeScript and React testing tools
+- U.S. Web Design System for themeable styling and a set of common components
+- Type checking, linting, and code formatting tools
+- Storybook for a frontend workshop environment
+
+## Repo structure
+
+```text
+├── .github             # GitHub workflows and repo templates
+├── app                 # Web application
+├── docs                # Project docs and decision records
+```
+
 ## Overview
 
 [Provide a brief overview of your web application, its purpose, and main features.]
@@ -46,23 +62,3 @@ npm run dev
 ## License
 
 [Include information about the license under which your project is distributed.]
-
----
-
-Feel free to customize this template by adding more sections or adjusting the content to best suit your project's specifics.
-
-## Features
-
-- Framework for server-side rendered, static, or hybrid React applications
-- TypeScript and React testing tools
-- U.S. Web Design System for themeable styling and a set of common components
-- Type checking, linting, and code formatting tools
-- Storybook for a frontend workshop environment
-
-## Repo structure
-
-```text
-├── .github             # GitHub workflows and repo templates
-├── app                 # Web application
-├── docs                # Project docs and decision records
-```
