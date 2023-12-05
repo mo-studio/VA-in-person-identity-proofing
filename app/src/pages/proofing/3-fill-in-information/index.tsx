@@ -24,7 +24,7 @@ function formatDate(inputDate: string): string {
   }).format(originalDate);
   return formattedDate;
 }
-export default function CaseNumerPage() {
+export default function FillInInformation() {
   const contextValue = useContext(ProofingContext);
   const { proofingData, setProofingData } = contextValue || {
     proofingData: initialProofingData,
