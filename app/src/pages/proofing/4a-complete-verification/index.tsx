@@ -43,8 +43,8 @@ export default function CompleteVerification() {
   };
 
   const formattedAddress = `${proofingData.address1}${
-    proofingData.address2 ? "," : ""
-  } ${proofingData.address2}, ${proofingData.city}, ${proofingData.stateName} ${
+    proofingData.address2 ? ", " : ""
+  }${proofingData.address2}, ${proofingData.city}, ${proofingData.stateName} ${
     proofingData.zipCode
   }`;
   const formattedName = `${proofingData.firstName} ${proofingData.middleName} ${proofingData.lastName}`;
