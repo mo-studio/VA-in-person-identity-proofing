@@ -99,7 +99,7 @@ export default function FillInInformation() {
             {" ‘Continue’"} when this form is complete.
           </p>
 
-          <Label htmlFor="first-name">Social Security Number</Label>
+          <Label htmlFor="ssn">Social Security Number</Label>
           <TextInput
             id="ssn"
             name="ssn"
@@ -110,8 +110,8 @@ export default function FillInInformation() {
 
           <Label htmlFor="first-name">First name</Label>
           <TextInput
-            id="fname"
-            name="fname"
+            id="first-name"
+            name="first-name"
             type="text"
             value={proofingData.firstName}
             onChange={(e) => inputChangeHandler(e, "firstName")}
@@ -153,7 +153,7 @@ export default function FillInInformation() {
             onChange={(e) => inputChangeHandler(e, "idNumber")}
           />
 
-          <Label id="birth-date-label" htmlFor="appointment-date">
+          <Label id="birth-date-label" htmlFor="birth-date">
             Date of Birth
           </Label>
           <DatePicker
