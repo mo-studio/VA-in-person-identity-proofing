@@ -10,7 +10,7 @@ describe("CompleteVerification", () => {
     expect(continueButton).toBeDisabled();
   });
 
-  test("applicant summary populate with data from previous page", () => {
+  test("applicant summary populated with data from previous page", () => {
     const filledData = {
       ...initialProofingData,
       socialSecurityNumber: "123456789",
@@ -41,5 +41,28 @@ describe("CompleteVerification", () => {
     expect(applicantSummary).toBeInTheDocument();
 
     // Test to make sure the continue button is enabled when there is an ICN and verified IAM boolean
+  });
+
+  test("continue button is enabled when there is an ICN and verified IAM boolean", () => {
+    const filledData = {
+      ...initialProofingData,
+      icn: "12345678901234567",
+      isIamToolkitVerified: true,
+    };
+    const setProofingData = (data: typeof initialProofingData) => {
+      return data;
+    };
+    render(
+      <ProofingContext.Provider
+        value={{
+          proofingData: filledData,
+          setProofingData,
+        }}
+      >
+        <CompleteVerification />
+      </ProofingContext.Provider>
+    );
+    const continueButton = screen.getByText("Continue");
+    expect(continueButton).toBeEnabled();
   });
 });

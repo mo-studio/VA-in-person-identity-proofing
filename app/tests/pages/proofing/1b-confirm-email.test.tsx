@@ -10,7 +10,6 @@ describe("ConfirmEmailPage", () => {
     expect(continueButton).toBeEnabled();
   });
 
-  // it should display the case number from the previous page
   it("should display the case number from the previous page", () => {
     const defaultCaseNumber = "123456789";
     const updatedData = {

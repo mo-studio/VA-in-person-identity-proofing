@@ -16,7 +16,7 @@ describe("ValidateId", () => {
     return data;
   };
 
-  it("prompts you to select an ID type if you skip that accordian", () => {
+  it("prompts you to select an ID type if you skip that accordion", () => {
     render(
       <ProofingContext.Provider
         value={{
