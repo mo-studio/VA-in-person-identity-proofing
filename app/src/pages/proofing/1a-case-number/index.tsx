@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ChangeEvent, useContext } from "react";
 import { Label, TextInput } from "@trussworks/react-uswds";
 
-export default function CaseNumerPage() {
+export default function CaseNumberPage() {
   const contextValue = useContext(ProofingContext);
   const { proofingData, setProofingData } = contextValue || {
     proofingData: initialProofingData,

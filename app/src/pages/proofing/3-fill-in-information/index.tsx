@@ -24,7 +24,7 @@ function formatDate(inputDate: string): string {
   }).format(originalDate);
   return formattedDate;
 }
-export default function CaseNumerPage() {
+export default function FillInInformation() {
   const contextValue = useContext(ProofingContext);
   const { proofingData, setProofingData } = contextValue || {
     proofingData: initialProofingData,
@@ -99,7 +99,7 @@ export default function CaseNumerPage() {
             {" ‘Continue’"} when this form is complete.
           </p>
 
-          <Label htmlFor="first-name">Social Security Number</Label>
+          <Label htmlFor="ssn">Social Security Number</Label>
           <TextInput
             id="ssn"
             name="ssn"
@@ -110,8 +110,8 @@ export default function CaseNumerPage() {
 
           <Label htmlFor="first-name">First name</Label>
           <TextInput
-            id="fname"
-            name="fname"
+            id="first-name"
+            name="first-name"
             type="text"
             value={proofingData.firstName}
             onChange={(e) => inputChangeHandler(e, "firstName")}
@@ -153,7 +153,7 @@ export default function CaseNumerPage() {
             onChange={(e) => inputChangeHandler(e, "idNumber")}
           />
 
-          <Label id="birth-date-label" htmlFor="appointment-date">
+          <Label id="birth-date-label" htmlFor="birth-date">
             Date of Birth
           </Label>
           <DatePicker

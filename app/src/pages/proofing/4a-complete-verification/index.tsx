@@ -19,7 +19,7 @@ import StepIndicatorStep, {
   StepStatus,
 } from "src/components/LoginDesignSystem/step-indicator/step-indicator-step";
 
-export default function CaseNumerPage() {
+export default function CompleteVerification() {
   const contextValue = useContext(ProofingContext);
   const { proofingData, setProofingData } = contextValue || {
     proofingData: initialProofingData,
@@ -43,8 +43,8 @@ export default function CaseNumerPage() {
   };
 
   const formattedAddress = `${proofingData.address1}${
-    proofingData.address2 ? "," : ""
-  } ${proofingData.address2}, ${proofingData.city}, ${proofingData.stateName} ${
+    proofingData.address2 ? ", " : ""
+  }${proofingData.address2}, ${proofingData.city}, ${proofingData.stateName} ${
     proofingData.zipCode
   }`;
   const formattedName = `${proofingData.firstName} ${proofingData.middleName} ${proofingData.lastName}`;

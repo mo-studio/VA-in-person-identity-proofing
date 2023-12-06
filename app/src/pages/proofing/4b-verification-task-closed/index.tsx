@@ -8,7 +8,7 @@ import StepIndicatorStep, {
   StepStatus,
 } from "src/components/LoginDesignSystem/step-indicator/step-indicator-step";
 
-export default function CaseNumerPage() {
+export default function VerificationTaskClosed() {
   const contextValue = useContext(ProofingContext);
   const { proofingData } = contextValue || {
     proofingData: initialProofingData,
@@ -36,7 +36,7 @@ export default function CaseNumerPage() {
         </StepIndicator>
 
         <h1 className="padding-x-0">Verification task closed</h1>
-        <p className="text-bold">
+        <p className="text-bold" data-testid="taskClosed">
           You have completed all of the steps of In-Person Identity Proofing for
           Case Number {proofingData.caseNumber}.
         </p>
