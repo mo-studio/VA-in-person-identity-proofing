@@ -34,7 +34,7 @@ export default function SelectIDType() {
       >
         <IDTypeSelectOptions />
       </Select>
-      {proofingData.idType === "Driver's License or State-issued ID" && (
+      {proofingData.idType === "State-issued Driver's License" && (
         <SelectStateDriversLicense />
       )}
     </p>

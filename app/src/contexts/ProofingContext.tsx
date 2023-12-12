@@ -4,6 +4,7 @@ import { createContext, useState } from "react";
 
 interface IProofingData {
   idType: string;
+  driverLicenseState: string;
   isDocumentValidated: boolean;
   caseNumber: string;
   socialSecurityNumber: string;

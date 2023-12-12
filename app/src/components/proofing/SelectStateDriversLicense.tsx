@@ -1,23 +1,24 @@
-// import { ProofingContext } from "src/contexts/ProofingContext";
-// import { initialProofingData } from "src/data/proofingData";
+import { ProofingContext } from "src/contexts/ProofingContext";
+import { initialProofingData } from "src/data/proofingData";
 
-// import { ChangeEvent, useContext } from "react";
+import { ChangeEvent, useContext } from "react";
 import { Label, Select } from "@trussworks/react-uswds";
 
 import StateDriversLicenseSelectOptions from "./StateDriversLicenseSelectOptions";
 
 export default function SelectStateDriversLicense() {
-  //   const contextValue = useContext(ProofingContext);
-  //   const { proofingData, setProofingData } = contextValue || {
-  //     proofingData: initialProofingData,
-  //     setProofingData: (data) => {
-  //       return data;
-  //     },
-  //   };
+  const contextValue = useContext(ProofingContext);
+  const { proofingData, setProofingData } = contextValue || {
+    proofingData: initialProofingData,
+    setProofingData: (data) => {
+      return data;
+    },
+  };
 
-  //   const changeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-  //     setProofingData({ ...proofingData, idType: e.target.value });
-  //   };
+  const changeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
+    setProofingData({ ...proofingData, driverLicenseState: e.target.value });
+    console.log(proofingData.driverLicenseState);
+  };
 
   return (
     <p className="margin-top-2 margin-bottom-2">
@@ -27,8 +28,8 @@ export default function SelectStateDriversLicense() {
       <Select
         id="input-select"
         name="input-select"
-        // value={proofingData.idType}
-        // onChange={(e) => changeHandler(e)}
+        value={proofingData.driverLicenseState}
+        onChange={(e) => changeHandler(e)}
       >
         <StateDriversLicenseSelectOptions />
       </Select>
