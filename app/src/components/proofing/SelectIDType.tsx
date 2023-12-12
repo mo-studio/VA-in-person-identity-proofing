@@ -5,6 +5,7 @@ import { ChangeEvent, useContext } from "react";
 import { Label, Select } from "@trussworks/react-uswds";
 
 import IDTypeSelectOptions from "./IDTypeSelectOptions";
+import SelectStateDriversLicense from "./SelectStateDriversLicense";
 
 export default function SelectIDType() {
   const contextValue = useContext(ProofingContext);
@@ -14,7 +15,6 @@ export default function SelectIDType() {
       return data;
     },
   };
-
   const changeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
     setProofingData({ ...proofingData, idType: e.target.value });
   };
@@ -34,6 +34,9 @@ export default function SelectIDType() {
       >
         <IDTypeSelectOptions />
       </Select>
+      {proofingData.idType === "Driver's License or State-issued ID" && (
+        <SelectStateDriversLicense />
+      )}
     </p>
   );
 }
