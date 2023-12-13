@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import CaseNumberScreen from "src/pages/intake/4-verify-in-person/index";
 
-describe("Intake", () => {
+describe("CaseNumberScreen", () => {
   it("Displays Continue button and important screen content", () => {
     render(<CaseNumberScreen />);
 

@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { initialIntakeData, IntakeContext } from "src/contexts/IntakeContext";
 import LocationConfirmationScreen from "src/pages/intake/3-confirm-site/index";
 
-describe("Intake", () => {
+describe("LocationConfirmationScreen", () => {
   it("Displays Continue button and other screen content", () => {
     render(<LocationConfirmationScreen />);
 
