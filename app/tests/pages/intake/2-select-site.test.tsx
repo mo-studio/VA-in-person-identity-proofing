@@ -1,15 +1,9 @@
-import {
-  act,
-  fireEvent,
-  render,
-  screen,
-  waitFor,
-} from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { initialIntakeData, IntakeContext } from "src/contexts/IntakeContext";
 import LocationSelectorScreen from "src/pages/intake/2-select-site/index";
 
 describe("LocationSelectorScreen", () => {
-  it("Displays Continue button as disabled", () => {
+  it("Displays Continue button as disabled initially", () => {
     render(<LocationSelectorScreen />);
 
     const continueButton = screen.getByText("Continue");

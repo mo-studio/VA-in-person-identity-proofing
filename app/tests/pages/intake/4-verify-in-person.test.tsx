@@ -1,10 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import { ProofingContext } from "src/contexts/ProofingContext";
-import { initialProofingData } from "src/data/proofingData";
 import CaseNumberScreen from "src/pages/intake/4-verify-in-person/index";
 
 describe("Intake", () => {
-  it("Displays Continue button", () => {
+  it("Displays Continue button and important screen content", () => {
     render(<CaseNumberScreen />);
 
     expect(screen.queryByText("Verify In Person")).toBeVisible();
