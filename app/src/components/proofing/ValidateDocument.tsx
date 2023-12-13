@@ -16,7 +16,6 @@ export default function SelectIDType() {
     if (proofingData.idType != "State-issued Driver's License") {
       return true;
     }
-    console.log(proofingData.driverLicenseState);
     if (
       proofingData.idType === "State-issued Driver's License" &&
       proofingData.driverLicenseState != ""

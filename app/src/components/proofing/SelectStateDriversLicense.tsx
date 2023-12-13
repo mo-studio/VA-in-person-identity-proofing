@@ -17,7 +17,6 @@ export default function SelectStateDriversLicense() {
 
   const changeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
     setProofingData({ ...proofingData, driverLicenseState: e.target.value });
-    console.log(proofingData.driverLicenseState);
   };
 
   return (
