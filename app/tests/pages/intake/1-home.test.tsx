@@ -2,9 +2,11 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import Intake from "src/pages/intake/1-home/index";
 
 describe("Intake", () => {
+  /* eslint-disable testing-library/no-render-in-setup */
   beforeEach(() => {
     render(<Intake />);
   });
+  /* eslint-enable testing-library/no-render-in-setup */
 
   const clickAccordionTitleAndCheckContent = (
     title: Node | Window,
