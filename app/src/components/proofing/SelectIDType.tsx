@@ -20,9 +20,11 @@ export default function SelectIDType() {
   };
 
   return (
-    <p className="margin-top-2 margin-bottom-2">
-      Type in and select the appropriate ID Type from the drop-down menu below
-      and then click ‘Validate document’.
+    <div>
+      <p className="margin-top-2 margin-bottom-2">
+        Type in and select the appropriate ID Type from the drop-down menu below
+        and then click ‘Validate document’.
+      </p>
       <Label htmlFor="input-select" className="margin-top-4">
         ID Type
       </Label>
@@ -37,6 +39,6 @@ export default function SelectIDType() {
       {proofingData.idType === "State-issued Driver's License" && (
         <SelectStateDriversLicense />
       )}
-    </p>
+    </div>
   );
 }
