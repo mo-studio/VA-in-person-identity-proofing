@@ -36,6 +36,7 @@ export default function SelectIDType() {
       >
         <IDTypeSelectOptions />
       </Select>
+      {/* // TODO: Replace with a shared variable if this becomes more than 2 options */}
       {proofingData.idType === "State-issued Driver's License" && (
         <SelectStateDriversLicense />
       )}

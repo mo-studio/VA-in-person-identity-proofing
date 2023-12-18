@@ -12,7 +12,7 @@ export default function SelectIDType() {
       return data;
     },
   };
-  function stateIsSelectedForDL() {
+  function isDLStateSelected() {
     if (proofingData.idType != "State-issued Driver's License") {
       return true;
     }
@@ -24,7 +24,7 @@ export default function SelectIDType() {
     }
     return false;
   }
-  function IdDisplay() {
+  function idDisplay() {
     let idDisplayed = proofingData.idType;
     if (proofingData.idType === "State-issued Driver's License") {
       idDisplayed = proofingData.driverLicenseState;
@@ -32,7 +32,7 @@ export default function SelectIDType() {
     return idDisplayed;
   }
 
-  return proofingData.idType === "" || stateIsSelectedForDL() === false ? (
+  return proofingData.idType === "" || isDLStateSelected() === false ? (
     <p>Select an ID Type above.</p>
   ) : (
     <>
@@ -43,7 +43,7 @@ export default function SelectIDType() {
         and then click {"'Continue'"} to proceed to the next step.
       </p>
       <p>
-        Validate a <b>{IdDisplay()}</b> by looking for the following features:
+        Validate a <b>{idDisplay()}</b> by looking for the following features:
       </p>
       <ul>
         <li>Polycarbonate card body</li>
