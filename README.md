@@ -1,6 +1,8 @@
 # In Person Identity Proofing
 Veterans Affairs (VA) continues to offer more digital services to ensure access and security for all Veterans. In order to achieve increased security measures for VA.gov, Veterans will need to  create modern credentials, such as Login.gov, which require verification of one’s identity. However, the process of remote identity verification can be very confusing and frustrating, and it has a high chance of failure. Through discovery research and literature review, Login.gov Adoption has identified that in-person support is not only desired by Veterans, but it is needed to help many subpopulations of Veterans to verify their identity successfully. For example, Veterans that are not comfortable with processes involving photographing and uploading a digital image. Currently, VA has sites set up so that Veterans may verify their identity for specific services, such as MHV premium. However, the process of identity verification has been found to be inconsistent and unregulated across sites. Login.gov has developed identity proofing services at United States Postal Service sites which are made available to those who have failed remote proofing.
-In order to support Veterans who may be unable to verify their identity remotely, Office of the Chief Technology Officer has tasked the Login.gov Adoption team with creating a custom service that meets NIST Identity Assurance Level 2 (IAL2) guidelines, 800-63, and enables Veterans to complete identity verification in person at VA facilities. The service consists of an In-Person Identity Proofing custom application and an appointment at a VAMC with a designated proofing agent. The custom application is a new product that will allow proofing agents to validate proofing documents and use the Identity Toolkit to help Veterans complete identity verification at VA sites. Login.gov Adoption is a team within OCTO Identity and is working in partnership with Login.gov.
+In order to support Veterans who may be unable to verify their identity remotely, Office of the Chief Technology Officer has tasked the Login.gov Adoption team with creating a custom service that meets NIST Identity Assurance Level 2 (IAL2) guidelines, 800-63, and enables Veterans to complete identity verification in person at VA facilities. The service consists of an In-Person Identity Proofing custom application and an appointment at a VAMC with a designated proofing agent. The custom application is a new product that will allow proofing agents to validate proofing documents and use the Identity Toolkit to help Veterans complete identity verification at VA sites. Login.gov Adoption is a team within OCTO Identity and is working in partnership with Login.gov. 
+
+Here is our [Product Brief](https://docs.google.com/document/d/1cQsrpAyydrElCxMk54TbRYmYuyyeJWx98KRWDUbshow/edit#heading=h.e0941y4fa3eg) for more info.
 
 ## Features
 
@@ -72,6 +74,8 @@ Localhost:3000 should lead you to this screen
 
 - Allows a veteran to see what entails in getting an IAL2 compliant account, select a site and recieve a confirmation number and instructions to go the VA site
 - Allows a Proofing Agent to retrieve the proffee's information via the case number and gather information to ensure that they reach IAL2 compliance
+- Check our [QA log](https://docs.google.com/spreadsheets/d/18v5DcUe0J5GlFZrXR219dvPCij4x-0_kdUGJ6zdzG4A/edit#gid=1180539079)
+- Check our [Database Diagram] (https://lucid.app/lucidchart/d59e0de9-7c74-4df7-8cf2-2683a22a2e2b/edit?beaconFlowId=348E8767A4F02D66&invitationId=inv_5f233044-ccde-4c15-9ec3-3214ff8be07a&page=0_0#)
 
 ## External Integrations
 
