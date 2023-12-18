@@ -4,8 +4,11 @@ const IDTypeSelectOptions: React.FC = () => {
   return (
     <>
       <option>- Select - </option>
-      <option value="Driver's License or State-issued ID">
-        {"Driver's License or State-issued ID"}
+      <option value="State-issued Driver's License">
+        {"State-issued Driver's License"}
+      </option>
+      <option value="State-issued Identification Card">
+        {"State-issued Identification Card"}
       </option>
       <option value="VHIC">VHIC</option>
     </>

@@ -1,5 +1,6 @@
 export const initialProofingData = {
   idType: "",
+  driverLicenseState: "",
   isDocumentValidated: false,
   caseNumber: "",
   socialSecurityNumber: "",
