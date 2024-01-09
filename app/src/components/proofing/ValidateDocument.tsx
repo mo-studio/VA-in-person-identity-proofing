@@ -38,7 +38,7 @@ export default function SelectIDType() {
     <>
       <p className="margin-top-2 margin-bottom-4">
         Use the information below to validate the authenticity of the
-        {"applicant's "} photo ID. Once you have reviewed the ID and determined
+        {" applicant's "} photo ID. Once you have reviewed the ID and determined
         that it is {"valid,"} click the check box for {"'Validated document' "}
         and then click {"'Continue'"} to proceed to the next step.
       </p>
