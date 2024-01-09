@@ -13,17 +13,19 @@ import IDTypeSelectOptions from "src/components/proofing/IDTypeSelectOptions";
 import StateSelectOptions from "src/components/proofing/StateSelectOptions";
 
 function formatDate(inputDate: string): string {
-  if (inputDate === "") {
-    return "";
-  }
-  const originalDate = new Date(inputDate);
-  const formattedDate = Intl.DateTimeFormat("en-CA", {
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  }).format(originalDate);
+  const dateArray = inputDate.split("/");
+  const originalDate = new Date(
+    Number(dateArray[2]),
+    Number(dateArray[0]) - 1,
+    Number(dateArray[1])
+  );
+  const year = originalDate.getFullYear();
+  const month = (originalDate.getMonth() + 1).toString().padStart(2, "0");
+  const day = originalDate.getDate().toString().padStart(2, "0");
+  const formattedDate = `${year}-${month}-${day}`;
   return formattedDate;
 }
+
 export default function FillInInformation() {
   const contextValue = useContext(ProofingContext);
   const { proofingData, setProofingData } = contextValue || {
