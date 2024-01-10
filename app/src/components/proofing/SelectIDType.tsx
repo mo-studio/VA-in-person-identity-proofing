@@ -5,7 +5,7 @@ import { ChangeEvent, useContext } from "react";
 import { Label, Select } from "@trussworks/react-uswds";
 
 import IDTypeSelectOptions from "./IDTypeSelectOptions";
-import SelectStateDriversLicense from "./SelectStateDriversLicense";
+import SelectIDTypeState from "./SelectIDTypeState";
 
 export default function SelectIDType() {
   const contextValue = useContext(ProofingContext);
@@ -37,8 +37,9 @@ export default function SelectIDType() {
         <IDTypeSelectOptions />
       </Select>
       {/* // TODO: Replace with a shared variable if this becomes more than 2 options */}
-      {proofingData.idType === "State-issued Driver's License" && (
-        <SelectStateDriversLicense />
+      {(proofingData.idType === "State-issued Driver's License" ||
+        proofingData.idType === "State-issued Identification Card") && (
+        <SelectIDTypeState />
       )}
     </div>
   );

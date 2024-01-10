@@ -12,29 +12,21 @@ export default function SelectIDType() {
       return data;
     },
   };
-  function isDLStateSelected() {
-    if (proofingData.idType != "State-issued Driver's License") {
-      return true;
-    }
-    if (
-      proofingData.idType === "State-issued Driver's License" &&
-      proofingData.driverLicenseState != ""
-    ) {
-      return true;
-    }
-    return false;
-  }
-  function idDisplay() {
-    let idDisplayed = proofingData.idType;
-    if (proofingData.idType === "State-issued Driver's License") {
-      idDisplayed = proofingData.driverLicenseState;
-    }
-    return idDisplayed;
-  }
 
-  return proofingData.idType === "" || isDLStateSelected() === false ? (
-    <p>Select an ID Type above.</p>
-  ) : (
+  const isDLStateSelected =
+    proofingData.idType === "State-issued Driver's License" &&
+    proofingData.idTypeState !== "";
+
+  const isIDStateSelected =
+    proofingData.idType === "State-issued Identification Card" &&
+    proofingData.idTypeState !== "";
+
+  const isVHICSelected = proofingData.idType === "VHIC";
+
+  const shouldShowValidationContent =
+    isVHICSelected || isDLStateSelected || isIDStateSelected;
+
+  return shouldShowValidationContent ? (
     <>
       <p className="margin-top-2 margin-bottom-4">
         Use the information below to validate the authenticity of the
@@ -43,7 +35,8 @@ export default function SelectIDType() {
         and then click {"'Continue'"} to proceed to the next step.
       </p>
       <p>
-        Validate a <b>{idDisplay()}</b> by looking for the following features:
+        Validate a <b>{proofingData.idType}</b> by looking for the following
+        features:
       </p>
       <ul>
         <li>Polycarbonate card body</li>
@@ -73,5 +66,7 @@ export default function SelectIDType() {
         }
       />
     </>
+  ) : (
+    <p>Select an ID Type above.</p>
   );
 }
