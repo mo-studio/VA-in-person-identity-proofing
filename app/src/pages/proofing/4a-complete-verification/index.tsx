@@ -134,8 +134,8 @@ export default function CompleteVerification() {
       content: (
         <div className="margin-top-2">
           <p>
-            The applicant will be receiving a confirmation email that their
-            identity has been verified at the following email address:
+            Tell the applicant that they will be receiving a physical
+            confirmation letter through the mail sent to the following address:
           </p>
           <p>
             {/* TODO: Fill this from context */}
@@ -150,7 +150,7 @@ export default function CompleteVerification() {
           </p>
           <p>
             Please ask the applicant to sign into VA.gov with their Login.gov
-            account now. If sign-in is successful, click the ‘Complete’ button
+            account now. If sign-in is successful, click the ‘Continue’ button
             below to close out this verification task and the associated case
             number.
           </p>
