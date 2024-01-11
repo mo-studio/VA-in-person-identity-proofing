@@ -3,7 +3,7 @@ import React from "react";
 const IDTypeSelectOptions: React.FC = () => {
   return (
     <>
-      <option>- Select - </option>
+      <option value="">- Select -</option>
       <option value="State-issued Driver's License">
         {"State-issued Driver's License"}
       </option>

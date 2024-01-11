@@ -3,7 +3,7 @@ import React from "react";
 const StateSelectOptions: React.FC = () => {
   return (
     <>
-      <option>- Select -</option>
+      <option value="">- Select -</option>
       <option value="AL">Alabama</option>
       <option value="AK">Alaska</option>
       <option value="AZ">Arizona</option>

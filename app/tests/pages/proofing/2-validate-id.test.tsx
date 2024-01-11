@@ -31,7 +31,7 @@ describe("ValidateId", () => {
     expect(caseNumber).toBeInTheDocument();
   });
 
-  it("displays a second ID Type if Driver's License is Selected", () => {
+  it("displays a State ID Type dropdown if Driver's License is Selected", () => {
     render(
       <ProofingContext.Provider
         value={{
@@ -45,18 +45,52 @@ describe("ValidateId", () => {
         <ValidateId />
       </ProofingContext.Provider>
     );
-    expect(screen.queryAllByText(`ID Type`)).toHaveLength(2);
-    expect(screen.queryAllByText("Maryland Driver's License")).toHaveLength(1);
+    expect(screen.queryAllByText(`State`)).toHaveLength(1);
+    expect(screen.queryAllByText("Maryland")).toHaveLength(1);
   });
 
-  it("displays a second ID Type if Driver's License is Selected below in validate document section", () => {
+  it("displays a State ID Type dropdown if State-issued ID is Selected", () => {
+    render(
+      <ProofingContext.Provider
+        value={{
+          proofingData: {
+            ...initialProofingData,
+            idType: "State-issued Identification Card",
+          },
+          setProofingData,
+        }}
+      >
+        <ValidateId />
+      </ProofingContext.Provider>
+    );
+    expect(screen.queryAllByText(`State`)).toHaveLength(1);
+  });
+
+  it("doesn't display a State ID Type dropdown if VHIC", () => {
+    render(
+      <ProofingContext.Provider
+        value={{
+          proofingData: {
+            ...initialProofingData,
+            idType: "VHIC",
+          },
+          setProofingData,
+        }}
+      >
+        <ValidateId />
+      </ProofingContext.Provider>
+    );
+    expect(screen.queryAllByText(`State`)).toHaveLength(0);
+  });
+
+  it("displays a second dropdown for State of ID Type if Driver's License is Selected below in validate document section", () => {
     render(
       <ProofingContext.Provider
         value={{
           proofingData: {
             ...initialProofingData,
             idType: "State-issued Driver's License",
-            driverLicenseState: "Maryland Driver's License",
+            idTypeState: "MD",
           },
           setProofingData,
         }}
@@ -65,7 +99,7 @@ describe("ValidateId", () => {
       </ProofingContext.Provider>
     );
 
-    expect(screen.queryAllByText("Maryland Driver's License")).toHaveLength(2);
+    expect(screen.queryAllByText("State")).toHaveLength(1);
   });
 
   it("continue button is disabled when validated boolean is false", () => {

@@ -127,7 +127,10 @@ export default function ConfirmEmailPage() {
             <button
               type="button"
               className="usa-button usa-button--full-width margin-bottom-4"
-              disabled={proofingData.isDocumentValidated === false}
+              disabled={
+                proofingData.idType === "" ||
+                proofingData.isDocumentValidated === false
+              }
             >
               Continue
             </button>
