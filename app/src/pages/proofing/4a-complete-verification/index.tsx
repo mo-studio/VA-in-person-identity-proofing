@@ -134,16 +134,16 @@ export default function CompleteVerification() {
       content: (
         <div className="margin-top-2">
           <p>
-            Tell the applicant that they will be receiving a physical
-            confirmation letter through the mail sent to the following address:
+            The applicant will be receiving a confirmation email that their
+            identity has been verified at following address:
           </p>
           <p>
             {/* TODO: Fill this from context */}
             <b>iparson5@gmail.com</b>
           </p>
           <p>
-            The applicant that they will be receiving a physical confirmation
-            letter through the mail sent to the following address:
+            Tell the applicant that they will be receiving a physical
+            confirmation letter through the mail sent to the following address:
           </p>
           <p>
             <b>{formattedAddress}</b>
