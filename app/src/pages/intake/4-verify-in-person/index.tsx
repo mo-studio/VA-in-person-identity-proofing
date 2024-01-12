@@ -9,6 +9,17 @@ export default function CaseNumberScreen() {
     result.setDate(result.getDate() + days);
     return result;
   }
+  function generateRandomCaseNumber() {
+    const digits = "0123456789";
+    let caseNumber = "";
+
+    for (let i = 0; i < 8; i++) {
+      const randomIndex = Math.floor(Math.random() * digits.length);
+      caseNumber += digits.charAt(randomIndex);
+    }
+
+    return caseNumber;
+  }
 
   const currentDate = new Date();
   const newDate = addDays(currentDate, 10);
@@ -35,7 +46,7 @@ export default function CaseNumberScreen() {
           </StepIndicator>
           <h1 className="padding-x-0">Verify In Person</h1>
           <p>
-            <b>Your case number is: C8302023</b>
+            <b>Your case number is: {generateRandomCaseNumber()}</b>
           </p>
           <p className="margin-y-4">
             For your In-Person Identity Proofing walk-in appointment, please
