@@ -95,11 +95,10 @@ export default function CompleteVerification() {
       content: (
         <div className="margin-top-2">
           <p>
-            To complete the verification process, enter the applicant’s ICN that
-            you wrote down from the previous screen and then check the box,
-            ‘Verified in IAM identity management toolkit’. Confirm the
-            applicant’s email and physical address one last time before pressing
-            “Complete.”
+            To complete the verification process, enter the applicant’s ICN and
+            then check the box, ‘Verified in IAM identity management toolkit’.
+            Confirm the applicant’s email and physical address one last time
+            before pressing “Complete.”
           </p>
           <Label htmlFor="icn-input">ICN</Label>
           <TextInput
