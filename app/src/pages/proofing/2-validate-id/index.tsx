@@ -29,7 +29,7 @@ const validateIdSteps: AccordionItemProps[] = [
     headingLevel: "h4",
   },
   {
-    title: "Veteran Health ID Insurance Card (VHIC) with proof of address",
+    title: "Veteran Health ID (VHIC) with proof of address",
     content: (
       <p>
         If VHIC is presented, the applicant must also provide additional
